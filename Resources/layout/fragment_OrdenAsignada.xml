@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:text="ORDEN ASIGNADA"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:elevation="10dp"
+        android:textColor="#ffff"
+        android:background="#6200EE"
+        android:layout_margin="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <!--CODIGO-->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_marginHorizontal="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="CODIGO:"
+            android:layout_weight="1"
+            android:textColor="#31B099"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/lblCodigoAsignado"
+            tools:text="Codigo"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:ignore="XmlNamespace" />
+
+    </LinearLayout>
+
+    <!--CLIENTE-->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_marginHorizontal="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="CLIENTE:"
+            android:layout_weight="1"
+            android:textColor="#31B099"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/lblclienteAsignado"
+            tools:text="Nombre del cliente"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:ignore="XmlNamespace" />
+
+    </LinearLayout>
+
+    <!--SUCURSAL-->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_marginHorizontal="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="SUCURSAL:"
+            android:layout_weight="1"
+            android:textColor="#31B099"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/lblSucursalAsignado"
+            tools:text="Nombre de la sucursal"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:ignore="XmlNamespace" />
+
+    </LinearLayout>
+
+    <!--DISPOSITIVO-->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_marginHorizontal="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="DISPOSITIVO:"
+            android:layout_weight="1"
+            android:textColor="#31B099"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/lblDispositivoAsignado"
+            tools:text="Nombre del dispositivo"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:ignore="XmlNamespace" />
+
+    </LinearLayout>
+
+    <!--DISPOSITIVO-->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_marginHorizontal="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="TECNICO:"
+            android:layout_weight="1"
+            android:textColor="#31B099"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/lblTecnicoAsignado"
+            tools:text="Nombre del Tecnico"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:ignore="XmlNamespace" />
+
+    </LinearLayout>
+
+    <!--PROBLEMA-->
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_marginHorizontal="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="ASUNTO"
+            android:textColor="#31B099"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/lblAsuntoAsginado"
+            tools:text="ASUNTO"
+            android:textColor="#ffff"
+            android:background="@android:color/darker_gray"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            tools:ignore="XmlNamespace" />
+
+    </LinearLayout>
+
+    <!--PROBLEMA-->
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_marginHorizontal="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="PROBLEMA"
+            android:gravity="center"
+            android:textColor="#31B099"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/lblProblema"
+            tools:text="Problema"
+            android:textColor="#ffff"
+            android:background="@android:color/darker_gray"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            tools:ignore="XmlNamespace" />
+
+    </LinearLayout>
+
+    <!--BOTON CERRAR DIALOG-->
+    <Button
+        android:id="@+id/btnSolucion"
+        android:text="EMPEZAR SOLUCION"
+        android:layout_margin="8dp"
+        android:textStyle="bold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>

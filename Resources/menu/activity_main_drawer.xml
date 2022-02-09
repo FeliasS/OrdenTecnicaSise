@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nuev_orden"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="NUEVA ORDEN" />
+		<item
+            android:id="@+id/orden_creada"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="ORDEN CREADA" />
+        <item
+            android:id="@+id/orden_asignada"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="ORDENES ASIGNADA" />
+        <item
+            android:id="@+id/orden_proceso"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="ORDENES EN PROCESO" />
+        <item
+            android:id="@+id/orden_atendido"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="ORDENES ATENDIDOS" />
+		<item
+            android:id="@+id/orden_cerrado"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="ORDENES CERRADAS" />
+    </group>
+
+    <item android:title="Opciones adicionales">
+        <menu>
+            <item
+                android:id="@+id/cerrar_sesion"
+                android:icon="@drawable/ic_menu_share"
+                android:title="CERRAR SESION" />
+        </menu>
+    </item>
+
+</menu>
