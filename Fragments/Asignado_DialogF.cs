@@ -26,7 +26,7 @@ namespace OrdenTecnica_App.Fragments
             View view = inflater.Inflate(Resource.Layout.fragment_OrdenAsignada, container, false);
 
             lblCodigo = view.FindViewById<TextView>(Resource.Id.lblCodigoAsignado);
-            lblCliente = view.FindViewById<TextView>(Resource.Id.lblNomCliente);
+            lblCliente = view.FindViewById<TextView>(Resource.Id.lblclienteAsignado);
             lblSucursal = view.FindViewById<TextView>(Resource.Id.lblSucursalAsignado);
             lblDispositivo = view.FindViewById<TextView>(Resource.Id.lblDispositivoAsignado);
             lblTecnico = view.FindViewById<TextView>(Resource.Id.lblTecnicoAsignado);

@@ -7,6 +7,7 @@ using Android.Views;
 using Android.Widget;
 using AndroidX.RecyclerView.Widget;
 using Newtonsoft.Json;
+using OrdenTecnica_App.Interface;
 using OrdenTecnica_App.ListRecycler.Adapter;
 using OrdenTecnica_App.Models;
 using OrdenTecnica_App.ServicesClubTec;
@@ -30,6 +31,15 @@ namespace OrdenTecnica_App.Fragments
 
         //Definimos el modelo de ordenWs
         List<OrdenWs> lstOrdenProceso;
+
+        //Definimos la interface
+        private INuevaOrden iNuevaOrden;
+
+        public override void OnAttach(Context context)
+        {
+            base.OnAttach(context);
+            iNuevaOrden = (INuevaOrden)context;
+        }
 
         public override void OnCreate(Bundle savedInstanceState)
         {
@@ -108,8 +118,17 @@ namespace OrdenTecnica_App.Fragments
 
         private void MAdapter_ItemClick(object sender, int e)
         {
+            Orden ordenAsig = new Orden();
+            ordenAsig.cod_orden = lstOrdenProceso[e].COD_ORDEN;
+            ordenAsig.asunto = lstOrdenProceso[e].ASUNTO;
+            ordenAsig.remitente = lstOrdenProceso[e].REMITENTE;
+            ordenAsig.id_sucursal = int.Parse(lstOrdenProceso[e].FK_SUCURSAL);
+            //ordenAsig.remitente = lstOrdenProceso[e].REMITENTE;
+
             var transaccion = this.Activity.SupportFragmentManager.BeginTransaction();
             Asignar_DialogF dialogAsignar = new Asignar_DialogF();
+            //Primero enviamos los datos al main 
+            iNuevaOrden.AsigarOrden(ordenAsig);
             dialogAsignar.Show(transaccion, "asignar Tecnico fragment");
         }
     }

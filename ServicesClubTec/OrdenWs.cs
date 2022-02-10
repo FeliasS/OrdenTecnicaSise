@@ -27,5 +27,6 @@ namespace OrdenTecnica_App.ServicesClubTec
         public OrdenWs()
         {
         }
+
     }
 }

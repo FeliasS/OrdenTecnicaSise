@@ -1,10 +1,5 @@
 D:\Repos\Xamarin\OrdenTecnica_App\bin\Debug\OrdenTecnica_App.dll
 D:\Repos\Xamarin\OrdenTecnica_App\bin\Debug\OrdenTecnica_App.pdb
-D:\Repos\Xamarin\OrdenTecnica_App\bin\Debug\com.companyname.ordentecnica_app.apk
-D:\Repos\Xamarin\OrdenTecnica_App\bin\Debug\com.companyname.ordentecnica_app.aab
-D:\Repos\Xamarin\OrdenTecnica_App\bin\Debug\com.companyname.ordentecnica_app-Signed.aab
-D:\Repos\Xamarin\OrdenTecnica_App\bin\Debug\com.companyname.ordentecnica_app-Signed.apk
-D:\Repos\Xamarin\OrdenTecnica_App\bin\Debug\com.companyname.ordentecnica_app-Signed.apk.idsig
 D:\Repos\Xamarin\OrdenTecnica_App\obj\Debug\110\MonoAndroid,Version=v11.0.AssemblyAttributes.cs
 D:\Repos\Xamarin\OrdenTecnica_App\obj\Debug\110\build.props
 D:\Repos\Xamarin\OrdenTecnica_App\obj\Debug\110\adb.props
@@ -28,10 +23,7 @@ D:\Repos\Xamarin\OrdenTecnica_App\obj\Debug\110\R.cs.flag
 D:\Repos\Xamarin\OrdenTecnica_App\obj\Debug\110\OrdenTecnica_App.csproj.CoreCompileInputs.cache
 D:\Repos\Xamarin\OrdenTecnica_App\obj\Debug\110\OrdenTecnica_App.dll
 D:\Repos\Xamarin\OrdenTecnica_App\obj\Debug\110\OrdenTecnica_App.pdb
-D:\Repos\Xamarin\OrdenTecnica_App\obj\Debug\110\android\bin\com.companyname.ordentecnica_app.apk
 D:\Repos\Xamarin\OrdenTecnica_App\obj\Debug\110\android\bin\base.zip
-D:\Repos\Xamarin\OrdenTecnica_App\obj\Debug\110\android\bin\com.companyname.ordentecnica_app.aab
-D:\Repos\Xamarin\OrdenTecnica_App\obj\Debug\110\android\bin\com.companyname.ordentecnica_app.apks
 D:\Repos\Xamarin\OrdenTecnica_App\obj\Debug\110\res\layout\activity_main.xml
 D:\Repos\Xamarin\OrdenTecnica_App\obj\Debug\110\res\layout\app_bar_main.xml
 D:\Repos\Xamarin\OrdenTecnica_App\obj\Debug\110\res\layout\content_main.xml
@@ -370,3 +362,12 @@ D:\Repos\Xamarin\OrdenTecnica_App\obj\Debug\110\android\src\crc64d818c4686ed024a
 D:\Repos\Xamarin\OrdenTecnica_App\obj\Debug\110\android\src\crc64d818c4686ed024a0\OrdenSolucionar_Fragment.java
 D:\Repos\Xamarin\OrdenTecnica_App\obj\Debug\110\res\layout\fragment_orddetalleproceso.xml
 D:\Repos\Xamarin\OrdenTecnica_App\obj\Debug\110\android\src\crc64d818c4686ed024a0\OrdenSolucionar0_Fragment.java
+D:\Repos\Xamarin\OrdenTecnica_App\bin\Debug\com.companyname.ordentecnica.apk
+D:\Repos\Xamarin\OrdenTecnica_App\bin\Debug\com.companyname.ordentecnica.aab
+D:\Repos\Xamarin\OrdenTecnica_App\bin\Debug\com.companyname.ordentecnica-Signed.aab
+D:\Repos\Xamarin\OrdenTecnica_App\bin\Debug\com.companyname.ordentecnica-Signed.apk
+D:\Repos\Xamarin\OrdenTecnica_App\bin\Debug\com.companyname.ordentecnica-Signed.apk.idsig
+D:\Repos\Xamarin\OrdenTecnica_App\obj\Debug\110\android\bin\com.companyname.ordentecnica.apk
+D:\Repos\Xamarin\OrdenTecnica_App\obj\Debug\110\android\bin\com.companyname.ordentecnica.aab
+D:\Repos\Xamarin\OrdenTecnica_App\obj\Debug\110\android\bin\com.companyname.ordentecnica.apks
+D:\Repos\Xamarin\OrdenTecnica_App\obj\Debug\110\android\src\com\companyname\ordentecnica\R.java

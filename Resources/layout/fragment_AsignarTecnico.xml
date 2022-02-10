@@ -18,6 +18,30 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
+    <!--CODIGO-->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_marginHorizontal="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    
+        <TextView
+            android:text="Codigo:"
+            android:layout_weight="1"
+            android:textColor="#31B099"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/lblAsigCodigo"
+            tools:text="Nombre del cliente"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+    </LinearLayout>
+
     <!--CLIENTE-->
     <LinearLayout
         android:orientation="horizontal"
@@ -33,7 +57,7 @@
             android:layout_height="wrap_content"/>
 
         <TextView
-            android:id="@+id/lblNomCliente"
+            android:id="@+id/lblAsigCliente"
             tools:text="Nombre del cliente"
             android:layout_weight="1"
             android:layout_width="match_parent"
@@ -48,7 +72,7 @@
         android:layout_marginHorizontal="8dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-    
+
         <TextView
             android:text="Sucursal:"
             android:layout_weight="1"
@@ -57,7 +81,7 @@
             android:layout_height="wrap_content"/>
 
         <TextView
-            android:id="@+id/lblNomSucursal"
+            android:id="@+id/lblAsigSucursal"
             tools:text="Nombre de la sucursal"
             android:layout_weight="1"
             android:layout_width="match_parent"
@@ -66,51 +90,27 @@
 
     </LinearLayout>
 
-    <!--DISPOSITIVO-->
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_marginHorizontal="8dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-    
-        <TextView
-            android:text="Dispositivo:"
-            android:layout_weight="1"
-            android:textColor="#31B099"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-
-        <TextView
-            android:id="@+id/lblNomDispositivo"
-            tools:text="Nombre del dispositivo"
-            android:layout_weight="1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            tools:ignore="XmlNamespace" />
-
-    </LinearLayout>
-
-    <!--PROBLEMA-->
+    <!--ASUNTO-->
     <LinearLayout
         android:orientation="vertical"
         android:layout_marginHorizontal="8dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-    
+
         <TextView
-            android:text="Problema"
+            android:text="Asunto:"
             android:textColor="#31B099"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
         <TextView
-            android:id="@+id/lblProblema"
-            tools:text="Problema"
+            android:id="@+id/lblAsigAsunto"
+            tools:text="MI ASUNTO"
             android:textColor="#ffff"
             android:background="@android:color/darker_gray"
             android:layout_width="match_parent"
             android:layout_height="60dp"/>
-        
+
     </LinearLayout>
 
     <!--RECYCLERVIEW AND SEARCHVIEW-->
@@ -118,7 +118,9 @@
         android:orientation="vertical"
         android:layout_marginHorizontal="8dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:minWidth="25px"
+        android:minHeight="25px">
 
         <SearchView
             android:id="@+id/svAsignarView"

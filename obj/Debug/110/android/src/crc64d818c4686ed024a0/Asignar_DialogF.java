@@ -11,7 +11,7 @@ public class Asignar_DialogF
 	public static final String __md_methods;
 	static {
 		__md_methods = 
-			"n_onCreateDialog:(Landroid/os/Bundle;)Landroid/app/Dialog;:GetOnCreateDialog_Landroid_os_Bundle_Handler\n" +
+			"n_onCreate:(Landroid/os/Bundle;)V:GetOnCreate_Landroid_os_Bundle_Handler\n" +
 			"n_onCreateView:(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;:GetOnCreateView_Landroid_view_LayoutInflater_Landroid_view_ViewGroup_Landroid_os_Bundle_Handler\n" +
 			"n_onActivityCreated:(Landroid/os/Bundle;)V:GetOnActivityCreated_Landroid_os_Bundle_Handler\n" +
 			"n_onQueryTextChange:(Ljava/lang/String;)Z:GetOnQueryTextChange_Ljava_lang_String_Handler:Android.Widget.SearchView/IOnQueryTextListenerInvoker, Mono.Android, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null\n" +
@@ -29,12 +29,12 @@ public class Asignar_DialogF
 	}
 
 
-	public android.app.Dialog onCreateDialog (android.os.Bundle p0)
+	public void onCreate (android.os.Bundle p0)
 	{
-		return n_onCreateDialog (p0);
+		n_onCreate (p0);
 	}
 
-	private native android.app.Dialog n_onCreateDialog (android.os.Bundle p0);
+	private native void n_onCreate (android.os.Bundle p0);
 
 
 	public android.view.View onCreateView (android.view.LayoutInflater p0, android.view.ViewGroup p1, android.os.Bundle p2)

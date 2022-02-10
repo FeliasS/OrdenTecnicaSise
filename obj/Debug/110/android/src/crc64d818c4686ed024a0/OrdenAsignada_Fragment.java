@@ -11,6 +11,7 @@ public class OrdenAsignada_Fragment
 	public static final String __md_methods;
 	static {
 		__md_methods = 
+			"n_onAttach:(Landroid/content/Context;)V:GetOnAttach_Landroid_content_Context_Handler\n" +
 			"n_onCreate:(Landroid/os/Bundle;)V:GetOnCreate_Landroid_os_Bundle_Handler\n" +
 			"n_onCreateView:(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;:GetOnCreateView_Landroid_view_LayoutInflater_Landroid_view_ViewGroup_Landroid_os_Bundle_Handler\n" +
 			"n_onQueryTextChange:(Ljava/lang/String;)Z:GetOnQueryTextChange_Ljava_lang_String_Handler:Android.Widget.SearchView/IOnQueryTextListenerInvoker, Mono.Android, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null\n" +
@@ -34,6 +35,14 @@ public class OrdenAsignada_Fragment
 		if (getClass () == OrdenAsignada_Fragment.class)
 			mono.android.TypeManager.Activate ("OrdenTecnica_App.Fragments.OrdenAsignada_Fragment, OrdenTecnica_App", "System.Int32, mscorlib", this, new java.lang.Object[] { p0 });
 	}
+
+
+	public void onAttach (android.content.Context p0)
+	{
+		n_onAttach (p0);
+	}
+
+	private native void n_onAttach (android.content.Context p0);
 
 
 	public void onCreate (android.os.Bundle p0)

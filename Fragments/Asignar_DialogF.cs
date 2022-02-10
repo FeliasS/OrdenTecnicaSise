@@ -5,6 +5,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using AndroidX.RecyclerView.Widget;
+using OrdenTecnica_App.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,34 +15,62 @@ namespace OrdenTecnica_App.Fragments
 {
     class Asignar_DialogF: AndroidX.Fragment.App.DialogFragment,SearchView.IOnQueryTextListener
     {
-        private int _clickCount;
-
+        
         SearchView svAsigTecnico;
 
-        public override Dialog OnCreateDialog(Bundle savedInstanceState)
-        {
-            Bundle args = this.Arguments;
+        public TextView lblcodigo, lblcliente, lblsucursal, lblasunto;
 
-            return base.OnCreateDialog(savedInstanceState);
+        //Definimos la orden que recibirá los datos del main
+        Orden getOrden = new Orden();
+
+        string cod;
+        
+
+        public override void OnCreate(Bundle savedInstanceState)
+        {
+            base.OnCreate(savedInstanceState);
+            
         }
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
-            base.OnCreateView(inflater, container, savedInstanceState);
+            
+            View view = inflater.Inflate(Resource.Layout.fragment_AsignarTecnico, container, false);
+            lblcodigo = view.FindViewById<TextView>(Resource.Id.lblAsigCodigo);
+            lblcodigo.Text = cod;
 
-            var view = inflater.Inflate(Resource.Layout.fragment_AsignarTecnico, container, false);
-            var lblNombre = view.FindViewById<TextView>(Resource.Id.lblNomCliente);
-            var lblSucursal = view.FindViewById<TextView>(Resource.Id.lblNomSucursal);
-            var lblDispositivo = view.FindViewById<TextView>(Resource.Id.lblNomDispositivo);
-            var lblProblema = view.FindViewById<TextView>(Resource.Id.lblProblema);
+            lblcliente = view.FindViewById<TextView>(Resource.Id.lblAsigCliente);
+            lblsucursal = view.FindViewById<TextView>(Resource.Id.lblAsigSucursal);
+            lblasunto = view.FindViewById<TextView>(Resource.Id.lblAsigAsunto);
 
             svAsigTecnico = view.FindViewById<SearchView>(Resource.Id.svAsignarView);
             RecyclerView rvAsigTecnico = view.FindViewById<RecyclerView>(Resource.Id.rvAsignarTecnico);
             Button btnAsignar = view.FindViewById<Button>(Resource.Id.btnAsignarTecnico);
 
 
+            //Mostramos los dato en la actividad
+            //lblcodigo.Text = miCodigo;
+            //lblcliente.Text = miCliente;
+            //lblsucursal.Text = miSucursal.ToString();
+            //lblasunto.Text = miAsunto;
+            
+            Console.WriteLine("Codigo: " + lblcodigo.Text +
+                "\n cliente: " + lblcliente.Text +
+                "\n sucursal: " + lblsucursal.Text +
+                "\n asunto: " + lblasunto.Text);
             return view;
         }
+
+        public void SetInDialogOrden(Orden orden)
+        {
+            Console.WriteLine("orden ocdigo: " + orden.cod_orden);
+
+            cod = orden.cod_orden;
+            //lblcliente.Text = miCliente;
+            //lblsucursal.Text = miSucursal.ToString();
+            //lblasunto.Text = miAsunto;
+
+        } 
 
         public override void OnActivityCreated(Bundle savedInstanceState)
         {
@@ -58,5 +87,6 @@ namespace OrdenTecnica_App.Fragments
         {
             throw new NotImplementedException();
         }
+
     }
 }

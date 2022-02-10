@@ -16,6 +16,7 @@ using Google.Android.Material.Navigation;
 using Google.Android.Material.Snackbar;
 using OrdenTecnica_App.Fragments;
 using OrdenTecnica_App.Interface;
+using OrdenTecnica_App.Models;
 using Xamarin.Essentials;
 
 namespace OrdenTecnica_App
@@ -184,10 +185,10 @@ namespace OrdenTecnica_App
                     navigationView.Menu.FindItem(Resource.Id.orden_atendido).SetVisible(true);
                     navigationView.Menu.FindItem(Resource.Id.orden_cerrado).SetVisible(false);
 
-                    OrdenAtendida_Fragment ordenAtendido = new OrdenAtendida_Fragment();
+                    OrdenAsignada_Fragment ordenAsig = new OrdenAsignada_Fragment();
                     var transaccion = SupportFragmentManager.BeginTransaction();
 
-                    transaccion.Replace(Resource.Id.conteinerView, ordenAtendido);
+                    transaccion.Replace(Resource.Id.conteinerView, ordenAsig);
                     transaccion.Commit();
 
                     break;
@@ -216,16 +217,30 @@ namespace OrdenTecnica_App
             }
         }
 
+        int counter = 0;
         public override void OnBackPressed()
         {
-            DrawerLayout drawer = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
-            if(drawer.IsDrawerOpen(GravityCompat.Start))
+            int count = SupportFragmentManager.BackStackEntryCount;
+
+            if (count == 0)
             {
-                drawer.CloseDrawer(GravityCompat.Start);
+                counter++;
+
+                if (counter == 1)
+                {
+                    Android.Widget.Toast.MakeText(this, "Tap una vez más para salir", Android.Widget.ToastLength.Short).Show();
+                }
+                else if (counter == 2)
+                {
+
+                    base.OnBackPressed();
+                }
+
             }
             else
             {
-                base.OnBackPressed();
+                SupportFragmentManager.PopBackStack();
+                counter = 0;
             }
         }
 
@@ -355,6 +370,22 @@ namespace OrdenTecnica_App
 
             var transaccion = SupportFragmentManager.BeginTransaction();
             transaccion.Replace(Resource.Id.conteinerView, ordenSol0);
+            transaccion.Commit();
+        }
+
+        public void AsigarOrden(Orden orden)
+        {
+            Asignar_DialogF asig = new Asignar_DialogF();
+            //El main recibe los dato y los envia al dialog fragment
+            asig.SetInDialogOrden(orden);
+        }
+
+        public void AbrirOrdenProceso()
+        {
+            OrdenProceso_Fragment ordenProceso = new OrdenProceso_Fragment();
+            var transaccion = SupportFragmentManager.BeginTransaction();
+
+            transaccion.Replace(Resource.Id.conteinerView, ordenProceso);
             transaccion.Commit();
         }
     }

@@ -4,6 +4,7 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using OrdenTecnica_App.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,5 +15,7 @@ namespace OrdenTecnica_App.Interface
     interface INuevaOrden
     {
         void AbrirListaPendiente();
+
+        void AsigarOrden(Orden orden);
     }
 }

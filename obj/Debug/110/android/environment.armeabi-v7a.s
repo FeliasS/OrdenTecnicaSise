@@ -23,8 +23,8 @@
 	.section	.rodata.env.str.1,"aMS",%progbits,1
 	.type	.L.env.str.1, %object
 .L.env.str.1:
-	.asciz	"com.companyname.ordentecnica_app"
-	.size	.L.env.str.1, 33
+	.asciz	"com.companyname.ordentecnica"
+	.size	.L.env.str.1, 29
 	.section	.data.application_config,"aw",%progbits
 	.type	application_config, %object
 	.p2align	2
@@ -92,7 +92,7 @@ mono_aot_mode_name:
 	.section	.rodata.env.str.8,"aMS",%progbits,1
 	.type	.L.env.str.8, %object
 .L.env.str.8:
-	.asciz	"1430bfd8-bcae-486d-8495-4fb44e0f15de"
+	.asciz	"dad84dd6-5fe7-43ad-91bf-38030ea959c2"
 	.size	.L.env.str.8, 37
 	.section	.rodata.env.str.9,"aMS",%progbits,1
 	.type	.L.env.str.9, %object
