@@ -11,6 +11,7 @@ public class Asignar_DialogF
 	public static final String __md_methods;
 	static {
 		__md_methods = 
+			"n_onAttach:(Landroid/content/Context;)V:GetOnAttach_Landroid_content_Context_Handler\n" +
 			"n_onCreate:(Landroid/os/Bundle;)V:GetOnCreate_Landroid_os_Bundle_Handler\n" +
 			"n_onCreateView:(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;:GetOnCreateView_Landroid_view_LayoutInflater_Landroid_view_ViewGroup_Landroid_os_Bundle_Handler\n" +
 			"n_onActivityCreated:(Landroid/os/Bundle;)V:GetOnActivityCreated_Landroid_os_Bundle_Handler\n" +
@@ -27,6 +28,14 @@ public class Asignar_DialogF
 		if (getClass () == Asignar_DialogF.class)
 			mono.android.TypeManager.Activate ("OrdenTecnica_App.Fragments.Asignar_DialogF, OrdenTecnica_App", "", this, new java.lang.Object[] {  });
 	}
+
+
+	public void onAttach (android.content.Context p0)
+	{
+		n_onAttach (p0);
+	}
+
+	private native void n_onAttach (android.content.Context p0);
 
 
 	public void onCreate (android.os.Bundle p0)

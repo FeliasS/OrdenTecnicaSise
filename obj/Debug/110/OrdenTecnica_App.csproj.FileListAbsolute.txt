@@ -371,3 +371,6 @@ D:\Repos\Xamarin\OrdenTecnica_App\obj\Debug\110\android\bin\com.companyname.orde
 D:\Repos\Xamarin\OrdenTecnica_App\obj\Debug\110\android\bin\com.companyname.ordentecnica.aab
 D:\Repos\Xamarin\OrdenTecnica_App\obj\Debug\110\android\bin\com.companyname.ordentecnica.apks
 D:\Repos\Xamarin\OrdenTecnica_App\obj\Debug\110\android\src\com\companyname\ordentecnica\R.java
+D:\Repos\Xamarin\OrdenTecnica_App\obj\Debug\110\res\layout\item_listtecnico.xml
+D:\Repos\Xamarin\OrdenTecnica_App\obj\Debug\110\android\src\crc64101ab38e3d43aafd\ListTecnicos.java
+D:\Repos\Xamarin\OrdenTecnica_App\obj\Debug\110\android\src\crc64fac4dc6930c9ca92\ListTecnicos_Adapter.java

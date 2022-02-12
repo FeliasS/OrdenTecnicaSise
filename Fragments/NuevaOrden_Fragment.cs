@@ -181,7 +181,7 @@ namespace OrdenTecnica_App.Fragments
 
 
                 HttpClient client = new HttpClient();
-                Uri url = new Uri("http://micmaproyectos.com/orden/registrar");
+                Uri url = new Uri("http://servicios.micmaproyectos.com/orden/registrar ");
                 var json = JsonConvert.SerializeObject(addOrden);
                 var conten = new StringContent(json, Encoding.UTF8, "application/json");
                 var postJson = await client.PostAsync(url, conten);

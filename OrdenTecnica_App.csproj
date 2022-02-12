@@ -90,7 +90,9 @@
     <Compile Include="ListRecycler\Adapter\ItemSucursal_ac.cs" />
     <Compile Include="ListRecycler\Adapter\ListOrdenDetalle_Adapter.cs" />
     <Compile Include="ListRecycler\Adapter\ListOrden_Adapter.cs" />
+    <Compile Include="ListRecycler\Adapter\ListTecnicos_Adapter.cs" />
     <Compile Include="ListRecycler\Holder\ListOrdenDetalle.cs" />
+    <Compile Include="ListRecycler\Holder\ListTecnicos.cs" />
     <Compile Include="LoginActivity.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Models\Cliente.cs" />
@@ -101,15 +103,18 @@
     <Compile Include="Models\OrdenIDandEst.cs" />
     <Compile Include="Models\Statics\UserLogin.cs" />
     <Compile Include="Models\Sucursal.cs" />
+    <Compile Include="Models\Tecnicos.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="ListRecycler\Holder\ListOrden_Item.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServicesClubTec\OrdenWs.cs" />
+    <Compile Include="ServicesClubTec\TecnicoWs.cs" />
     <Compile Include="ServicesClubTec\TramaOrden.cs" />
     <Compile Include="ServicesClubTec\TramaOrdenLista.cs" />
     <Compile Include="ServicesClubTec\TramaOrdenTecnica.cs" />
     <Compile Include="ServicesClubTec\TramaOrdenObjeto.cs" />
+    <Compile Include="ServicesClubTec\TramaTecnicoLista.cs" />
     <Compile Include="ServicesClubTec\TramaUsuario.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -230,6 +235,11 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\fragment_OrdDetalleProceso.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\item_listTecnico.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

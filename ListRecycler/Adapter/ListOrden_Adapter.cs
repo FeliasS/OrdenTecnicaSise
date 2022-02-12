@@ -26,9 +26,6 @@ namespace OrdenTecnica_App.ListRecycler.Adapter
         // Definimos un miembro controlador de evento click
         public event EventHandler<int> ItemClick;
 
-        // Definimos los elementos par el buscar
-        
-
         public ListOrden_Adapter(List<OrdenWs> ordens)
         {
             lstOrden = ordens;

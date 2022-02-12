@@ -97,7 +97,7 @@ namespace OrdenTecnica_App
             // Validamos los cargos
             switch (cargo)
             {
-                case 5: //JEFE DE OPERACIONES
+                case 3: //JEFE DE OPERACIONES
                     headerView.FindViewById<TextView>(Resource.Id.textViewNomUser).Text = nomUser;
                     headerView.FindViewById<TextView>(Resource.Id.textViewCargoUser).Text = "JEFE DE OPERACIONES";
 
@@ -386,6 +386,15 @@ namespace OrdenTecnica_App
             var transaccion = SupportFragmentManager.BeginTransaction();
 
             transaccion.Replace(Resource.Id.conteinerView, ordenProceso);
+            transaccion.Commit();
+        }
+
+        public void ListarOrdenCreado()
+        {
+            OrdenCreada_Fragment ocreado = new OrdenCreada_Fragment();
+            var transaccion = SupportFragmentManager.BeginTransaction();
+
+            transaccion.Replace(Resource.Id.conteinerView, ocreado);
             transaccion.Commit();
         }
     }

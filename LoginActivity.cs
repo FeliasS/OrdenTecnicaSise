@@ -97,7 +97,7 @@ namespace OrdenTecnica_App
                 Usuario login = new Usuario(u, c);
 
                 HttpClient client = new HttpClient();
-                Uri url = new Uri("http://micmaproyectos.com/usuario/login");
+                Uri url = new Uri("http://servicios.micmaproyectos.com/usuario/login");
                 
                 var json = JsonConvert.SerializeObject(login);
 

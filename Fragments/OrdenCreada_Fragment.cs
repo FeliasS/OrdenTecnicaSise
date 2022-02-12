@@ -29,11 +29,15 @@ namespace OrdenTecnica_App.Fragments
         RecyclerView.LayoutManager mLayoutManager;
         ListOrden_Adapter mAdapter;
 
+        public static string idOrden;
+
         //Definimos el modelo de ordenWs
         List<OrdenWs> lstOrdenProceso;
 
         //Definimos la interface
         private INuevaOrden iNuevaOrden;
+
+
 
         public override void OnAttach(Context context)
         {
@@ -79,14 +83,14 @@ namespace OrdenTecnica_App.Fragments
             sOrdenProceso.SetOnQueryTextListener(this);
         }
 
-        private async void ListOrdnCreada()
+        public async void ListOrdnCreada()
         {
             Orden est = new Orden();
             est.estado = 1;
 
             Console.WriteLine("dato: " + est.estado);
             HttpClient client = new HttpClient();
-            Uri url = new Uri("http://micmaproyectos.com/orden/buscarOrdenByEstado");
+            Uri url = new Uri("http://servicios.micmaproyectos.com/orden/buscarOrdenByEstado ");
 
             var json = JsonConvert.SerializeObject(est);
             Console.WriteLine("parametros enviados: " + json);
@@ -119,14 +123,15 @@ namespace OrdenTecnica_App.Fragments
         private void MAdapter_ItemClick(object sender, int e)
         {
             Orden ordenAsig = new Orden();
+            ordenAsig.idOrden = int.Parse(lstOrdenProceso[e].ID_ORDEN);
             ordenAsig.cod_orden = lstOrdenProceso[e].COD_ORDEN;
             ordenAsig.asunto = lstOrdenProceso[e].ASUNTO;
             ordenAsig.remitente = lstOrdenProceso[e].REMITENTE;
             ordenAsig.id_sucursal = int.Parse(lstOrdenProceso[e].FK_SUCURSAL);
-            //ordenAsig.remitente = lstOrdenProceso[e].REMITENTE;
-
+            
             var transaccion = this.Activity.SupportFragmentManager.BeginTransaction();
             Asignar_DialogF dialogAsignar = new Asignar_DialogF();
+            
             //Primero enviamos los datos al main 
             iNuevaOrden.AsigarOrden(ordenAsig);
             dialogAsignar.Show(transaccion, "asignar Tecnico fragment");

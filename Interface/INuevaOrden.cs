@@ -17,5 +17,7 @@ namespace OrdenTecnica_App.Interface
         void AbrirListaPendiente();
 
         void AsigarOrden(Orden orden);
+
+        void ListarOrdenCreado();
     }
 }

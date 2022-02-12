@@ -77,7 +77,7 @@ namespace OrdenTecnica_App.Fragments
 
             switch (UserLogin._fk_perfil)
             {
-                case 5:
+                case 3:
                     List5();
                     break;
                 case 2:
@@ -96,7 +96,7 @@ namespace OrdenTecnica_App.Fragments
         {
             
             HttpClient client = new HttpClient();
-            Uri url = new Uri("http://micmaproyectos.com/orden/buscarOrdenByEmpleado ");
+            Uri url = new Uri("http://servicios.micmaproyectos.com/orden/buscarOrdenByEmpleado");
 
             var json = JsonConvert.SerializeObject(UserLogin._fk_empleado);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
@@ -139,7 +139,7 @@ namespace OrdenTecnica_App.Fragments
             Orden ordEstad = new Orden();
             ordEstad.estado = 5;
             HttpClient client = new HttpClient();
-            Uri url = new Uri("http://micmaproyectos.com/orden/buscarOrdenByEstado ");
+            Uri url = new Uri("http://servicios.micmaproyectos.com/orden/buscarOrdenByEstado ");
 
             var json = JsonConvert.SerializeObject(ordEstad);
             var content = new StringContent(json, Encoding.UTF8, "application/json");

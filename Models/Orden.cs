@@ -13,7 +13,7 @@ namespace OrdenTecnica_App.Models
 {
     public class Orden
     {
-        //public int idOrden { get; set; }
+        public int idOrden { get; set; }
         public string cod_orden { get; set; }
         public string asunto { get; set; }
         public string fecha_orden { get; set; } // Cambiar el tipo a Date
@@ -38,6 +38,22 @@ namespace OrdenTecnica_App.Models
             this.estado = estado;
             this.id_sucursal = id_sucursal;
             this.id_empleado = id_empleado;
+        }
+    }
+
+    public class OrdenEmpleado
+    {
+        public int idOrden { get; set; }
+        public int idEmpleado { get; set; }
+
+        public OrdenEmpleado(int idOrden, int idEmpleado)
+        {
+            this.idOrden = idOrden;
+            this.idEmpleado = idEmpleado;
+        }
+
+        public OrdenEmpleado()
+        {
         }
     }
 }
