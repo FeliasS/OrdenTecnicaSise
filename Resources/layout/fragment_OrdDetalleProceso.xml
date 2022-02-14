@@ -61,13 +61,34 @@
 
     </LinearLayout>
 
+    <!--CODIGO-->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_marginHorizontal="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="CODIGO:"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/lblSetCodigo"
+            tools:text="MI Codigo"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
     <!--CLIENTE-->
     <LinearLayout
         android:orientation="horizontal"
         android:layout_marginHorizontal="8dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        
+
         <TextView
             android:text="CLIENTE:"
             android:layout_weight="1"
@@ -81,14 +102,14 @@
             android:layout_height="wrap_content"/>
 
     </LinearLayout>
-
+   
     <!--SUCURSAL-->
     <LinearLayout
         android:orientation="horizontal"
         android:layout_marginHorizontal="8dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        
+
         <TextView
             android:text="SUCURSAL:"
             android:layout_weight="1"
@@ -96,33 +117,14 @@
             android:layout_height="wrap_content"/>
         <TextView
             android:id="@+id/lblSetSucursal"
-            tools:text="MI Sucursal"
+            tools:text="MI SUCURSAL"
             android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
     </LinearLayout>
 
-    <!--DISPOSITIVO-->
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_marginHorizontal="8dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        
-        <TextView
-            android:text="DISPOSITIVO:"
-            android:layout_weight="1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-        <TextView
-            android:id="@+id/lblSetDispositivo"
-            tools:text="MI Dispositivo"
-            android:layout_weight="1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
 
-    </LinearLayout>
 
     <!--ASUNTO-->
     <TextView
@@ -152,5 +154,14 @@
         android:layout_marginHorizontal="8dp"
         android:layout_width="match_parent"
         android:layout_height="120dp"/>
+
+    <!--FINALIZAR ORDEN-->
+    <Button
+        android:text="FINALIZAR ORDEN TECNICA"
+        android:id="@+id/btnFinOrdTecnica"
+        android:layout_margin="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
 
 </LinearLayout>

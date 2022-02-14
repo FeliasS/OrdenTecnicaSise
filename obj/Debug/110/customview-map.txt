@@ -17,6 +17,7 @@ background;obj\Debug\110\res\mipmap-anydpi-v26\ic_launcher_round.xml
 Button;obj\Debug\110\res\layout\activity_login.xml
 Button;obj\Debug\110\res\layout\fragment_asignartecnico.xml
 Button;obj\Debug\110\res\layout\fragment_nuevaorden.xml
+Button;obj\Debug\110\res\layout\fragment_orddetalleproceso.xml
 Button;obj\Debug\110\res\layout\fragment_ordenasignada.xml
 Button;obj\Debug\110\res\layout\fragment_ordenproceso.xml
 Button;obj\Debug\110\res\layout\item_listordentecnica.xml

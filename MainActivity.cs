@@ -17,6 +17,7 @@ using Google.Android.Material.Snackbar;
 using OrdenTecnica_App.Fragments;
 using OrdenTecnica_App.Interface;
 using OrdenTecnica_App.Models;
+using OrdenTecnica_App.ServicesClubTec;
 using Xamarin.Essentials;
 
 namespace OrdenTecnica_App
@@ -364,10 +365,10 @@ namespace OrdenTecnica_App
             transaccion.Commit();
         }
 
-        public void AbrirSolucionOrden0()
+        public void AbrirSolucionOrden0(OrdenWs orden)
         {
             OrdenSolucionar0_Fragment ordenSol0 = new OrdenSolucionar0_Fragment();
-
+            ordenSol0.SetOrdenDetalle(orden);
             var transaccion = SupportFragmentManager.BeginTransaction();
             transaccion.Replace(Resource.Id.conteinerView, ordenSol0);
             transaccion.Commit();

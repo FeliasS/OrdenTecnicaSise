@@ -9,6 +9,7 @@ using AndroidX.RecyclerView.Widget;
 using OrdenTecnica_App.Interface;
 using OrdenTecnica_App.ListRecycler.Adapter;
 using OrdenTecnica_App.Models;
+using OrdenTecnica_App.ServicesClubTec;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,7 +19,7 @@ namespace OrdenTecnica_App.Fragments
 {
     public class OrdenSolucionar0_Fragment : AndroidX.Fragment.App.Fragment
     {
-        TextView lblFecha, lblHora, lblClient, lblSucursal,lblDispositivo, lblAsunto;
+        TextView lblFecha, lblHora, lblClient, lblSucursal, lblAsunto, lblCodigo;
         RecyclerView rvODetalle;
 
         //Definimos el adaptador para el recyclerView
@@ -27,6 +28,9 @@ namespace OrdenTecnica_App.Fragments
 
         // Lista Detalle Orden
         List<Detalle_Orden> lstDo;
+
+        //Definimos una orden estatica
+        static OrdenWs o;
 
         //Interfce para abrir la siguiente ventana de procesor para la finalizacion de orden tecnica
         private ISolucionOrden iSolucionOrden;
@@ -52,10 +56,12 @@ namespace OrdenTecnica_App.Fragments
             lblHora = view.FindViewById<TextView>(Resource.Id.lblHoraAtencion);
             lblClient = view.FindViewById<TextView>(Resource.Id.lblSetCliente);
             lblSucursal = view.FindViewById<TextView>(Resource.Id.lblSetSucursal);
-            lblDispositivo = view.FindViewById<TextView>(Resource.Id.lblSetDispositivo);
+            lblCodigo = view.FindViewById<TextView>(Resource.Id.lblSetCodigo);
             lblAsunto = view.FindViewById<TextView>(Resource.Id.lblSetAsunto);
 
             rvODetalle = view.FindViewById<RecyclerView>(Resource.Id.rvSetListadoProblemas);
+
+            SetData();
 
             //ingresamos unos datos estaticos
             lstDo = new List<Detalle_Orden>();
@@ -76,6 +82,39 @@ namespace OrdenTecnica_App.Fragments
             mAdapter.ItemClick += MAdapter_ItemClick;
 
             return view;
+        }
+
+        void SetData()
+        {
+            lblFecha.Text = o.FECHA_ORDEN;
+            lblHora.Text = o.HORA_ORDEN;
+            lblCodigo.Text = o.COD_ORDEN;
+            lblClient.Text = o.REMITENTE;
+            lblSucursal.Text = o.FK_SUCURSAL;
+            lblAsunto.Text = o.ASUNTO;
+        }
+
+        public void SetOrdenDetalle(OrdenWs orden)
+        {
+            
+            if (orden.Equals(null))
+            {
+                Console.WriteLine("datos vacios");
+            }
+            else
+            {
+                o = new OrdenWs();
+                o.COD_ORDEN = orden.COD_ORDEN;
+                o.FECHA_ORDEN = orden.FECHA_ORDEN;
+                o.HORA_ORDEN = orden.HORA_ORDEN;
+                o.REMITENTE = orden.REMITENTE;
+                o.FK_SUCURSAL = orden.FK_SUCURSAL;
+                o.ASUNTO = orden.ASUNTO;
+                o.ESTADO = orden.ESTADO;
+
+                Console.WriteLine("datos LLenos");
+            }
+
         }
 
         private void MAdapter_ItemClick(object sender, int e)

@@ -6,59 +6,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_marginTop="8dp"
-        android:layout_marginHorizontal="8dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <!--FECHA DE ATENCION-->
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_weight="1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:text="FECHA DE ATENCION"
-                android:textStyle="bold"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-            <TextView
-                android:id="@+id/lblFechaAtencion"
-                tools:text="Mi fecha"
-                android:gravity="center"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                tools:ignore="XmlNamespace" />
-
-        </LinearLayout>
-
-        <!--HORA DE ATENCION-->
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_weight="1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:text="HORA DE ATENCION"
-                android:textStyle="bold"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-            <TextView
-                android:id="@+id/lblHoraAtencion"
-                tools:text="Mi hora"
-                android:gravity="center"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                tools:ignore="XmlNamespace" />
-
-        </LinearLayout>
-
-    </LinearLayout>
-
     <!--DIAGNOSTICO-->
     <TextView
         android:text="DIAGNOSTICO"
@@ -222,10 +169,10 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
-    <!--FINALIZAR ORDEN-->
+    <!--FINALIZAR PROBLEMA-->
     <Button
         android:id="@+id/btnFinalizarOrden"
-        android:text="FINALIZAR ORDEN"
+        android:text="FINALIZAR PROBLEMA TECNICO"
         android:layout_margin="8dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>

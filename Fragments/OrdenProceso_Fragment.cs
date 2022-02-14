@@ -174,7 +174,17 @@ namespace OrdenTecnica_App.Fragments
         }
         private void MAdapter_ItemClick(object sender, int e)
         {
-            iSolucionOrden.AbrirSolucionOrden0();
+            //Capturamos los datos de item seleccionado y lo enviamos al siguiente fragmento
+            OrdenWs ows = new OrdenWs();
+            ows.COD_ORDEN = lstOrdenProceso[e].COD_ORDEN;
+            ows.FECHA_ORDEN = lstOrdenProceso[e].FECHA_ORDEN;
+            ows.HORA_ORDEN = lstOrdenProceso[e].HORA_ORDEN;
+            ows.REMITENTE = lstOrdenProceso[e].REMITENTE;
+            ows.FK_SUCURSAL = lstOrdenProceso[e].FK_SUCURSAL;
+            ows.ASUNTO = lstOrdenProceso[e].ASUNTO;
+            ows.ESTADO = lstOrdenProceso[e].ESTADO;
+            
+            iSolucionOrden.AbrirSolucionOrden0(ows);
         }
     }
 }
