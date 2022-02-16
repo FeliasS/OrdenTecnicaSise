@@ -233,7 +233,6 @@ namespace OrdenTecnica_App
                 }
                 else if (counter == 2)
                 {
-
                     base.OnBackPressed();
                 }
 
@@ -283,7 +282,8 @@ namespace OrdenTecnica_App
                 OrdenCreada_Fragment ordenCreada = new OrdenCreada_Fragment();
                 var transaccion = SupportFragmentManager.BeginTransaction();
 
-                transaccion.Replace(Resource.Id.conteinerView, ordenCreada);
+                transaccion.Replace(Resource.Id.conteinerView, ordenCreada, "fragmentOrdenCreada");
+                transaccion.AddToBackStack("fragmentOrdenCreada");
                 transaccion.Commit();
             }
             else if (id == Resource.Id.orden_asignada)
@@ -292,32 +292,32 @@ namespace OrdenTecnica_App
                 OrdenPendiente = new OrdenAsignada_Fragment();
                 var transaccion = SupportFragmentManager.BeginTransaction();
 
-                transaccion.Replace(Resource.Id.conteinerView, OrdenPendiente);
+                transaccion.Replace(Resource.Id.conteinerView, OrdenPendiente,"fragmentOrdenPendiente");
+                transaccion.AddToBackStack("fragmentOrdenPendiente");
                 transaccion.Commit();
 
             }
             else if (id == Resource.Id.orden_proceso)
             {
-                int estadoOrden = 2; // aqui el tecnico ya esta actualizando la orden
                 OrdenProceso_Fragment ordenProceso = new OrdenProceso_Fragment();
                 var transaccion = SupportFragmentManager.BeginTransaction();
 
-                transaccion.Replace(Resource.Id.conteinerView, ordenProceso);
+                transaccion.Replace(Resource.Id.conteinerView, ordenProceso,"fragmentOrdenProceso");
+                transaccion.AddToBackStack("fragmentOrdenProceso");
                 transaccion.Commit();
             }
             else if (id == Resource.Id.orden_atendido)
             {
-                int estadoOrden = 3; // Aqui indica que ya dio solucion a la orden
                 OrdenAtendida_Fragment ordenAtendido = new OrdenAtendida_Fragment();
                 var transaccion = SupportFragmentManager.BeginTransaction();
 
-                transaccion.Replace(Resource.Id.conteinerView, ordenAtendido);
+                transaccion.Replace(Resource.Id.conteinerView, ordenAtendido,"fragmentOrdenAtendido");
+                transaccion.AddToBackStack("fragmentOrdenAtendido");
                 transaccion.Commit();
             }
             else if (id == Resource.Id.orden_cerrado)
             {
                 ordenCerrada = new OrdenCerrada_Fragment();
-                int estadoOrden = 4; // aqui la orden ya tiene el visto bueno por el supervisor general
                 int v = Intent.GetIntExtra(LLAVE_COD_EMPLEADO, 0);
 
                 Bundle bundle = new Bundle();
@@ -328,7 +328,8 @@ namespace OrdenTecnica_App
 
                 var transaccion = SupportFragmentManager.BeginTransaction();
 
-                transaccion.Replace(Resource.Id.conteinerView, ordenCerrada);
+                transaccion.Replace(Resource.Id.conteinerView, ordenCerrada,"fragmentOrdenCerrado");
+                transaccion.AddToBackStack("fragmentOrdenCerrado");
                 transaccion.Commit();
             }
             else if (id == Resource.Id.cerrar_sesion)
@@ -352,7 +353,8 @@ namespace OrdenTecnica_App
             OrdenCreada_Fragment ordenCreada = new OrdenCreada_Fragment();
 
             var transaccion = SupportFragmentManager.BeginTransaction();
-            transaccion.Replace(Resource.Id.conteinerView, ordenCreada);
+            transaccion.Replace(Resource.Id.conteinerView, ordenCreada,"fragmentOrdenCreada");
+            transaccion.AddToBackStack("fragmentOrdenCreada");
             transaccion.Commit();
         }
 
@@ -361,7 +363,8 @@ namespace OrdenTecnica_App
             OrdenSolucionar_Fragment ordenSolucionar = new OrdenSolucionar_Fragment();
 
             var transaccion = SupportFragmentManager.BeginTransaction();
-            transaccion.Replace(Resource.Id.conteinerView, ordenSolucionar);
+            transaccion.Replace(Resource.Id.conteinerView, ordenSolucionar,"fragmentOrdenSolucionar");
+            transaccion.AddToBackStack("fragmentOrdenSolucionar");
             transaccion.Commit();
         }
 
@@ -370,7 +373,8 @@ namespace OrdenTecnica_App
             OrdenSolucionar0_Fragment ordenSol0 = new OrdenSolucionar0_Fragment();
             ordenSol0.SetOrdenDetalle(orden);
             var transaccion = SupportFragmentManager.BeginTransaction();
-            transaccion.Replace(Resource.Id.conteinerView, ordenSol0);
+            transaccion.Replace(Resource.Id.conteinerView, ordenSol0,"fragmentOrden0");
+            transaccion.AddToBackStack("fragmentOrden0");
             transaccion.Commit();
         }
 
@@ -386,7 +390,8 @@ namespace OrdenTecnica_App
             OrdenProceso_Fragment ordenProceso = new OrdenProceso_Fragment();
             var transaccion = SupportFragmentManager.BeginTransaction();
 
-            transaccion.Replace(Resource.Id.conteinerView, ordenProceso);
+            transaccion.Replace(Resource.Id.conteinerView, ordenProceso,"fragmentOrdenProceso");
+            transaccion.AddToBackStack("fragmentOrdenProceso");
             transaccion.Commit();
         }
 
@@ -395,7 +400,8 @@ namespace OrdenTecnica_App
             OrdenCreada_Fragment ocreado = new OrdenCreada_Fragment();
             var transaccion = SupportFragmentManager.BeginTransaction();
 
-            transaccion.Replace(Resource.Id.conteinerView, ocreado);
+            transaccion.Replace(Resource.Id.conteinerView, ocreado, "fragmentOrdenCreado");
+            transaccion.AddToBackStack("fragmentOrdenCreado");
             transaccion.Commit();
         }
     }

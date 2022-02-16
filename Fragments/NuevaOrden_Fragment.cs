@@ -23,9 +23,9 @@ namespace OrdenTecnica_App.Fragments
     public class NuevaOrden_Fragment : AndroidX.Fragment.App.Fragment
     {
         // Definimos los componentes del fragmento
-        private TextView lblCodigo, lblFecha, lblHora;
+        private TextView lblFecha, lblHora;
         private AutoCompleteTextView acCliente, acSucursal, acDispositivo;
-        private EditText txtProblema;
+        private EditText txtProblema, txtAsunto;
         private Button btnAgregarList, btnGenerarOrden;
         private RecyclerView rvOrden_Detalle;
 
@@ -66,10 +66,9 @@ namespace OrdenTecnica_App.Fragments
             // Use this to return your custom view for this Fragment
             View view = inflater.Inflate(Resource.Layout.fragment_nuevaOrden, container, false);
 
-            lblCodigo = view.FindViewById<TextView>(Resource.Id.lblCodigo);
             lblFecha = view.FindViewById<TextView>(Resource.Id.lblFecha);
             lblHora = view.FindViewById<TextView>(Resource.Id.lblHora);
-
+            
             // Instanciamos Lista del Detalle Orden
             cD_Orden = new CDetalle_Orden();
 
@@ -89,6 +88,7 @@ namespace OrdenTecnica_App.Fragments
             var array_dispositivo = new ArrayAdapter<string>(Activity, Resource.Layout.ac_ItemList, dispositivo);
 
             txtProblema = view.FindViewById<EditText>(Resource.Id.txtProblema);
+            txtAsunto = view.FindViewById<EditText>(Resource.Id.txtAsunto);
             rvOrden_Detalle = view.FindViewById<RecyclerView>(Resource.Id.recyclerV_ODetalle);
 
             // intanciamos el RecyclerView
@@ -97,12 +97,12 @@ namespace OrdenTecnica_App.Fragments
 
             lstDO = new List<Detalle_Orden>();
 
-            Detalle_Orden detOr = new Detalle_Orden();
-            detOr._COD_DETALLE_ORD = "...";
-            detOr._DESCRIPCION = "...";
-            detOr._ESTADO = "...";
-            detOr._FK_DISPOSITIVO = "...";
-            lstDO.Add(detOr);
+            //Detalle_Orden detOr = new Detalle_Orden();
+            //detOr._COD_DETALLE_ORD = "...";
+            //detOr._DESCRIPCION = "...";
+            //detOr._ESTADO = "...";
+            //detOr._FK_DISPOSITIVO = "...";
+            //lstDO.Add(detOr);
 
             mAdapter = new ListOrdenDetalle_Adapter(lstDO);
             rvOrden_Detalle.SetAdapter(mAdapter);
@@ -134,7 +134,6 @@ namespace OrdenTecnica_App.Fragments
             acCliente.Text = "";
             acSucursal.Text = "";
             
-            // Debemos limpiar el recyclerView tambien
         }
         
         private void LimpiarDetalleOrd()
@@ -232,11 +231,7 @@ namespace OrdenTecnica_App.Fragments
                 {
                     Toast.MakeText(Activity, "servicio no encontrado", ToastLength.Short).Show();
                 }
-
-                //Empleamos codigo para crear una nueva Orden
-                // Mostrar mensaje de que el problema ha sido agregado correctamente
-                
-                
+  
             }
             
         }

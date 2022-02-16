@@ -775,10 +775,10 @@ public final class R {
 		public static final int titleDividerNoCustom = 0x7f090119;
 		public static final int title_template = 0x7f09011a;
 		public static final int topPanel = 0x7f09011d;
-		public static final int unchecked = 0x7f09012d;
-		public static final int uniform = 0x7f09012e;
-		public static final int up = 0x7f090130;
-		public static final int wrap_content = 0x7f090137;
+		public static final int unchecked = 0x7f09012e;
+		public static final int uniform = 0x7f09012f;
+		public static final int up = 0x7f090131;
+		public static final int wrap_content = 0x7f090138;
 	}
 	public static final class integer {
 		public static final int abc_config_activityDefaultDur = 0x7f0a0000;

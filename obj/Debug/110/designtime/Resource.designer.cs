@@ -4324,64 +4324,67 @@ namespace OrdenTecnica_App
 			public const int transition_transform = 2131296547;
 			
 			// aapt resource value: 0x7F090124
-			public const int txtContraseña = 2131296548;
+			public const int txtAsunto = 2131296548;
 			
 			// aapt resource value: 0x7F090125
-			public const int txtDiagnostico = 2131296549;
+			public const int txtContraseña = 2131296549;
 			
 			// aapt resource value: 0x7F090126
-			public const int txtFirmaCliente = 2131296550;
+			public const int txtDiagnostico = 2131296550;
 			
 			// aapt resource value: 0x7F090127
-			public const int txtFirmaTecnico = 2131296551;
+			public const int txtFirmaCliente = 2131296551;
 			
 			// aapt resource value: 0x7F090128
-			public const int txtODCodigo = 2131296552;
+			public const int txtFirmaTecnico = 2131296552;
 			
 			// aapt resource value: 0x7F090129
-			public const int txtODDispo = 2131296553;
+			public const int txtODCodigo = 2131296553;
 			
 			// aapt resource value: 0x7F09012A
-			public const int txtODEstado = 2131296554;
+			public const int txtODDispo = 2131296554;
 			
 			// aapt resource value: 0x7F09012B
-			public const int txtProblema = 2131296555;
+			public const int txtODEstado = 2131296555;
 			
 			// aapt resource value: 0x7F09012C
-			public const int txtUsuario = 2131296556;
+			public const int txtProblema = 2131296556;
 			
 			// aapt resource value: 0x7F09012D
-			public const int @unchecked = 2131296557;
+			public const int txtUsuario = 2131296557;
 			
 			// aapt resource value: 0x7F09012E
-			public const int uniform = 2131296558;
+			public const int @unchecked = 2131296558;
 			
 			// aapt resource value: 0x7F09012F
-			public const int unlabeled = 2131296559;
+			public const int uniform = 2131296559;
 			
 			// aapt resource value: 0x7F090130
-			public const int up = 2131296560;
+			public const int unlabeled = 2131296560;
 			
 			// aapt resource value: 0x7F090131
-			public const int useLogo = 2131296561;
+			public const int up = 2131296561;
 			
 			// aapt resource value: 0x7F090132
-			public const int view_offset_helper = 2131296562;
+			public const int useLogo = 2131296562;
 			
 			// aapt resource value: 0x7F090133
-			public const int view_tree_saved_state_registry_owner = 2131296563;
+			public const int view_offset_helper = 2131296563;
 			
 			// aapt resource value: 0x7F090134
-			public const int visible = 2131296564;
+			public const int view_tree_saved_state_registry_owner = 2131296564;
 			
 			// aapt resource value: 0x7F090135
-			public const int visible_removing_fragment_view_tag = 2131296565;
+			public const int visible = 2131296565;
 			
 			// aapt resource value: 0x7F090136
-			public const int withText = 2131296566;
+			public const int visible_removing_fragment_view_tag = 2131296566;
 			
 			// aapt resource value: 0x7F090137
-			public const int wrap_content = 2131296567;
+			public const int withText = 2131296567;
+			
+			// aapt resource value: 0x7F090138
+			public const int wrap_content = 2131296568;
 			
 			static Id()
 			{
