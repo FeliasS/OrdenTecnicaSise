@@ -30,6 +30,14 @@ public class Asignar_DialogF
 	}
 
 
+	public Asignar_DialogF (int p0)
+	{
+		super (p0);
+		if (getClass () == Asignar_DialogF.class)
+			mono.android.TypeManager.Activate ("OrdenTecnica_App.Fragments.Asignar_DialogF, OrdenTecnica_App", "System.Int32, mscorlib", this, new java.lang.Object[] { p0 });
+	}
+
+
 	public void onAttach (android.content.Context p0)
 	{
 		n_onAttach (p0);

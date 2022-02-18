@@ -26,6 +26,14 @@ public class Asignado_DialogF
 	}
 
 
+	public Asignado_DialogF (int p0)
+	{
+		super (p0);
+		if (getClass () == Asignado_DialogF.class)
+			mono.android.TypeManager.Activate ("OrdenTecnica_App.Fragments.Asignado_DialogF, OrdenTecnica_App", "System.Int32, mscorlib", this, new java.lang.Object[] { p0 });
+	}
+
+
 	public android.app.Dialog onCreateDialog (android.os.Bundle p0)
 	{
 		return n_onCreateDialog (p0);
