@@ -22,7 +22,7 @@ using Xamarin.Essentials;
 
 namespace OrdenTecnica_App
 {
-    [Activity(Label = "@string/app_name", Theme = "@style/AppTheme.NoActionBar", MainLauncher = false)]
+    [Activity(Label = "@string/app_name", Theme = "@style/AppTheme.NoActionBar", MainLauncher =false)]
     public class MainActivity : AppCompatActivity, NavigationView.IOnNavigationItemSelectedListener, INuevaOrden,ISolucionOrden
     {
         //Definimos los fragmentos
@@ -358,7 +358,7 @@ namespace OrdenTecnica_App
             transaccion.Commit();
         }
 
-        public void AbrirSolucionOrden()
+        public void AbrirSolucionOrden(DetalleOrdenWs detalle)
         {
             OrdenSolucionar_Fragment ordenSolucionar = new OrdenSolucionar_Fragment();
 

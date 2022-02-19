@@ -34,7 +34,7 @@ namespace OrdenTecnica_App.Fragments
         ListOrdenDetalle_Adapter mAdapter;
 
         // Lista Detalle orden
-        List<Detalle_Orden> lstDO;
+        List<DetalleOrdenWs> lstDO;
 
         // Definimos el cuadro de alerta
         AlertDialog.Builder alert;
@@ -95,7 +95,7 @@ namespace OrdenTecnica_App.Fragments
             mLayoutManager = new LinearLayoutManager(Activity);
             rvOrden_Detalle.SetLayoutManager(mLayoutManager);
 
-            lstDO = new List<Detalle_Orden>();
+            lstDO = new List<DetalleOrdenWs>();
 
             //Detalle_Orden detOr = new Detalle_Orden();
             //detOr._COD_DETALLE_ORD = "...";
@@ -166,6 +166,10 @@ namespace OrdenTecnica_App.Fragments
             {
                 Toast.MakeText(Activity, "Campos Vacios, Ingrese datos", ToastLength.Short).Show();
             }
+            else if (lstDO.Count==0)
+            {
+                Toast.MakeText(Activity, "La lista debe tener como minimo un problema tecnico en la Orden", ToastLength.Short).Show();
+            }
             else
             {
                 Orden addOrden = new Orden();
@@ -177,7 +181,7 @@ namespace OrdenTecnica_App.Fragments
                 addOrden.estado = o.estado;
                 addOrden.id_sucursal = o.id_sucursal;
                 addOrden.id_empleado = o.id_empleado;
-
+                addOrden.listaDetalleOrden= lstDO;
 
                 HttpClient client = new HttpClient();
                 Uri url = new Uri("http://servicios.micmaproyectos.com/orden/registrar ");
@@ -236,6 +240,20 @@ namespace OrdenTecnica_App.Fragments
             
         }
 
+        private bool GetList()
+        {
+
+            if (lstDO.Count==0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+        }
+
         private void AgregarDetalleOrd(string disp, string probl)
         {
             if (CamposVaciosDetalleOrd(disp,probl).Equals(true))
@@ -246,11 +264,11 @@ namespace OrdenTecnica_App.Fragments
             {
                 //Instanciamos una lista
                 
-                Detalle_Orden detOr = new Detalle_Orden();
-                detOr._COD_DETALLE_ORD = "DO001";
-                detOr._DESCRIPCION = probl;
-                detOr._ESTADO = "pendiente";
-                detOr._FK_DISPOSITIVO = disp;
+                DetalleOrdenWs detOr = new DetalleOrdenWs();
+                //detOr.COD_ORDEN_DETALLE = "DO001";
+                detOr.DESCRIPCION = probl;
+                detOr.ESTADO = "0";
+                detOr.FK_DISPOSITIVO = disp;
 
                 lstDO.Add(detOr);
 
@@ -258,7 +276,7 @@ namespace OrdenTecnica_App.Fragments
                 mAdapter.NotifyDataSetChanged();
                 rvOrden_Detalle.SmoothScrollToPosition(lstDO.Count());
 
-                Console.WriteLine("problema; "+ detOr._DESCRIPCION);
+                Console.WriteLine("problema; "+ detOr.DESCRIPCION);
                 LimpiarDetalleOrd();
             }
         }
@@ -271,17 +289,28 @@ namespace OrdenTecnica_App.Fragments
 
         private void BtnGenerarOrden_Click(object sender, EventArgs e)
         {
-            Orden nuevOrde = new Orden();
-            nuevOrde.cod_orden = "";
-            nuevOrde.asunto = "esto pertenece al detalle orden";
-            nuevOrde.fecha_orden = fechaAc;
-            nuevOrde.hora_orden = horaAc;
-            nuevOrde.remitente = acCliente.Text;
-            nuevOrde.estado = 1;
-            nuevOrde.id_sucursal = int.Parse(acSucursal.Text);
-            nuevOrde.id_empleado = 0;
+            //Orden nuevOrde = new Orden();
+            //nuevOrde.cod_orden = "";
+            //nuevOrde.asunto = txtAsunto.Text;
+            //nuevOrde.fecha_orden = fechaAc;
+            //nuevOrde.hora_orden = horaAc;
+            //nuevOrde.remitente = acCliente.Text;
+            //nuevOrde.estado = 1;
+            //nuevOrde.id_sucursal = int.Parse(acSucursal.Text);
 
-            AgregarOrden(nuevOrde);
+            Orden nOrden = new Orden
+            {
+                cod_orden = "",
+                asunto = txtAsunto.Text,
+                fecha_orden = fechaAc,
+                hora_orden = horaAc,
+                remitente = acCliente.Text,
+                estado=1,
+                id_sucursal=int.Parse(acSucursal.Text),
+                id_empleado=0,
+            };
+
+            AgregarOrden(nOrden);
 
         }
 

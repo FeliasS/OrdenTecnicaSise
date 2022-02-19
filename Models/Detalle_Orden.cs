@@ -13,20 +13,29 @@ namespace OrdenTecnica_App.Models
 {
     public class Detalle_Orden
     {
-        internal int _ID_DETALLE_ORDEN { get; set; }
-        internal string _COD_DETALLE_ORD { get; set; }
-        internal string _DESCRIPCION { get; set; }
-        internal string _IMAGEN { get; set; }
-        internal string _ESTADO { get; set; } // Cambiar el tipo de dato a estado
-        internal string _FK_DISPOSITIVO { get; set; } // Asociar con la clase Dispositivo (Cambiar el tido de dato en el adapter detalle orden)
-        internal Orden _FK_ORDEN { get; set; } // Asociar con la clase Orden 
+        public string ID_ORDEN_DETALLE { get; set; }
+        public string COD_ORDEN_DETALLE { get; set; }
+        public string DESCRIPCION { get; set; }
+        public string IMAGENES { get; set; }
+        public string IMAGENES_EVIDENCIA { get; set; }
+        public string FIRMA_CLIENTE { get; set; }
+        public string FIRMA_TECNICO { get; set; }
+        public string ESTADO { get; set; }
+        public string FK_DISPOSITIVO { get; set; }
+        public string FK_ORDEN { get; set; }
 
-        public Detalle_Orden(string cOD_DETALLE_ORD, string dESCRIPCION, string eSTADO, string fK_DISPOSITIVO)
+        public Detalle_Orden(string iD_ORDEN_DETALLE, string cOD_ORDEN_DETALLE, string dESCRIPCION, string iMAGENES, string iMAGENES_EVIDENCIA, string fIRMA_CLIENTE, string fIRMA_TECNICO, string eSTADO, string fK_DISPOSITIVO, string fK_ORDEN)
         {
-            _COD_DETALLE_ORD = cOD_DETALLE_ORD;
-            _DESCRIPCION = dESCRIPCION;
-            _ESTADO = eSTADO;
-            _FK_DISPOSITIVO = fK_DISPOSITIVO;
+            ID_ORDEN_DETALLE = iD_ORDEN_DETALLE;
+            COD_ORDEN_DETALLE = cOD_ORDEN_DETALLE;
+            DESCRIPCION = dESCRIPCION;
+            IMAGENES = iMAGENES;
+            IMAGENES_EVIDENCIA = iMAGENES_EVIDENCIA;
+            FIRMA_CLIENTE = fIRMA_CLIENTE;
+            FIRMA_TECNICO = fIRMA_TECNICO;
+            ESTADO = eSTADO;
+            FK_DISPOSITIVO = fK_DISPOSITIVO;
+            FK_ORDEN = fK_ORDEN;
         }
 
         public Detalle_Orden()

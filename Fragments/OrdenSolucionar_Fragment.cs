@@ -7,6 +7,7 @@ using Android.Views;
 using Android.Widget;
 using Bumptech.Glide;
 using Newtonsoft.Json;
+using OrdenTecnica_App.Models;
 using OrdenTecnica_App.ServicesClubTec;
 using System;
 using System.Collections.Generic;
@@ -27,7 +28,9 @@ namespace OrdenTecnica_App.Fragments
 
         //Usar estos valores para   | guardar cambios(modificar orden) | finalizar orden (modificar orden + cmabiar estado de detalle de orden) * solo los usas ya que ya trae los valores
         //Values
-        string nroOrden = "ORDEN14"; //aqui igualar al dato traido
+        static int id;
+        static string fk_dispositivo;
+        static string nroOrden = "ORDEN14"; //aqui igualar al dato traido
         string PathImgInicio, PathImgFin;
         string PathFirmaTec, PathFirmaCli;
         //
@@ -38,6 +41,15 @@ namespace OrdenTecnica_App.Fragments
         TextView lblFtec, lblFcli;
         LayoutInflater inflaterlocal;
 
+        //Mensaje de alerta
+        AlertDialog.Builder alert;
+
+        public void getData(DetalleOrdenWs detalle)
+        {
+            id = int.Parse(detalle.ID_ORDEN_DETALLE);
+            nroOrden = detalle.COD_ORDEN_DETALLE; //recibe el cod de orden del item seleccionado del fragmento anterior
+            fk_dispositivo = detalle.FK_DISPOSITIVO;
+        }
 
         public override void OnCreate(Bundle savedInstanceState)
         {
@@ -118,14 +130,14 @@ namespace OrdenTecnica_App.Fragments
                     {
                         case 1:
                             Fname = nroOrden + "_T" + DateTime.Now.ToString("ddMMyyyyhhmmss") + ".Png";
-                            Fdirectoryname = "http://photo.micmaproyectos.com/imagenes/firma";                                                            //aqui va el url del la carpeta de imagenes           **por si hay cambios
-                            urlrestFirm = "";                                                                                                               //aqui poner el url del rest (REST FIRMA TECNICO)       **CAMBIAR
+                            Fdirectoryname = "http://photo.micmaproyectos.com/imagenes/firma";//aqui va el url del la carpeta de imagenes           **por si hay cambios
+                            urlrestFirm = "http://servicios.micmaproyectos.com/orden/uploadImagenFirmaTecnico";//aqui poner el url del rest (REST FIRMA TECNICO)       **CAMBIAR
                             Console.WriteLine("mY CODE : " + Android.App.Application.Context.GetExternalFilesDir("").AbsolutePath);
                             break;
                         case 2:
                             Fname = nroOrden + "_C" + DateTime.Now.ToString("ddMMyyyyhhmmss") + ".Png";
-                            Fdirectoryname = "http://photo.micmaproyectos.com/imagenes/firma";                                                            // aqui va el url del la carpeta de imagenes          **por si hay cambios
-                            urlrestFirm = "";                                                                                                                //aqui poner el url del rest (REST FIRMA CLIENTE)      **CAMBIAR
+                            Fdirectoryname = "http://photo.micmaproyectos.com/imagenes/firma";// aqui va el url del la carpeta de imagenes          **por si hay cambios
+                            urlrestFirm = "http://servicios.micmaproyectos.com/orden/uploadImagenFirmaCliente";//aqui poner el url del rest (REST FIRMA CLIENTE)      **CAMBIAR
                             break;
                     }
 
@@ -246,7 +258,7 @@ namespace OrdenTecnica_App.Fragments
 
                         break;
                     case 2:
-                        urlrestImg = "http://servicios.micmaproyectos.com/orden/uploadImagen...";     //aqui poner el url del rest (REST IMAGEN DE FIN)                   **CAMBIAR
+                        urlrestImg = "http://servicios.micmaproyectos.com/orden/uploadImagenLater";     //aqui poner el url del rest (REST IMAGEN DE FIN)                   **CAMBIAR
                         urlDirectoryImg = "http://photo.micmaproyectos.com/imagenes/orden/later";    //aqui va la carpetas de imagen fin                           **por si hay cambios 
                         break;
 
@@ -308,10 +320,64 @@ namespace OrdenTecnica_App.Fragments
 
         }
 
-        public void Generar(object sender, EventArgs e)
+        public async void Generar(object sender, EventArgs e)
         {
+            if (txtDiagnostico.Text=="")
+            {
+                Toast.MakeText(Activity, "No se asignó un diagnostico al problema", ToastLength.Short).Show();
+            }
+            else
+            {
+                //actualizamos el problema tecnico y cambiamos su estado
+                Detalle_Orden det = new Detalle_Orden();
+                det.ID_ORDEN_DETALLE = id.ToString();
+                det.DESCRIPCION = txtDiagnostico.Text;
+                det.IMAGENES = PathImgInicio;
+                det.IMAGENES_EVIDENCIA = PathImgFin;
+                det.FIRMA_CLIENTE = PathFirmaCli;
+                det.FIRMA_TECNICO = PathFirmaTec;
+                det.FK_DISPOSITIVO = fk_dispositivo;
 
-            Toast.MakeText(Activity, PathImgInicio + "hi " + PathImgFin, ToastLength.Short).Show();
+                HttpClient client = new HttpClient();
+                Uri url = new Uri("http://servicios.micmaproyectos.com/detalleorden/actualizarDetalleOrden");
+
+                var json = JsonConvert.SerializeObject(null);
+                var content = new StringContent(json, Encoding.UTF8, "application/json");
+                var postJson = await client.PostAsync(url, content);
+
+                if (postJson.StatusCode == System.Net.HttpStatusCode.OK)
+                {
+                    string readJson = await postJson.Content.ReadAsStringAsync();
+                    var response = JsonConvert.DeserializeObject<TramaOrden>(readJson);
+
+                    if (response.status == true && response.code == 1)
+                    {
+                        Console.WriteLine(response.message);
+                        alert = new AlertDialog.Builder(Activity);
+                        alert.SetTitle("Mensaje de confirmacion");
+                        alert.SetMessage("Problema Solucionado Correctamente");
+                        alert.SetPositiveButton("ACEPTAR", (sender, args) =>
+                        {
+                            //cuando se actualiza la orden este nos enviará al fragmento anterior
+                            alert.Dispose();
+                            FragmentManager.PopBackStack(); //nos envia al fragmento anterior
+                            
+                        });
+                        Dialog dialog = alert.Create();
+                        dialog.Show();
+                    }
+                    else if (response.status == true && response.code == 2)
+                    {
+                        Toast.MakeText(Activity, response.message, ToastLength.Short).Show();
+                    }
+                }
+                else if (postJson.StatusCode == System.Net.HttpStatusCode.NotFound)
+                {
+                    Toast.MakeText(Activity, "Se genero un problema interno", ToastLength.Short).Show();
+                }
+
+            }
+
         }
 
     }

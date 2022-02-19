@@ -176,6 +176,7 @@ namespace OrdenTecnica_App.Fragments
         {
             //Capturamos los datos de item seleccionado y lo enviamos al siguiente fragmento
             OrdenWs ows = new OrdenWs();
+            ows.ID_ORDEN = lstOrdenProceso[e].ID_ORDEN;
             ows.COD_ORDEN = lstOrdenProceso[e].COD_ORDEN;
             ows.FECHA_ORDEN = lstOrdenProceso[e].FECHA_ORDEN;
             ows.HORA_ORDEN = lstOrdenProceso[e].HORA_ORDEN;
@@ -183,6 +184,7 @@ namespace OrdenTecnica_App.Fragments
             ows.FK_SUCURSAL = lstOrdenProceso[e].FK_SUCURSAL;
             ows.ASUNTO = lstOrdenProceso[e].ASUNTO;
             ows.ESTADO = lstOrdenProceso[e].ESTADO;
+            ows.FK_EMPLEADO = lstOrdenProceso[e].FK_EMPLEADO;
             
             iSolucionOrden.AbrirSolucionOrden0(ows);
         }

@@ -5209,9 +5209,9 @@ public final class R {
     public static final int txtDiagnostico=0x7f090148;
     public static final int txtFirmaCliente=0x7f090149;
     public static final int txtFirmaTecnico=0x7f09014a;
-    public static final int txtODCodigo=0x7f09014b;
-    public static final int txtODDispo=0x7f09014c;
-    public static final int txtODEstado=0x7f09014d;
+    public static final int txtODDispo=0x7f09014b;
+    public static final int txtODEstado=0x7f09014c;
+    public static final int txtODProblema=0x7f09014d;
     public static final int txtProblema=0x7f09014e;
     public static final int txtUsuario=0x7f09014f;
     public static final int unchecked=0x7f090150;

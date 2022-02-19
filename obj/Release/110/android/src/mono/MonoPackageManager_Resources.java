@@ -4,6 +4,8 @@ public class MonoPackageManager_Resources {
 		/* We need to ensure that "OrdenTecnica_App.dll" comes first in this list. */
 		"OrdenTecnica_App.dll",
 		"Newtonsoft.Json.dll",
+		"SignaturePad.dll",
+		"Xamarin.Android.Glide.dll",
 		"Xamarin.AndroidX.Activity.dll",
 		"Xamarin.AndroidX.AppCompat.dll",
 		"Xamarin.AndroidX.CoordinatorLayout.dll",

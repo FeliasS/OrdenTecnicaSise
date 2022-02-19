@@ -4556,13 +4556,13 @@ namespace OrdenTecnica_App
 			public const int txtFirmaTecnico = 2131296586;
 			
 			// aapt resource value: 0x7F09014B
-			public const int txtODCodigo = 2131296587;
+			public const int txtODDispo = 2131296587;
 			
 			// aapt resource value: 0x7F09014C
-			public const int txtODDispo = 2131296588;
+			public const int txtODEstado = 2131296588;
 			
 			// aapt resource value: 0x7F09014D
-			public const int txtODEstado = 2131296589;
+			public const int txtODProblema = 2131296589;
 			
 			// aapt resource value: 0x7F09014E
 			public const int txtProblema = 2131296590;

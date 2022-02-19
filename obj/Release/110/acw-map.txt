@@ -7,6 +7,9 @@ ordentecnica_app.MainActivity;crc64a1e84454907822fc.MainActivity
 OrdenTecnica_App.ListRecycler.Holder.ListOrdenDetalle, OrdenTecnica_App;crc64101ab38e3d43aafd.ListOrdenDetalle
 OrdenTecnica_App.ListRecycler.Holder.ListOrdenDetalle;crc64101ab38e3d43aafd.ListOrdenDetalle
 ordentecnica_app.listrecycler.holder.ListOrdenDetalle;crc64101ab38e3d43aafd.ListOrdenDetalle
+OrdenTecnica_App.ListRecycler.Holder.ListTecnicos, OrdenTecnica_App;crc64101ab38e3d43aafd.ListTecnicos
+OrdenTecnica_App.ListRecycler.Holder.ListTecnicos;crc64101ab38e3d43aafd.ListTecnicos
+ordentecnica_app.listrecycler.holder.ListTecnicos;crc64101ab38e3d43aafd.ListTecnicos
 OrdenTecnica_App.ListRecycler.Holder.ListOrden_Item, OrdenTecnica_App;crc64101ab38e3d43aafd.ListOrden_Item
 OrdenTecnica_App.ListRecycler.Holder.ListOrden_Item;crc64101ab38e3d43aafd.ListOrden_Item
 ordentecnica_app.listrecycler.holder.ListOrden_Item;crc64101ab38e3d43aafd.ListOrden_Item
@@ -25,6 +28,9 @@ ordentecnica_app.listrecycler.adapter.ListOrdenDetalle_Adapter;crc64fac4dc6930c9
 OrdenTecnica_App.ListRecycler.Adapter.ListOrden_Adapter, OrdenTecnica_App;crc64fac4dc6930c9ca92.ListOrden_Adapter
 OrdenTecnica_App.ListRecycler.Adapter.ListOrden_Adapter;crc64fac4dc6930c9ca92.ListOrden_Adapter
 ordentecnica_app.listrecycler.adapter.ListOrden_Adapter;crc64fac4dc6930c9ca92.ListOrden_Adapter
+OrdenTecnica_App.ListRecycler.Adapter.ListTecnicos_Adapter, OrdenTecnica_App;crc64fac4dc6930c9ca92.ListTecnicos_Adapter
+OrdenTecnica_App.ListRecycler.Adapter.ListTecnicos_Adapter;crc64fac4dc6930c9ca92.ListTecnicos_Adapter
+ordentecnica_app.listrecycler.adapter.ListTecnicos_Adapter;crc64fac4dc6930c9ca92.ListTecnicos_Adapter
 OrdenTecnica_App.Fragments.Asignado_DialogF, OrdenTecnica_App;crc64d818c4686ed024a0.Asignado_DialogF
 OrdenTecnica_App.Fragments.Asignado_DialogF;crc64d818c4686ed024a0.Asignado_DialogF
 ordentecnica_app.fragments.Asignado_DialogF;crc64d818c4686ed024a0.Asignado_DialogF
@@ -55,6 +61,156 @@ ordentecnica_app.fragments.OrdenSolucionar0_Fragment;crc64d818c4686ed024a0.Orden
 OrdenTecnica_App.Fragments.OrdenSolucionar_Fragment, OrdenTecnica_App;crc64d818c4686ed024a0.OrdenSolucionar_Fragment
 OrdenTecnica_App.Fragments.OrdenSolucionar_Fragment;crc64d818c4686ed024a0.OrdenSolucionar_Fragment
 ordentecnica_app.fragments.OrdenSolucionar_Fragment;crc64d818c4686ed024a0.OrdenSolucionar_Fragment
+Xamarin.Controls.InkPresenter, SignaturePad;crc64a4453dc4d6b942b4.InkPresenter
+Xamarin.Controls.InkPresenter;crc64a4453dc4d6b942b4.InkPresenter
+xamarin.controls.InkPresenter;crc64a4453dc4d6b942b4.InkPresenter
+Xamarin.Controls.SignaturePadCanvasView, SignaturePad;crc64a4453dc4d6b942b4.SignaturePadCanvasView
+Xamarin.Controls.SignaturePadCanvasView;crc64a4453dc4d6b942b4.SignaturePadCanvasView
+xamarin.controls.SignaturePadCanvasView;crc64a4453dc4d6b942b4.SignaturePadCanvasView
+Xamarin.Controls.SignaturePadView, SignaturePad;crc64a4453dc4d6b942b4.SignaturePadView
+Xamarin.Controls.SignaturePadView;crc64a4453dc4d6b942b4.SignaturePadView
+xamarin.controls.SignaturePadView;crc64a4453dc4d6b942b4.SignaturePadView
+Bumptech.Glide.Glide+IRequestOptionsFactory, Xamarin.Android.Glide;com.bumptech.glide.Glide$RequestOptionsFactory
+Bumptech.Glide.Glide.IRequestOptionsFactory;com.bumptech.glide.Glide$RequestOptionsFactory
+com.bumptech.glide.Glide$RequestOptionsFactory;com.bumptech.glide.Glide$RequestOptionsFactory
+Bumptech.Glide.Manager.IConnectivityMonitorConnectivityListener, Xamarin.Android.Glide;com.bumptech.glide.manager.ConnectivityMonitor$ConnectivityListener
+Bumptech.Glide.Manager.IConnectivityMonitorConnectivityListener;com.bumptech.glide.manager.ConnectivityMonitor$ConnectivityListener
+com.bumptech.glide.manager.ConnectivityMonitor$ConnectivityListener;com.bumptech.glide.manager.ConnectivityMonitor$ConnectivityListener
+Bumptech.Glide.Manager.IConnectivityMonitor, Xamarin.Android.Glide;com.bumptech.glide.manager.ConnectivityMonitor
+Bumptech.Glide.Manager.IConnectivityMonitor;com.bumptech.glide.manager.ConnectivityMonitor
+com.bumptech.glide.manager.ConnectivityMonitor;com.bumptech.glide.manager.ConnectivityMonitor
+Bumptech.Glide.Manager.IConnectivityMonitorFactory, Xamarin.Android.Glide;com.bumptech.glide.manager.ConnectivityMonitorFactory
+Bumptech.Glide.Manager.IConnectivityMonitorFactory;com.bumptech.glide.manager.ConnectivityMonitorFactory
+com.bumptech.glide.manager.ConnectivityMonitorFactory;com.bumptech.glide.manager.ConnectivityMonitorFactory
+Bumptech.Glide.Manager.ILifecycle, Xamarin.Android.Glide;com.bumptech.glide.manager.Lifecycle
+Bumptech.Glide.Manager.ILifecycle;com.bumptech.glide.manager.Lifecycle
+com.bumptech.glide.manager.Lifecycle;com.bumptech.glide.manager.Lifecycle
+Bumptech.Glide.Manager.ILifecycleListener, Xamarin.Android.Glide;com.bumptech.glide.manager.LifecycleListener
+Bumptech.Glide.Manager.ILifecycleListener;com.bumptech.glide.manager.LifecycleListener
+com.bumptech.glide.manager.LifecycleListener;com.bumptech.glide.manager.LifecycleListener
+Bumptech.Glide.Manager.IRequestManagerTreeNode, Xamarin.Android.Glide;com.bumptech.glide.manager.RequestManagerTreeNode
+Bumptech.Glide.Manager.IRequestManagerTreeNode;com.bumptech.glide.manager.RequestManagerTreeNode
+com.bumptech.glide.manager.RequestManagerTreeNode;com.bumptech.glide.manager.RequestManagerTreeNode
+Bumptech.Glide.Manager.RequestManagerRetriever+IRequestManagerFactory, Xamarin.Android.Glide;com.bumptech.glide.manager.RequestManagerRetriever$RequestManagerFactory
+Bumptech.Glide.Manager.RequestManagerRetriever.IRequestManagerFactory;com.bumptech.glide.manager.RequestManagerRetriever$RequestManagerFactory
+com.bumptech.glide.manager.RequestManagerRetriever$RequestManagerFactory;com.bumptech.glide.manager.RequestManagerRetriever$RequestManagerFactory
+Bumptech.Glide.Request.IFutureTarget, Xamarin.Android.Glide;com.bumptech.glide.request.FutureTarget
+Bumptech.Glide.Request.IFutureTarget;com.bumptech.glide.request.FutureTarget
+com.bumptech.glide.request.FutureTarget;com.bumptech.glide.request.FutureTarget
+Bumptech.Glide.Request.IRequest, Xamarin.Android.Glide;com.bumptech.glide.request.Request
+Bumptech.Glide.Request.IRequest;com.bumptech.glide.request.Request
+com.bumptech.glide.request.Request;com.bumptech.glide.request.Request
+Bumptech.Glide.Request.IRequestListener, Xamarin.Android.Glide;com.bumptech.glide.request.RequestListener
+Bumptech.Glide.Request.IRequestListener;com.bumptech.glide.request.RequestListener
+com.bumptech.glide.request.RequestListener;com.bumptech.glide.request.RequestListener
+Bumptech.Glide.Request.Transition.ITransitionViewAdapter, Xamarin.Android.Glide;com.bumptech.glide.request.transition.Transition$ViewAdapter
+Bumptech.Glide.Request.Transition.ITransitionViewAdapter;com.bumptech.glide.request.transition.Transition$ViewAdapter
+com.bumptech.glide.request.transition.Transition$ViewAdapter;com.bumptech.glide.request.transition.Transition$ViewAdapter
+Bumptech.Glide.Request.Transition.ITransition, Xamarin.Android.Glide;com.bumptech.glide.request.transition.Transition
+Bumptech.Glide.Request.Transition.ITransition;com.bumptech.glide.request.transition.Transition
+com.bumptech.glide.request.transition.Transition;com.bumptech.glide.request.transition.Transition
+Bumptech.Glide.Request.Transition.ITransitionFactory, Xamarin.Android.Glide;com.bumptech.glide.request.transition.TransitionFactory
+Bumptech.Glide.Request.Transition.ITransitionFactory;com.bumptech.glide.request.transition.TransitionFactory
+com.bumptech.glide.request.transition.TransitionFactory;com.bumptech.glide.request.transition.TransitionFactory
+Bumptech.Glide.Request.Transition.ViewPropertyTransition+IAnimator, Xamarin.Android.Glide;com.bumptech.glide.request.transition.ViewPropertyTransition$Animator
+Bumptech.Glide.Request.Transition.ViewPropertyTransition.IAnimator;com.bumptech.glide.request.transition.ViewPropertyTransition$Animator
+com.bumptech.glide.request.transition.ViewPropertyTransition$Animator;com.bumptech.glide.request.transition.ViewPropertyTransition$Animator
+Bumptech.Glide.Request.Target.ISizeReadyCallback, Xamarin.Android.Glide;com.bumptech.glide.request.target.SizeReadyCallback
+Bumptech.Glide.Request.Target.ISizeReadyCallback;com.bumptech.glide.request.target.SizeReadyCallback
+com.bumptech.glide.request.target.SizeReadyCallback;com.bumptech.glide.request.target.SizeReadyCallback
+Bumptech.Glide.Request.Target.ITarget, Xamarin.Android.Glide;com.bumptech.glide.request.target.Target
+Bumptech.Glide.Request.Target.ITarget;com.bumptech.glide.request.target.Target
+com.bumptech.glide.request.target.Target;com.bumptech.glide.request.target.Target
+Bumptech.Glide.Load.IEncoder, Xamarin.Android.Glide;com.bumptech.glide.load.Encoder
+Bumptech.Glide.Load.IEncoder;com.bumptech.glide.load.Encoder
+com.bumptech.glide.load.Encoder;com.bumptech.glide.load.Encoder
+Bumptech.Glide.Load.IImageHeaderParser, Xamarin.Android.Glide;com.bumptech.glide.load.ImageHeaderParser
+Bumptech.Glide.Load.IImageHeaderParser;com.bumptech.glide.load.ImageHeaderParser
+com.bumptech.glide.load.ImageHeaderParser;com.bumptech.glide.load.ImageHeaderParser
+Bumptech.Glide.Load.IKey, Xamarin.Android.Glide;com.bumptech.glide.load.Key
+Bumptech.Glide.Load.IKey;com.bumptech.glide.load.Key
+com.bumptech.glide.load.Key;com.bumptech.glide.load.Key
+Bumptech.Glide.Load.IResourceDecoder, Xamarin.Android.Glide;com.bumptech.glide.load.ResourceDecoder
+Bumptech.Glide.Load.IResourceDecoder;com.bumptech.glide.load.ResourceDecoder
+com.bumptech.glide.load.ResourceDecoder;com.bumptech.glide.load.ResourceDecoder
+Bumptech.Glide.Load.IResourceEncoder, Xamarin.Android.Glide;com.bumptech.glide.load.ResourceEncoder
+Bumptech.Glide.Load.IResourceEncoder;com.bumptech.glide.load.ResourceEncoder
+com.bumptech.glide.load.ResourceEncoder;com.bumptech.glide.load.ResourceEncoder
+Bumptech.Glide.Load.ITransformation, Xamarin.Android.Glide;com.bumptech.glide.load.Transformation
+Bumptech.Glide.Load.ITransformation;com.bumptech.glide.load.Transformation
+com.bumptech.glide.load.Transformation;com.bumptech.glide.load.Transformation
+Bumptech.Glide.Load.Option+ICacheKeyUpdater, Xamarin.Android.Glide;com.bumptech.glide.load.Option$CacheKeyUpdater
+Bumptech.Glide.Load.Option.ICacheKeyUpdater;com.bumptech.glide.load.Option$CacheKeyUpdater
+com.bumptech.glide.load.Option$CacheKeyUpdater;com.bumptech.glide.load.Option$CacheKeyUpdater
+Bumptech.Glide.Load.Resource.Transcode.IResourceTranscoder, Xamarin.Android.Glide;com.bumptech.glide.load.resource.transcode.ResourceTranscoder
+Bumptech.Glide.Load.Resource.Transcode.IResourceTranscoder;com.bumptech.glide.load.resource.transcode.ResourceTranscoder
+com.bumptech.glide.load.resource.transcode.ResourceTranscoder;com.bumptech.glide.load.resource.transcode.ResourceTranscoder
+Bumptech.Glide.Load.Model.IModelLoader, Xamarin.Android.Glide;com.bumptech.glide.load.model.ModelLoader
+Bumptech.Glide.Load.Model.IModelLoader;com.bumptech.glide.load.model.ModelLoader
+com.bumptech.glide.load.model.ModelLoader;com.bumptech.glide.load.model.ModelLoader
+Bumptech.Glide.Load.Model.IModelLoaderFactory, Xamarin.Android.Glide;com.bumptech.glide.load.model.ModelLoaderFactory
+Bumptech.Glide.Load.Model.IModelLoaderFactory;com.bumptech.glide.load.model.ModelLoaderFactory
+com.bumptech.glide.load.model.ModelLoaderFactory;com.bumptech.glide.load.model.ModelLoaderFactory
+Bumptech.Glide.Load.Engine.IResource, Xamarin.Android.Glide;com.bumptech.glide.load.engine.Resource
+Bumptech.Glide.Load.Engine.IResource;com.bumptech.glide.load.engine.Resource
+com.bumptech.glide.load.engine.Resource;com.bumptech.glide.load.engine.Resource
+Bumptech.Glide.Load.Engine.Cache.IDiskCacheFactory, Xamarin.Android.Glide;com.bumptech.glide.load.engine.cache.DiskCache$Factory
+Bumptech.Glide.Load.Engine.Cache.IDiskCacheFactory;com.bumptech.glide.load.engine.cache.DiskCache$Factory
+com.bumptech.glide.load.engine.cache.DiskCache$Factory;com.bumptech.glide.load.engine.cache.DiskCache$Factory
+Bumptech.Glide.Load.Engine.Cache.IDiskCacheWriter, Xamarin.Android.Glide;com.bumptech.glide.load.engine.cache.DiskCache$Writer
+Bumptech.Glide.Load.Engine.Cache.IDiskCacheWriter;com.bumptech.glide.load.engine.cache.DiskCache$Writer
+com.bumptech.glide.load.engine.cache.DiskCache$Writer;com.bumptech.glide.load.engine.cache.DiskCache$Writer
+Bumptech.Glide.Load.Engine.Cache.IDiskCache, Xamarin.Android.Glide;com.bumptech.glide.load.engine.cache.DiskCache
+Bumptech.Glide.Load.Engine.Cache.IDiskCache;com.bumptech.glide.load.engine.cache.DiskCache
+com.bumptech.glide.load.engine.cache.DiskCache;com.bumptech.glide.load.engine.cache.DiskCache
+Bumptech.Glide.Load.Engine.Cache.IMemoryCacheResourceRemovedListener, Xamarin.Android.Glide;com.bumptech.glide.load.engine.cache.MemoryCache$ResourceRemovedListener
+Bumptech.Glide.Load.Engine.Cache.IMemoryCacheResourceRemovedListener;com.bumptech.glide.load.engine.cache.MemoryCache$ResourceRemovedListener
+com.bumptech.glide.load.engine.cache.MemoryCache$ResourceRemovedListener;com.bumptech.glide.load.engine.cache.MemoryCache$ResourceRemovedListener
+Bumptech.Glide.Load.Engine.Cache.IMemoryCache, Xamarin.Android.Glide;com.bumptech.glide.load.engine.cache.MemoryCache
+Bumptech.Glide.Load.Engine.Cache.IMemoryCache;com.bumptech.glide.load.engine.cache.MemoryCache
+com.bumptech.glide.load.engine.cache.MemoryCache;com.bumptech.glide.load.engine.cache.MemoryCache
+Bumptech.Glide.Load.Engine.BitmapRecycle.IArrayPool, Xamarin.Android.Glide;com.bumptech.glide.load.engine.bitmap_recycle.ArrayPool
+Bumptech.Glide.Load.Engine.BitmapRecycle.IArrayPool;com.bumptech.glide.load.engine.bitmap_recycle.ArrayPool
+com.bumptech.glide.load.engine.bitmap_recycle.ArrayPool;com.bumptech.glide.load.engine.bitmap_recycle.ArrayPool
+Bumptech.Glide.Load.Engine.BitmapRecycle.IBitmapPool, Xamarin.Android.Glide;com.bumptech.glide.load.engine.bitmap_recycle.BitmapPool
+Bumptech.Glide.Load.Engine.BitmapRecycle.IBitmapPool;com.bumptech.glide.load.engine.bitmap_recycle.BitmapPool
+com.bumptech.glide.load.engine.bitmap_recycle.BitmapPool;com.bumptech.glide.load.engine.bitmap_recycle.BitmapPool
+Bumptech.Glide.Load.Engine.Executor.GlideExecutor+IUncaughtThrowableStrategy, Xamarin.Android.Glide;com.bumptech.glide.load.engine.executor.GlideExecutor$UncaughtThrowableStrategy
+Bumptech.Glide.Load.Engine.Executor.GlideExecutor.IUncaughtThrowableStrategy;com.bumptech.glide.load.engine.executor.GlideExecutor$UncaughtThrowableStrategy
+com.bumptech.glide.load.engine.executor.GlideExecutor$UncaughtThrowableStrategy;com.bumptech.glide.load.engine.executor.GlideExecutor$UncaughtThrowableStrategy
+Bumptech.Glide.Load.Data.IDataFetcherDataCallback, Xamarin.Android.Glide;com.bumptech.glide.load.data.DataFetcher$DataCallback
+Bumptech.Glide.Load.Data.IDataFetcherDataCallback;com.bumptech.glide.load.data.DataFetcher$DataCallback
+com.bumptech.glide.load.data.DataFetcher$DataCallback;com.bumptech.glide.load.data.DataFetcher$DataCallback
+Bumptech.Glide.Load.Data.IDataFetcher, Xamarin.Android.Glide;com.bumptech.glide.load.data.DataFetcher
+Bumptech.Glide.Load.Data.IDataFetcher;com.bumptech.glide.load.data.DataFetcher
+com.bumptech.glide.load.data.DataFetcher;com.bumptech.glide.load.data.DataFetcher
+Bumptech.Glide.Load.Data.IDataRewinderFactory, Xamarin.Android.Glide;com.bumptech.glide.load.data.DataRewinder$Factory
+Bumptech.Glide.Load.Data.IDataRewinderFactory;com.bumptech.glide.load.data.DataRewinder$Factory
+com.bumptech.glide.load.data.DataRewinder$Factory;com.bumptech.glide.load.data.DataRewinder$Factory
+Bumptech.Glide.Load.Data.IDataRewinder, Xamarin.Android.Glide;com.bumptech.glide.load.data.DataRewinder
+Bumptech.Glide.Load.Data.IDataRewinder;com.bumptech.glide.load.data.DataRewinder
+com.bumptech.glide.load.data.DataRewinder;com.bumptech.glide.load.data.DataRewinder
+AndroidX.Activity.IOnBackPressedDispatcherOwner, Xamarin.AndroidX.Activity;androidx.activity.OnBackPressedDispatcherOwner
+AndroidX.Activity.IOnBackPressedDispatcherOwner;androidx.activity.OnBackPressedDispatcherOwner
+androidx.activity.OnBackPressedDispatcherOwner;androidx.activity.OnBackPressedDispatcherOwner
+AndroidX.Activity.ContextAware.IContextAware, Xamarin.AndroidX.Activity;androidx.activity.contextaware.ContextAware
+AndroidX.Activity.ContextAware.IContextAware;androidx.activity.contextaware.ContextAware
+androidx.activity.contextaware.ContextAware;androidx.activity.contextaware.ContextAware
+AndroidX.Activity.ContextAware.IOnContextAvailableListener, Xamarin.AndroidX.Activity;androidx.activity.contextaware.OnContextAvailableListener
+AndroidX.Activity.ContextAware.IOnContextAvailableListener;androidx.activity.contextaware.OnContextAvailableListener
+androidx.activity.contextaware.OnContextAvailableListener;androidx.activity.contextaware.OnContextAvailableListener
+AndroidX.Activity.ContextAware.IOnContextAvailableListenerImplementor, Xamarin.AndroidX.Activity;mono.androidx.activity.contextaware.OnContextAvailableListenerImplementor
+AndroidX.Activity.ContextAware.IOnContextAvailableListenerImplementor;mono.androidx.activity.contextaware.OnContextAvailableListenerImplementor
+mono.androidx.activity.contextaware.OnContextAvailableListenerImplementor;mono.androidx.activity.contextaware.OnContextAvailableListenerImplementor
+AndroidX.Activity.Result.IActivityResultCallback, Xamarin.AndroidX.Activity;androidx.activity.result.ActivityResultCallback
+AndroidX.Activity.Result.IActivityResultCallback;androidx.activity.result.ActivityResultCallback
+androidx.activity.result.ActivityResultCallback;androidx.activity.result.ActivityResultCallback
+AndroidX.Activity.Result.IActivityResultCaller, Xamarin.AndroidX.Activity;androidx.activity.result.ActivityResultCaller
+AndroidX.Activity.Result.IActivityResultCaller;androidx.activity.result.ActivityResultCaller
+androidx.activity.result.ActivityResultCaller;androidx.activity.result.ActivityResultCaller
+AndroidX.Activity.Result.IActivityResultRegistryOwner, Xamarin.AndroidX.Activity;androidx.activity.result.ActivityResultRegistryOwner
+AndroidX.Activity.Result.IActivityResultRegistryOwner;androidx.activity.result.ActivityResultRegistryOwner
+androidx.activity.result.ActivityResultRegistryOwner;androidx.activity.result.ActivityResultRegistryOwner
 AndroidX.AppCompat.App.ActionBar+IOnMenuVisibilityListener, Xamarin.AndroidX.AppCompat;androidx.appcompat.app.ActionBar$OnMenuVisibilityListener
 AndroidX.AppCompat.App.ActionBar.IOnMenuVisibilityListener;androidx.appcompat.app.ActionBar$OnMenuVisibilityListener
 androidx.appcompat.app.ActionBar$OnMenuVisibilityListener;androidx.appcompat.app.ActionBar$OnMenuVisibilityListener
@@ -103,9 +259,36 @@ androidx.appcompat.view.menu.MenuPresenter;androidx.appcompat.view.menu.MenuPres
 AndroidX.AppCompat.View.Menu.IMenuView, Xamarin.AndroidX.AppCompat;androidx.appcompat.view.menu.MenuView
 AndroidX.AppCompat.View.Menu.IMenuView;androidx.appcompat.view.menu.MenuView
 androidx.appcompat.view.menu.MenuView;androidx.appcompat.view.menu.MenuView
+AndroidX.Core.Util.Pools+IPool, Xamarin.AndroidX.Core;androidx.core.util.Pools$Pool
+AndroidX.Core.Util.Pools.IPool;androidx.core.util.Pools$Pool
+androidx.core.util.Pools$Pool;androidx.core.util.Pools$Pool
+AndroidX.Core.Internal.View.ISupportMenu, Xamarin.AndroidX.Core;androidx.core.internal.view.SupportMenu
+AndroidX.Core.Internal.View.ISupportMenu;androidx.core.internal.view.SupportMenu
+androidx.core.internal.view.SupportMenu;androidx.core.internal.view.SupportMenu
+AndroidX.Core.Internal.View.ISupportMenuItem, Xamarin.AndroidX.Core;androidx.core.internal.view.SupportMenuItem
+AndroidX.Core.Internal.View.ISupportMenuItem;androidx.core.internal.view.SupportMenuItem
+androidx.core.internal.view.SupportMenuItem;androidx.core.internal.view.SupportMenuItem
+AndroidX.Core.App.ActivityCompat+IOnRequestPermissionsResultCallback, Xamarin.AndroidX.Core;androidx.core.app.ActivityCompat$OnRequestPermissionsResultCallback
+AndroidX.Core.App.ActivityCompat.IOnRequestPermissionsResultCallback;androidx.core.app.ActivityCompat$OnRequestPermissionsResultCallback
+androidx.core.app.ActivityCompat$OnRequestPermissionsResultCallback;androidx.core.app.ActivityCompat$OnRequestPermissionsResultCallback
+AndroidX.Core.App.ActivityCompat+IPermissionCompatDelegate, Xamarin.AndroidX.Core;androidx.core.app.ActivityCompat$PermissionCompatDelegate
+AndroidX.Core.App.ActivityCompat.IPermissionCompatDelegate;androidx.core.app.ActivityCompat$PermissionCompatDelegate
+androidx.core.app.ActivityCompat$PermissionCompatDelegate;androidx.core.app.ActivityCompat$PermissionCompatDelegate
+AndroidX.Core.App.ActivityCompat+IRequestPermissionsRequestCodeValidator, Xamarin.AndroidX.Core;androidx.core.app.ActivityCompat$RequestPermissionsRequestCodeValidator
+AndroidX.Core.App.ActivityCompat.IRequestPermissionsRequestCodeValidator;androidx.core.app.ActivityCompat$RequestPermissionsRequestCodeValidator
+androidx.core.app.ActivityCompat$RequestPermissionsRequestCodeValidator;androidx.core.app.ActivityCompat$RequestPermissionsRequestCodeValidator
+AndroidX.Core.App.SharedElementCallback+IOnSharedElementsReadyListener, Xamarin.AndroidX.Core;androidx.core.app.SharedElementCallback$OnSharedElementsReadyListener
+AndroidX.Core.App.SharedElementCallback.IOnSharedElementsReadyListener;androidx.core.app.SharedElementCallback$OnSharedElementsReadyListener
+androidx.core.app.SharedElementCallback$OnSharedElementsReadyListener;androidx.core.app.SharedElementCallback$OnSharedElementsReadyListener
+AndroidX.Core.App.TaskStackBuilder+ISupportParentable, Xamarin.AndroidX.Core;androidx.core.app.TaskStackBuilder$SupportParentable
+AndroidX.Core.App.TaskStackBuilder.ISupportParentable;androidx.core.app.TaskStackBuilder$SupportParentable
+androidx.core.app.TaskStackBuilder$SupportParentable;androidx.core.app.TaskStackBuilder$SupportParentable
 AndroidX.Core.Widget.ITintableImageSourceView, Xamarin.AndroidX.Core;androidx.core.widget.TintableImageSourceView
 AndroidX.Core.Widget.ITintableImageSourceView;androidx.core.widget.TintableImageSourceView
 androidx.core.widget.TintableImageSourceView;androidx.core.widget.TintableImageSourceView
+AndroidX.Core.View.INestedScrollingParent2, Xamarin.AndroidX.Core;androidx.core.view.NestedScrollingParent2
+AndroidX.Core.View.INestedScrollingParent2;androidx.core.view.NestedScrollingParent2
+androidx.core.view.NestedScrollingParent2;androidx.core.view.NestedScrollingParent2
 AndroidX.Core.View.ActionProvider+ISubUiVisibilityListener, Xamarin.AndroidX.Core;androidx.core.view.ActionProvider$SubUiVisibilityListener
 AndroidX.Core.View.ActionProvider.ISubUiVisibilityListener;androidx.core.view.ActionProvider$SubUiVisibilityListener
 androidx.core.view.ActionProvider$SubUiVisibilityListener;androidx.core.view.ActionProvider$SubUiVisibilityListener
@@ -130,9 +313,6 @@ androidx.core.view.NestedScrollingChild3;androidx.core.view.NestedScrollingChild
 AndroidX.Core.View.INestedScrollingParent, Xamarin.AndroidX.Core;androidx.core.view.NestedScrollingParent
 AndroidX.Core.View.INestedScrollingParent;androidx.core.view.NestedScrollingParent
 androidx.core.view.NestedScrollingParent;androidx.core.view.NestedScrollingParent
-AndroidX.Core.View.INestedScrollingParent2, Xamarin.AndroidX.Core;androidx.core.view.NestedScrollingParent2
-AndroidX.Core.View.INestedScrollingParent2;androidx.core.view.NestedScrollingParent2
-androidx.core.view.NestedScrollingParent2;androidx.core.view.NestedScrollingParent2
 AndroidX.Core.View.INestedScrollingParent3, Xamarin.AndroidX.Core;androidx.core.view.NestedScrollingParent3
 AndroidX.Core.View.INestedScrollingParent3;androidx.core.view.NestedScrollingParent3
 androidx.core.view.NestedScrollingParent3;androidx.core.view.NestedScrollingParent3
@@ -151,30 +331,9 @@ androidx.core.view.ViewPropertyAnimatorUpdateListener;androidx.core.view.ViewPro
 AndroidX.Core.View.KeyEventDispatcher+IComponent, Xamarin.AndroidX.Core;androidx.core.view.KeyEventDispatcher$Component
 AndroidX.Core.View.KeyEventDispatcher.IComponent;androidx.core.view.KeyEventDispatcher$Component
 androidx.core.view.KeyEventDispatcher$Component;androidx.core.view.KeyEventDispatcher$Component
-AndroidX.Core.View.Accessibiity.IAccessibilityViewCommand, Xamarin.AndroidX.Core;androidx.core.view.accessibility.AccessibilityViewCommand
-AndroidX.Core.View.Accessibiity.IAccessibilityViewCommand;androidx.core.view.accessibility.AccessibilityViewCommand
+AndroidX.Core.View.Accessibility.IAccessibilityViewCommand, Xamarin.AndroidX.Core;androidx.core.view.accessibility.AccessibilityViewCommand
+AndroidX.Core.View.Accessibility.IAccessibilityViewCommand;androidx.core.view.accessibility.AccessibilityViewCommand
 androidx.core.view.accessibility.AccessibilityViewCommand;androidx.core.view.accessibility.AccessibilityViewCommand
-AndroidX.Core.Internal.View.ISupportMenu, Xamarin.AndroidX.Core;androidx.core.internal.view.SupportMenu
-AndroidX.Core.Internal.View.ISupportMenu;androidx.core.internal.view.SupportMenu
-androidx.core.internal.view.SupportMenu;androidx.core.internal.view.SupportMenu
-AndroidX.Core.Internal.View.ISupportMenuItem, Xamarin.AndroidX.Core;androidx.core.internal.view.SupportMenuItem
-AndroidX.Core.Internal.View.ISupportMenuItem;androidx.core.internal.view.SupportMenuItem
-androidx.core.internal.view.SupportMenuItem;androidx.core.internal.view.SupportMenuItem
-AndroidX.Core.App.ActivityCompat+IOnRequestPermissionsResultCallback, Xamarin.AndroidX.Core;androidx.core.app.ActivityCompat$OnRequestPermissionsResultCallback
-AndroidX.Core.App.ActivityCompat.IOnRequestPermissionsResultCallback;androidx.core.app.ActivityCompat$OnRequestPermissionsResultCallback
-androidx.core.app.ActivityCompat$OnRequestPermissionsResultCallback;androidx.core.app.ActivityCompat$OnRequestPermissionsResultCallback
-AndroidX.Core.App.ActivityCompat+IPermissionCompatDelegate, Xamarin.AndroidX.Core;androidx.core.app.ActivityCompat$PermissionCompatDelegate
-AndroidX.Core.App.ActivityCompat.IPermissionCompatDelegate;androidx.core.app.ActivityCompat$PermissionCompatDelegate
-androidx.core.app.ActivityCompat$PermissionCompatDelegate;androidx.core.app.ActivityCompat$PermissionCompatDelegate
-AndroidX.Core.App.ActivityCompat+IRequestPermissionsRequestCodeValidator, Xamarin.AndroidX.Core;androidx.core.app.ActivityCompat$RequestPermissionsRequestCodeValidator
-AndroidX.Core.App.ActivityCompat.IRequestPermissionsRequestCodeValidator;androidx.core.app.ActivityCompat$RequestPermissionsRequestCodeValidator
-androidx.core.app.ActivityCompat$RequestPermissionsRequestCodeValidator;androidx.core.app.ActivityCompat$RequestPermissionsRequestCodeValidator
-AndroidX.Core.App.SharedElementCallback+IOnSharedElementsReadyListener, Xamarin.AndroidX.Core;androidx.core.app.SharedElementCallback$OnSharedElementsReadyListener
-AndroidX.Core.App.SharedElementCallback.IOnSharedElementsReadyListener;androidx.core.app.SharedElementCallback$OnSharedElementsReadyListener
-androidx.core.app.SharedElementCallback$OnSharedElementsReadyListener;androidx.core.app.SharedElementCallback$OnSharedElementsReadyListener
-AndroidX.Core.App.TaskStackBuilder+ISupportParentable, Xamarin.AndroidX.Core;androidx.core.app.TaskStackBuilder$SupportParentable
-AndroidX.Core.App.TaskStackBuilder.ISupportParentable;androidx.core.app.TaskStackBuilder$SupportParentable
-androidx.core.app.TaskStackBuilder$SupportParentable;androidx.core.app.TaskStackBuilder$SupportParentable
 AndroidX.CustomView.Widget.IOpenable, Xamarin.AndroidX.CustomView;androidx.customview.widget.Openable
 AndroidX.CustomView.Widget.IOpenable;androidx.customview.widget.Openable
 androidx.customview.widget.Openable;androidx.customview.widget.Openable
@@ -193,6 +352,18 @@ androidx.fragment.app.FragmentManager$OnBackStackChangedListener;androidx.fragme
 AndroidX.Fragment.App.FragmentManager+IOnBackStackChangedListenerImplementor, Xamarin.AndroidX.Fragment;mono.androidx.fragment.app.FragmentManager_OnBackStackChangedListenerImplementor
 AndroidX.Fragment.App.FragmentManager.IOnBackStackChangedListenerImplementor;mono.androidx.fragment.app.FragmentManager_OnBackStackChangedListenerImplementor
 mono.androidx.fragment.app.FragmentManager_OnBackStackChangedListenerImplementor;mono.androidx.fragment.app.FragmentManager_OnBackStackChangedListenerImplementor
+AndroidX.Fragment.App.IFragmentOnAttachListener, Xamarin.AndroidX.Fragment;androidx.fragment.app.FragmentOnAttachListener
+AndroidX.Fragment.App.IFragmentOnAttachListener;androidx.fragment.app.FragmentOnAttachListener
+androidx.fragment.app.FragmentOnAttachListener;androidx.fragment.app.FragmentOnAttachListener
+AndroidX.Fragment.App.IFragmentOnAttachListenerImplementor, Xamarin.AndroidX.Fragment;mono.androidx.fragment.app.FragmentOnAttachListenerImplementor
+AndroidX.Fragment.App.IFragmentOnAttachListenerImplementor;mono.androidx.fragment.app.FragmentOnAttachListenerImplementor
+mono.androidx.fragment.app.FragmentOnAttachListenerImplementor;mono.androidx.fragment.app.FragmentOnAttachListenerImplementor
+AndroidX.Fragment.App.IFragmentResultListener, Xamarin.AndroidX.Fragment;androidx.fragment.app.FragmentResultListener
+AndroidX.Fragment.App.IFragmentResultListener;androidx.fragment.app.FragmentResultListener
+androidx.fragment.app.FragmentResultListener;androidx.fragment.app.FragmentResultListener
+AndroidX.Fragment.App.IFragmentResultOwner, Xamarin.AndroidX.Fragment;androidx.fragment.app.FragmentResultOwner
+AndroidX.Fragment.App.IFragmentResultOwner;androidx.fragment.app.FragmentResultOwner
+androidx.fragment.app.FragmentResultOwner;androidx.fragment.app.FragmentResultOwner
 AndroidX.Lifecycle.ILifecycleObserver, Xamarin.AndroidX.Lifecycle.Common;androidx.lifecycle.LifecycleObserver
 AndroidX.Lifecycle.ILifecycleObserver;androidx.lifecycle.LifecycleObserver
 androidx.lifecycle.LifecycleObserver;androidx.lifecycle.LifecycleObserver
@@ -265,6 +436,15 @@ androidx.savedstate.SavedStateRegistry$SavedStateProvider;androidx.savedstate.Sa
 Xamarin.Essentials.ConnectivityBroadcastReceiver, Xamarin.Essentials;crc64a0e0a82d0db9a07d.ConnectivityBroadcastReceiver
 Xamarin.Essentials.ConnectivityBroadcastReceiver;crc64a0e0a82d0db9a07d.ConnectivityBroadcastReceiver
 xamarin.essentials.ConnectivityBroadcastReceiver;crc64a0e0a82d0db9a07d.ConnectivityBroadcastReceiver
+Xamarin.Essentials.ActivityLifecycleContextListener, Xamarin.Essentials;crc64a0e0a82d0db9a07d.ActivityLifecycleContextListener
+Xamarin.Essentials.ActivityLifecycleContextListener;crc64a0e0a82d0db9a07d.ActivityLifecycleContextListener
+xamarin.essentials.ActivityLifecycleContextListener;crc64a0e0a82d0db9a07d.ActivityLifecycleContextListener
+Xamarin.Essentials.IntermediateActivity, Xamarin.Essentials;crc64a0e0a82d0db9a07d.IntermediateActivity
+Xamarin.Essentials.IntermediateActivity;crc64a0e0a82d0db9a07d.IntermediateActivity
+xamarin.essentials.IntermediateActivity;crc64a0e0a82d0db9a07d.IntermediateActivity
+Xamarin.Essentials.FileProvider, Xamarin.Essentials;xamarin.essentials.fileProvider
+Xamarin.Essentials.FileProvider;xamarin.essentials.fileProvider
+xamarin.essentials.fileProvider;xamarin.essentials.fileProvider
 Google.Android.Material.Navigation.NavigationView+IOnNavigationItemSelectedListener, Xamarin.Google.Android.Material;com.google.android.material.navigation.NavigationView$OnNavigationItemSelectedListener
 Google.Android.Material.Navigation.NavigationView.IOnNavigationItemSelectedListener;com.google.android.material.navigation.NavigationView$OnNavigationItemSelectedListener
 com.google.android.material.navigation.NavigationView$OnNavigationItemSelectedListener;com.google.android.material.navigation.NavigationView$OnNavigationItemSelectedListener

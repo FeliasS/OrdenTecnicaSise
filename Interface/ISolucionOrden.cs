@@ -15,7 +15,7 @@ namespace OrdenTecnica_App.Interface
     interface ISolucionOrden
     {
         void AbrirSolucionOrden0(OrdenWs orden);
-        void AbrirSolucionOrden();
+        void AbrirSolucionOrden(DetalleOrdenWs detalle);
         void AbrirOrdenProceso();
     }
 }

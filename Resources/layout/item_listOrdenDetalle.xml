@@ -13,26 +13,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
     
-        <!--CODIGO-->
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_weight="1"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:text="Codigo;"
-                android:textStyle="bold"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-            <TextView
-                android:id="@+id/txtODCodigo"
-                tools:text="C001"
-                android:textSize="20dp"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
-        </LinearLayout>
-
         <!--DISPOSITIVO-->
         <LinearLayout
             android:orientation="vertical"
@@ -50,6 +30,25 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
+        </LinearLayout>
+
+        <!--PROBLEMA-->
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:text="Problema:"
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/txtODProblema"
+                tools:text="Mi Problema"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
         </LinearLayout>
 
         <!--ESTADO-->

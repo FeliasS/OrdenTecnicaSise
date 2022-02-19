@@ -7,6 +7,7 @@ using Android.Widget;
 using AndroidX.RecyclerView.Widget;
 using OrdenTecnica_App.ListRecycler.Holder;
 using OrdenTecnica_App.Models;
+using OrdenTecnica_App.ServicesClubTec;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,12 +18,12 @@ namespace OrdenTecnica_App.ListRecycler.Adapter
     class ListOrdenDetalle_Adapter : RecyclerView.Adapter
     {
         // Definimos una lista de orden detalle
-        List<Detalle_Orden> lstOrdenD;
+        List<DetalleOrdenWs> lstOrdenD;
 
         //Definimos un miembro controlador de evento click
         public event EventHandler<int> ItemClick;
 
-        public ListOrdenDetalle_Adapter(List<Detalle_Orden> lstOD)
+        public ListOrdenDetalle_Adapter(List<DetalleOrdenWs> lstOD)
         {
             lstOrdenD = lstOD;
         }
@@ -32,9 +33,19 @@ namespace OrdenTecnica_App.ListRecycler.Adapter
         public override void OnBindViewHolder(RecyclerView.ViewHolder holder, int position)
         {
             ListOrdenDetalle lstOD_holder = holder as ListOrdenDetalle;
-            lstOD_holder.lblODCodigo.Text = lstOrdenD[position]._COD_DETALLE_ORD;
-            lstOD_holder.lblODDispositivo.Text = lstOrdenD[position]._FK_DISPOSITIVO;
-            lstOD_holder.lblODEstado.Text = lstOrdenD[position]._ESTADO;
+            lstOD_holder.lblODDispositivo.Text = lstOrdenD[position].FK_DISPOSITIVO;
+            lstOD_holder.lblODProblema.Text = lstOrdenD[position].DESCRIPCION;
+            //lstOD_holder.lblODEstado.Text = lstOrdenD[position].ESTADO;
+
+            switch (lstOrdenD[position].ESTADO)
+            {
+                case "0":
+                    lstOD_holder.lblODEstado.Text = "PENDIENTE";
+                    break;
+                case "1":
+                    lstOD_holder.lblODEstado.Text = "COMPLETADO";
+                    break;
+            }
         }
 
         public override RecyclerView.ViewHolder OnCreateViewHolder(ViewGroup parent, int viewType)
