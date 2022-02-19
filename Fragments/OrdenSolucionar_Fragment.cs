@@ -130,13 +130,13 @@ namespace OrdenTecnica_App.Fragments
                     {
                         case 1:
                             Fname = nroOrden + "_T" + DateTime.Now.ToString("ddMMyyyyhhmmss") + ".Png";
-                            Fdirectoryname = "http://photo.micmaproyectos.com/imagenes/firma";//aqui va el url del la carpeta de imagenes           **por si hay cambios
+                            Fdirectoryname = "http://servicios.micmaproyectos.com/imagenes/firma/tecnico/"; //aqui va el url del la carpeta de imagenes           **por si hay cambios
                             urlrestFirm = "http://servicios.micmaproyectos.com/orden/uploadImagenFirmaTecnico";//aqui poner el url del rest (REST FIRMA TECNICO)       **CAMBIAR
                             Console.WriteLine("mY CODE : " + Android.App.Application.Context.GetExternalFilesDir("").AbsolutePath);
                             break;
                         case 2:
                             Fname = nroOrden + "_C" + DateTime.Now.ToString("ddMMyyyyhhmmss") + ".Png";
-                            Fdirectoryname = "http://photo.micmaproyectos.com/imagenes/firma";// aqui va el url del la carpeta de imagenes          **por si hay cambios
+                            Fdirectoryname = "http://servicios.micmaproyectos.com/imagenes/firma/cliente/";// aqui va el url del la carpeta de imagenes          **por si hay cambios
                             urlrestFirm = "http://servicios.micmaproyectos.com/orden/uploadImagenFirmaCliente";//aqui poner el url del rest (REST FIRMA CLIENTE)      **CAMBIAR
                             break;
                     }
@@ -185,25 +185,24 @@ namespace OrdenTecnica_App.Fragments
         private void PutImgFirms(int id, string pathfirm)
         {
 
-            if (File.Exists(pathfirm))
-            {
+            
                 switch (id)
                 {
                     case 1:
                         //Image tecimg = Image.FromFile(pathfirm);
                         Glide.With(Activity).AsBitmap().Load(pathfirm).Into(imgFirmTec);
                         imgFirmTec.Visibility = Android.Views.ViewStates.Visible;
-                        lblFtec.Visibility = Android.Views.ViewStates.Visible;
+                        //lblFtec.Visibility = Android.Views.ViewStates.Visible;
                         PathFirmaTec = pathfirm;
                         break;
                     case 2:
                         Glide.With(Activity).AsBitmap().Load(pathfirm).Into(imgFirmCli);
                         imgFirmCli.Visibility = Android.Views.ViewStates.Visible;
-                        lblFcli.Visibility = Android.Views.ViewStates.Visible;
+                        //lblFcli.Visibility = Android.Views.ViewStates.Visible;
                         PathFirmaCli = pathfirm;
                         break;
                 }
-            }
+            
         }
 
         async Task TakePhotoAsync(int idtimephoto)
@@ -259,7 +258,7 @@ namespace OrdenTecnica_App.Fragments
                         break;
                     case 2:
                         urlrestImg = "http://servicios.micmaproyectos.com/orden/uploadImagenLater";     //aqui poner el url del rest (REST IMAGEN DE FIN)                   **CAMBIAR
-                        urlDirectoryImg = "http://photo.micmaproyectos.com/imagenes/orden/later";    //aqui va la carpetas de imagen fin                           **por si hay cambios 
+                        urlDirectoryImg = "http://servicios.micmaproyectos.com/imagenes/orden/later/";    //aqui va la carpetas de imagen fin                           **por si hay cambios 
                         break;
 
                 }
