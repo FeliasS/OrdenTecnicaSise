@@ -20,11 +20,10 @@ namespace OrdenTecnica_App.ServicesClubTec
         public string IMAGENES_EVIDENCIA { get; set; }
         public string FIRMA_CLIENTE { get; set; }
         public string FIRMA_TECNICO { get; set; }
-        public string ESTADO { get; set; }
+        public int ESTADO { get; set; }
         public string FK_DISPOSITIVO { get; set; }
-        public string FK_ORDEN { get; set; }
 
-        public DetalleOrdenWs(string iD_ORDEN_DETALLE, string cOD_ORDEN_DETALLE, string dESCRIPCION, string iMAGENES, string iMAGENES_EVIDENCIA, string fIRMA_CLIENTE, string fIRMA_TECNICO, string eSTADO, string fK_DISPOSITIVO, string fK_ORDEN)
+        public DetalleOrdenWs(string iD_ORDEN_DETALLE, string cOD_ORDEN_DETALLE, string dESCRIPCION, string iMAGENES, string iMAGENES_EVIDENCIA, string fIRMA_CLIENTE, string fIRMA_TECNICO, int eSTADO, string fK_DISPOSITIVO)
         {
             ID_ORDEN_DETALLE = iD_ORDEN_DETALLE;
             COD_ORDEN_DETALLE = cOD_ORDEN_DETALLE;
@@ -35,11 +34,15 @@ namespace OrdenTecnica_App.ServicesClubTec
             FIRMA_TECNICO = fIRMA_TECNICO;
             ESTADO = eSTADO;
             FK_DISPOSITIVO = fK_DISPOSITIVO;
-            FK_ORDEN = fK_ORDEN;
         }
 
         public DetalleOrdenWs()
         {
         }
+        //public string FK_ORDEN { get; set; }
+
+
+
+
     }
 }

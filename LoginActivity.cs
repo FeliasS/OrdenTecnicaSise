@@ -100,12 +100,10 @@ namespace OrdenTecnica_App
                 Uri url = new Uri("http://servicios.micmaproyectos.com/usuario/login");
                 
                 var json = JsonConvert.SerializeObject(login);
-
-                Console.WriteLine(json);
-
                 var content = new StringContent(json, Encoding.UTF8, "application/json");
                 var postJson = await client.PostAsync(url, content);
 
+                Console.WriteLine(json);
                 if (postJson.StatusCode==System.Net.HttpStatusCode.OK)
                 {
                     Console.WriteLine("estado de enviso json: " + postJson.StatusCode);
@@ -141,6 +139,7 @@ namespace OrdenTecnica_App
                         var intent = new Intent(this, typeof(MainActivity));
                         intent.PutExtra(MainActivity.LLAVE_COD_EMPLEADO, response.OBJETO._fk_empleado);
                         StartActivity(intent);
+                        postJson.Dispose(); //cerramos el servicio
                         LimpiarCampos();
 
                         UserLogin._fk_empleado = response.OBJETO._fk_empleado;

@@ -87,7 +87,7 @@ namespace OrdenTecnica_App.Fragments
         {
             // 1) Asignamos a la orden el Tecnico
             OrdenEmpleado ATec = new OrdenEmpleado();
-            ATec.idOrden = getOrden.idOrden;//actualizar este punto
+            ATec.idOrden = int.Parse(getOrden.idOrden);//actualizar este punto
             ATec.idEmpleado = idEmpleado;
 
             Console.WriteLine("empleado: " + lblTecnico.Text + " id Empleado: " + ATec.idEmpleado);

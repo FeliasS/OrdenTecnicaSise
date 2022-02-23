@@ -1393,9 +1393,9 @@ int id txtContraseña 0x7f090147
 int id txtDiagnostico 0x7f090148
 int id txtFirmaCliente 0x7f090149
 int id txtFirmaTecnico 0x7f09014a
-int id txtODCodigo 0x7f09014b
-int id txtODDispo 0x7f09014c
-int id txtODEstado 0x7f09014d
+int id txtODDispo 0x7f09014b
+int id txtODEstado 0x7f09014c
+int id txtODProblema 0x7f09014d
 int id txtProblema 0x7f09014e
 int id txtUsuario 0x7f09014f
 int id unchecked 0x7f090150

@@ -105,6 +105,7 @@
     <Compile Include="Models\Statics\UserLogin.cs" />
     <Compile Include="Models\Sucursal.cs" />
     <Compile Include="Models\Tecnicos.cs" />
+    <Compile Include="Models\UpdateDetalleOrden.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="ListRecycler\Holder\ListOrden_Item.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
@@ -117,6 +118,7 @@
     <Compile Include="ServicesClubTec\TramaOrdenLista.cs" />
     <Compile Include="ServicesClubTec\TramaOrdenTecnica.cs" />
     <Compile Include="ServicesClubTec\TramaOrdenObjeto.cs" />
+    <Compile Include="ServicesClubTec\TramaPostDetalleOrdWs.cs" />
     <Compile Include="ServicesClubTec\TramaTecnicoLista.cs" />
     <Compile Include="ServicesClubTec\TramaUsuario.cs" />
     <Compile Include="ServicesClubTec\UploadFirm.cs" />

@@ -33,6 +33,7 @@ namespace OrdenTecnica_App.Fragments
         static string nroOrden = "ORDEN14"; //aqui igualar al dato traido
         string PathImgInicio, PathImgFin;
         string PathFirmaTec, PathFirmaCli;
+
         //
 
         String PhotoPath = "";
@@ -78,6 +79,7 @@ namespace OrdenTecnica_App.Fragments
             imgFirmCli = view.FindViewById<ImageView>(Resource.Id.IVfirmacliente);
 
             int idtimephoto = 0;
+            Console.WriteLine("fk dispositivo: " + fk_dispositivo);
 
             btnTakephoto.Click += async (sender, e) => { idtimephoto = 1; await TakePhotoAsync(1); };
             btnAddphotos.Click += async (sender, e) => { idtimephoto = 1; await PickPhotoAsync(1); };
@@ -130,13 +132,13 @@ namespace OrdenTecnica_App.Fragments
                     {
                         case 1:
                             Fname = nroOrden + "_T" + DateTime.Now.ToString("ddMMyyyyhhmmss") + ".Png";
-                            Fdirectoryname = "http://photo.micmaproyectos.com/imagenes/firma";//aqui va el url del la carpeta de imagenes           **por si hay cambios
+                            Fdirectoryname = "http://servicios.micmaproyectos.com/imagenes/firma/tecnico/"; //aqui va el url del la carpeta de imagenes           **por si hay cambios
                             urlrestFirm = "http://servicios.micmaproyectos.com/orden/uploadImagenFirmaTecnico";//aqui poner el url del rest (REST FIRMA TECNICO)       **CAMBIAR
                             Console.WriteLine("mY CODE : " + Android.App.Application.Context.GetExternalFilesDir("").AbsolutePath);
                             break;
                         case 2:
                             Fname = nroOrden + "_C" + DateTime.Now.ToString("ddMMyyyyhhmmss") + ".Png";
-                            Fdirectoryname = "http://photo.micmaproyectos.com/imagenes/firma";// aqui va el url del la carpeta de imagenes          **por si hay cambios
+                            Fdirectoryname = "http://servicios.micmaproyectos.com/imagenes/firma/cliente/";// aqui va el url del la carpeta de imagenes          **por si hay cambios
                             urlrestFirm = "http://servicios.micmaproyectos.com/orden/uploadImagenFirmaCliente";//aqui poner el url del rest (REST FIRMA CLIENTE)      **CAMBIAR
                             break;
                     }
@@ -185,25 +187,24 @@ namespace OrdenTecnica_App.Fragments
         private void PutImgFirms(int id, string pathfirm)
         {
 
-            if (File.Exists(pathfirm))
+
+            switch (id)
             {
-                switch (id)
-                {
-                    case 1:
-                        //Image tecimg = Image.FromFile(pathfirm);
-                        Glide.With(Activity).AsBitmap().Load(pathfirm).Into(imgFirmTec);
-                        imgFirmTec.Visibility = Android.Views.ViewStates.Visible;
-                        lblFtec.Visibility = Android.Views.ViewStates.Visible;
-                        PathFirmaTec = pathfirm;
-                        break;
-                    case 2:
-                        Glide.With(Activity).AsBitmap().Load(pathfirm).Into(imgFirmCli);
-                        imgFirmCli.Visibility = Android.Views.ViewStates.Visible;
-                        lblFcli.Visibility = Android.Views.ViewStates.Visible;
-                        PathFirmaCli = pathfirm;
-                        break;
-                }
+                case 1:
+                    //Image tecimg = Image.FromFile(pathfirm);
+                    Glide.With(Activity).AsBitmap().Load(pathfirm).Into(imgFirmTec);
+                    imgFirmTec.Visibility = Android.Views.ViewStates.Visible;
+                    //lblFtec.Visibility = Android.Views.ViewStates.Visible;
+                    PathFirmaTec = pathfirm;
+                    break;
+                case 2:
+                    Glide.With(Activity).AsBitmap().Load(pathfirm).Into(imgFirmCli);
+                    imgFirmCli.Visibility = Android.Views.ViewStates.Visible;
+                    //lblFcli.Visibility = Android.Views.ViewStates.Visible;
+                    PathFirmaCli = pathfirm;
+                    break;
             }
+
         }
 
         async Task TakePhotoAsync(int idtimephoto)
@@ -259,7 +260,7 @@ namespace OrdenTecnica_App.Fragments
                         break;
                     case 2:
                         urlrestImg = "http://servicios.micmaproyectos.com/orden/uploadImagenLater";     //aqui poner el url del rest (REST IMAGEN DE FIN)                   **CAMBIAR
-                        urlDirectoryImg = "http://photo.micmaproyectos.com/imagenes/orden/later";    //aqui va la carpetas de imagen fin                           **por si hay cambios 
+                        urlDirectoryImg = "http://servicios.micmaproyectos.com/imagenes/orden/later/";    //aqui va la carpetas de imagen fin                           **por si hay cambios 
                         break;
 
                 }
@@ -322,29 +323,41 @@ namespace OrdenTecnica_App.Fragments
 
         public async void Generar(object sender, EventArgs e)
         {
-            if (txtDiagnostico.Text=="")
+            if (txtDiagnostico.Text == "")
             {
                 Toast.MakeText(Activity, "No se asignó un diagnostico al problema", ToastLength.Short).Show();
             }
             else
             {
                 //actualizamos el problema tecnico y cambiamos su estado
-                Detalle_Orden det = new Detalle_Orden();
-                det.ID_ORDEN_DETALLE = id.ToString();
-                det.DESCRIPCION = txtDiagnostico.Text;
-                det.IMAGENES = PathImgInicio;
-                det.IMAGENES_EVIDENCIA = PathImgFin;
-                det.FIRMA_CLIENTE = PathFirmaCli;
-                det.FIRMA_TECNICO = PathFirmaTec;
-                det.FK_DISPOSITIVO = fk_dispositivo;
+                //Detalle_Orden det = new Detalle_Orden();
+                //det.ID_ORDEN_DETALLE = id.ToString();
+                //det.DESCRIPCION = txtDiagnostico.Text;
+                //det.IMAGENES = PathImgInicio;
+                //det.IMAGENES_EVIDENCIA = PathImgFin;
+                //det.FIRMA_CLIENTE = PathFirmaCli;
+                //det.FIRMA_TECNICO = PathFirmaTec;
+                //det.FK_DISPOSITIVO = fk_dispositivo;
+                UpdateDetalleOrden uD = new UpdateDetalleOrden
+                {
+                    idDetalleOrden =id,
+                    descripcion=txtDiagnostico.Text,
+                    imagen_inicio=PathImgInicio,
+                    imagen_evidencia=PathImgFin,
+                    firma_cliente=PathFirmaCli,
+                    firma_tecnico=PathFirmaTec,
+                    estado=2,
+                    id_dispositivo=int.Parse(fk_dispositivo)
+                };
 
                 HttpClient client = new HttpClient();
-                Uri url = new Uri("http://servicios.micmaproyectos.com/detalleorden/actualizarDetalleOrden");
+                Uri url = new Uri("http://servicios.micmaproyectos.com/DetalleOrden/actualizarDetalleOrden");
 
-                var json = JsonConvert.SerializeObject(null);
+                var json = JsonConvert.SerializeObject(uD);
                 var content = new StringContent(json, Encoding.UTF8, "application/json");
                 var postJson = await client.PostAsync(url, content);
 
+                Console.WriteLine("json update detalle orden enviado: " + json);
                 if (postJson.StatusCode == System.Net.HttpStatusCode.OK)
                 {
                     string readJson = await postJson.Content.ReadAsStringAsync();

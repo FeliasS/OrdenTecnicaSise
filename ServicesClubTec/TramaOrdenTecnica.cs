@@ -30,30 +30,28 @@ namespace OrdenTecnica_App.ServicesClubTec
         public string ASUNTO { get; set; }
         public string FECHA_ORDEN { get; set; }
         public string HORA_ORDEN { get; set; }
+        public string FECHA_ATENCION { get; set; }
+        public string HORA_ATENCION { get; set; }
         public string REMITENTE { get; set; }
         public string ESTADO { get; set; }
         public string FK_SUCURSAL { get; set; }
         public string FK_EMPLEADO { get; set; }
+        public List<DetalleOrdenWs> listaDetalleOrden { get; set; }
 
-        public OrdenTecnicaWS(string cod_orden, string fecha_orden, string hora_orden,string estado)
+        public OrdenTecnicaWS(string iD_ORDEN, string cOD_ORDEN, string aSUNTO, string fECHA_ORDEN, string hORA_ORDEN, string fECHA_ATENCION, string hORA_ATENCION, string rEMITENTE, string eSTADO, string fK_SUCURSAL, string fK_EMPLEADO, List<DetalleOrdenWs> listaDetalleOrden)
         {
-            COD_ORDEN = cod_orden;
-            FECHA_ORDEN = fecha_orden;
-            HORA_ORDEN = hora_orden;
-            ESTADO = estado;
-        }
-
-        public OrdenTecnicaWS(string id_orden, string cod_orden, string asunto, string fecha_orden, string hora_orden, string remitente, string estado, string fk_sucursal, string fk_empleado)
-        {
-            ID_ORDEN = id_orden;
-            COD_ORDEN = cod_orden;
-            ASUNTO = asunto;
-            FECHA_ORDEN = fecha_orden;
-            HORA_ORDEN = hora_orden;
-            REMITENTE = remitente;
-            ESTADO = estado;
-            FK_SUCURSAL = fk_sucursal;
-            FK_EMPLEADO = fk_empleado;
+            ID_ORDEN = iD_ORDEN;
+            COD_ORDEN = cOD_ORDEN;
+            ASUNTO = aSUNTO;
+            FECHA_ORDEN = fECHA_ORDEN;
+            HORA_ORDEN = hORA_ORDEN;
+            FECHA_ATENCION = fECHA_ATENCION;
+            HORA_ATENCION = hORA_ATENCION;
+            REMITENTE = rEMITENTE;
+            ESTADO = eSTADO;
+            FK_SUCURSAL = fK_SUCURSAL;
+            FK_EMPLEADO = fK_EMPLEADO;
+            this.listaDetalleOrden = listaDetalleOrden;
         }
 
         public OrdenTecnicaWS()

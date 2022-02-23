@@ -14,7 +14,7 @@ namespace OrdenTecnica_App.Models
 {
     public class Orden
     {
-        public int idOrden { get; set; }
+        public string idOrden { get; set; }
         public string cod_orden { get; set; }
         public string asunto { get; set; }
         public string fecha_orden { get; set; } // Cambiar el tipo a Date
@@ -33,7 +33,7 @@ namespace OrdenTecnica_App.Models
 
         }
 
-        public Orden(int idOrden, string cod_orden, string asunto, string fecha_orden, string hora_orden, string fecha_atencion, string hora_atencion, string remitente, int estado, int id_sucursal, int id_empleado, List<DetalleOrdenWs> listaDetalleOrden)
+        public Orden(string idOrden, string cod_orden, string asunto, string fecha_orden, string hora_orden, string fecha_atencion, string hora_atencion, string remitente, int estado, int id_sucursal, int id_empleado, List<DetalleOrdenWs> listaDetalleOrden)
         {
             this.idOrden = idOrden;
             this.cod_orden = cod_orden;

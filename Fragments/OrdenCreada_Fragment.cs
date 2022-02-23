@@ -123,7 +123,7 @@ namespace OrdenTecnica_App.Fragments
         private void MAdapter_ItemClick(object sender, int e)
         {
             Orden ordenAsig = new Orden();
-            ordenAsig.idOrden = int.Parse(lstOrdenProceso[e].ID_ORDEN);
+            ordenAsig.idOrden = lstOrdenProceso[e].ID_ORDEN;
             ordenAsig.cod_orden = lstOrdenProceso[e].COD_ORDEN;
             ordenAsig.asunto = lstOrdenProceso[e].ASUNTO;
             ordenAsig.remitente = lstOrdenProceso[e].REMITENTE;

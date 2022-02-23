@@ -63,8 +63,8 @@ namespace OrdenTecnica_App
             AndroidX.AppCompat.Widget.Toolbar toolbar = FindViewById<AndroidX.AppCompat.Widget.Toolbar>(Resource.Id.toolbar);
             SetSupportActionBar(toolbar);
 
-            FloatingActionButton fab = FindViewById<FloatingActionButton>(Resource.Id.fab);
-            fab.Click += FabOnClick;
+            //FloatingActionButton fab = FindViewById<FloatingActionButton>(Resource.Id.fab);
+            //fab.Click += FabOnClick;
 
             DrawerLayout drawer = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
             ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, Resource.String.navigation_drawer_open, Resource.String.navigation_drawer_close);
@@ -261,12 +261,12 @@ namespace OrdenTecnica_App
             return base.OnOptionsItemSelected(item);
         }
 
-        private void FabOnClick(object sender, EventArgs eventArgs)
-        {
-            View view = (View) sender;
-            Snackbar.Make(view, "Replace with your own action", Snackbar.LengthLong)
-                .SetAction("Action", (Android.Views.View.IOnClickListener)null).Show();
-        }
+        //private void FabOnClick(object sender, EventArgs eventArgs)
+        //{
+        //    View view = (View) sender;
+        //    Snackbar.Make(view, "Replace with your own action", Snackbar.LengthLong)
+        //        .SetAction("Action", (Android.Views.View.IOnClickListener)null).Show();
+        //}
 
         public bool OnNavigationItemSelected(IMenuItem item)
         {
@@ -361,6 +361,7 @@ namespace OrdenTecnica_App
         public void AbrirSolucionOrden(DetalleOrdenWs detalle)
         {
             OrdenSolucionar_Fragment ordenSolucionar = new OrdenSolucionar_Fragment();
+            ordenSolucionar.getData(detalle);
 
             var transaccion = SupportFragmentManager.BeginTransaction();
             transaccion.Replace(Resource.Id.conteinerView, ordenSolucionar,"fragmentOrdenSolucionar");

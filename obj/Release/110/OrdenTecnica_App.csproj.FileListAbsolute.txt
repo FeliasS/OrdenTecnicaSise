@@ -8,6 +8,7 @@ D:\Repos\Xamarin\OrdenTecnica_App\bin\Release\com.companyname.ordentecnica-Signe
 D:\Repos\Xamarin\OrdenTecnica_App\obj\Release\110\MonoAndroid,Version=v11.0.AssemblyAttributes.cs
 D:\Repos\Xamarin\OrdenTecnica_App\obj\Release\110\build.props
 D:\Repos\Xamarin\OrdenTecnica_App\obj\Release\110\adb.props
+D:\Repos\Xamarin\OrdenTecnica_App\obj\Release\110\OrdenTecnica_App.csproj.AssemblyReference.cache
 D:\Repos\Xamarin\OrdenTecnica_App\obj\Release\110\stamp\_BuildLibraryImportsCache.stamp
 D:\Repos\Xamarin\OrdenTecnica_App\obj\Release\110\res.flag
 D:\Repos\Xamarin\OrdenTecnica_App\obj\Release\110\lp\0\jl\files.cache

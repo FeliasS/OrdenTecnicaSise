@@ -13,17 +13,17 @@ namespace OrdenTecnica_App.ServicesClubTec
 {
     class TramaOrdenObjeto
     {
-        internal bool STATUS { get; set; }
-        internal int CODE { get; set; }
-        internal string MESSAGE { get; set; }
-        public OrdenTecnicaWS OBJETO { get; set; }
+        public bool status { get; set; }
+        public int code { get; set; }
+        public string message { get; set; }
+        public OrdenTecnicaWS objeto { get; set; }
 
-        public TramaOrdenObjeto(bool sTATUS, int cODE, string mESSAGE, OrdenTecnicaWS oBJETO)
+        public TramaOrdenObjeto(bool status, int code, string message, OrdenTecnicaWS objeto)
         {
-            STATUS = sTATUS;
-            CODE = cODE;
-            MESSAGE = mESSAGE;
-            OBJETO = oBJETO;
+            this.status = status;
+            this.code = code;
+            this.message = message;
+            this.objeto = objeto;
         }
     }
 }

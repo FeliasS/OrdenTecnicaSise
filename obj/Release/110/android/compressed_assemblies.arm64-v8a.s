@@ -44,7 +44,7 @@
 
 	/* 4: OrdenTecnica_App.dll */
 	/* uncompressed_file_size */
-	.word	228864
+	.word	231936
 	/* loaded */
 	.byte	0
 	/* data */
