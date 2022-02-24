@@ -2409,11 +2409,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Repos\\Xamarin\\OrdenTecnica_App\\OrdenTecnica_App.csproj",
+      "projectUniqueName": "D:\\Repos\\Xamarin\\OrdenTecnicaSise\\OrdenTecnica_App.csproj",
       "projectName": "OrdenTecnica_App",
-      "projectPath": "D:\\Repos\\Xamarin\\OrdenTecnica_App\\OrdenTecnica_App.csproj",
+      "projectPath": "D:\\Repos\\Xamarin\\OrdenTecnicaSise\\OrdenTecnica_App.csproj",
       "packagesPath": "C:\\Users\\zink_\\.nuget\\packages\\",
-      "outputPath": "D:\\Repos\\Xamarin\\OrdenTecnica_App\\obj\\",
+      "outputPath": "D:\\Repos\\Xamarin\\OrdenTecnicaSise\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [

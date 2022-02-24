@@ -242,6 +242,7 @@ namespace OrdenTecnica_App.Fragments
                             {
                                 //AQUI NOS DEBE ENVIAR DE NUEVO A LA LISTA QUE ESTAN EN PROCESO
                                 alert.Dispose();
+                                postJson.Dispose(); //cerramos el servicio
                                 iSolucionOrden.AbrirOrdenProceso();
                             });
                             Dialog dialog = alert.Create();

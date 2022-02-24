@@ -115,7 +115,7 @@ namespace OrdenTecnica_App.Fragments
 
                     mAdapter = new ListOrden_Adapter(lstOrdenProceso);
                     rvOrdenProceso.SetAdapter(mAdapter);
-
+                    postJson.Dispose();//Cerramos el servicio
                     //mAdapter.ItemClick += MAdapter_ItemClick;
                 }
                 else if (response.status == true && response.code == 2)
@@ -156,7 +156,7 @@ namespace OrdenTecnica_App.Fragments
 
                     mAdapter = new ListOrden_Adapter(lstOrdenProceso);
                     rvOrdenProceso.SetAdapter(mAdapter);
-
+                    postJson.Dispose();//Cerramos el servicio
                     //mAdapter.ItemClick += MAdapter_ItemClick;
                 }
                 else if (response.status == true && response.code == 2)

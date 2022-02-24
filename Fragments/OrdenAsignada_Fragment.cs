@@ -128,7 +128,7 @@ namespace OrdenTecnica_App.Fragments
                     rListORden.SetAdapter(mAdapter);
                     mAdapter.NotifyDataSetChanged();
                     rListORden.SmoothScrollToPosition(lstOrden.Count());
-
+                    postJson.Dispose();//Cerramos el servicio
                     mAdapter.ItemClick += MAdapter_ItemClick;
                 }
             }
@@ -167,7 +167,7 @@ namespace OrdenTecnica_App.Fragments
                     rListORden.SetAdapter(mAdapter);
                     mAdapter.NotifyDataSetChanged();
                     rListORden.SmoothScrollToPosition(lstOrden.Count());
-
+                    postJson.Dispose();//Cerramos el servicio
                     mAdapter.ItemClick += MAdapter_ItemClick;
                 }
             }
@@ -241,6 +241,7 @@ namespace OrdenTecnica_App.Fragments
                         alert1.SetPositiveButton("SI", (sender, args) =>
                         {
                             alert1.Dispose();
+                            postJson.Dispose();//Cerramos el servicio
                             List5();
                         });
                         alert1.SetNegativeButton("NO",(sender,args)=>

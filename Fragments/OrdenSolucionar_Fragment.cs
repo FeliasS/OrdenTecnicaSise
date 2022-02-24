@@ -31,8 +31,8 @@ namespace OrdenTecnica_App.Fragments
         static int id;
         static string fk_dispositivo;
         static string nroOrden = "ORDEN14"; //aqui igualar al dato traido
-        string PathImgInicio, PathImgFin;
-        string PathFirmaTec, PathFirmaCli;
+        static string PathImgInicio, PathImgFin;
+        static string PathFirmaTec, PathFirmaCli;
 
         //
 
@@ -321,33 +321,47 @@ namespace OrdenTecnica_App.Fragments
 
         }
 
+        private bool ValidaCampos()
+        {
+
+            string diagnostico, imgInit, imgFin, firmCli, firmTec, dispositivo;
+            //int idorden = id;
+            diagnostico = txtDiagnostico.Text;
+            imgInit = PathImgInicio;
+            imgFin = PathImgFin;
+            firmCli = PathFirmaCli;
+            firmTec = PathFirmaTec;
+            //dispositivo = fk_dispositivo;
+            Console.WriteLine("diagnostico: " +diagnostico+ "\nimagen ini: "+ imgInit+ "\nimgFina: "+imgFin + "\nfirmaCli: "+ firmCli+ "\nfirmaTec: "+ firmTec);
+
+            if (diagnostico.Equals("") || imgInit.Equals("") || imgFin.Equals("") || firmCli.Equals("") || firmTec.Equals(""))
+            {
+                return true;
+            }
+
+            return false;
+        }
+
         public async void Generar(object sender, EventArgs e)
         {
-            if (txtDiagnostico.Text == "")
+            
+
+            if (txtDiagnostico.Text=="")
             {
-                Toast.MakeText(Activity, "No se asignó un diagnostico al problema", ToastLength.Short).Show();
+                Toast.MakeText(Activity, "Campos Vacios, Ingrese datos", ToastLength.Short).Show();
             }
             else
             {
-                //actualizamos el problema tecnico y cambiamos su estado
-                //Detalle_Orden det = new Detalle_Orden();
-                //det.ID_ORDEN_DETALLE = id.ToString();
-                //det.DESCRIPCION = txtDiagnostico.Text;
-                //det.IMAGENES = PathImgInicio;
-                //det.IMAGENES_EVIDENCIA = PathImgFin;
-                //det.FIRMA_CLIENTE = PathFirmaCli;
-                //det.FIRMA_TECNICO = PathFirmaTec;
-                //det.FK_DISPOSITIVO = fk_dispositivo;
                 UpdateDetalleOrden uD = new UpdateDetalleOrden
                 {
-                    idDetalleOrden =id,
-                    descripcion=txtDiagnostico.Text,
-                    imagen_inicio=PathImgInicio,
-                    imagen_evidencia=PathImgFin,
-                    firma_cliente=PathFirmaCli,
-                    firma_tecnico=PathFirmaTec,
-                    estado=2,
-                    id_dispositivo=int.Parse(fk_dispositivo)
+                    idDetalleOrden = id,
+                    descripcion = txtDiagnostico.Text,
+                    imagen_inicio = PathImgInicio,
+                    imagen_evidencia = PathImgFin,
+                    firma_cliente = PathFirmaCli,
+                    firma_tecnico = PathFirmaTec,
+                    estado = 2,
+                    id_dispositivo = int.Parse(fk_dispositivo)
                 };
 
                 HttpClient client = new HttpClient();
@@ -373,6 +387,7 @@ namespace OrdenTecnica_App.Fragments
                         {
                             //cuando se actualiza la orden este nos enviará al fragmento anterior
                             alert.Dispose();
+                            postJson.Dispose();//Cerramos el servicio
                             FragmentManager.PopBackStack(); //nos envia al fragmento anterior
                             
                         });

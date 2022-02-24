@@ -124,7 +124,7 @@ namespace OrdenTecnica_App.Fragments
                     Console.WriteLine("datos llenados en el mAdapter");
                     rvListORden.SetAdapter(mAdapter);
                     Console.WriteLine("seteando en el recyclerView la nueva lista");
-
+                    postJson.Dispose();//Cerramos el servicio
                     mAdapter.ItemClick += MAdapter_ItemClick1;
                 }
                 else if (response.status == true && response.code == 2)
@@ -167,7 +167,7 @@ namespace OrdenTecnica_App.Fragments
                     Console.WriteLine("datos llenados en el mAdapter");
                     rvListORden.SetAdapter(mAdapter);
                     Console.WriteLine("seteando en el recyclerView la nueva lista");
-
+                    postJson.Dispose();//Cerramos el servicio
                     mAdapter.ItemClick += MAdapter_ItemClick1;
                 }
                 else if (response.status == true && response.code == 2)
