@@ -73,16 +73,10 @@ namespace OrdenTecnica_App.Fragments
 
             //ingresamos unos datos estaticos
             lstDo = new List<DetalleOrdenWs>();
-            //DetalleOrdenWs dtor = new DetalleOrdenWs();
-            //dtor.COD_ORDEN_DETALLE = "...";
-            //dtor.DESCRIPCION = "...";
-            //dtor.ESTADO = "...";
-            //dtor.FK_DISPOSITIVO = "...";
-            //lstDo.Add(dtor);
-
+            
             LstOrdenDetallebyOrden();
 
-            //INSTACIAMOS EL ADAPTADOR DEL LIST
+            //INSTANCIAMOS EL ADAPTADOR DEL LIST
             mLayoutManager = new LinearLayoutManager(Activity);
             rvODetalle.SetLayoutManager(mLayoutManager);
 
@@ -129,45 +123,50 @@ namespace OrdenTecnica_App.Fragments
 
         private async void LstOrdenDetallebyOrden()
         {
+            try
+            {
+                Orden ord = new Orden();
+                ord.idOrden = o.ID_ORDEN; //obtiene el ID del item seleccionado en la lista
+
+                HttpClient client = new HttpClient();
+                Uri url = new Uri("http://servicios.micmaproyectos.com/orden/buscarDetalleOrdenByIdOrden");
+
+                var json = JsonConvert.SerializeObject(ord);
+                var content = new StringContent(json, Encoding.UTF8, "application/json");
+                var postJson = await client.PostAsync(url, content);
+
+                if (postJson.StatusCode == System.Net.HttpStatusCode.OK)
+                {
+                    string readJson = await postJson.Content.ReadAsStringAsync();
+                    var response = JsonConvert.DeserializeObject<TramaDetalleOrden>(readJson);
+
+                    if (response.status == true && response.code == 1)
+                    {
+                        Console.WriteLine(response.message);
+                        lstDo = response.lista;
+
+
+                        mAdapter = new ListOrdenDetalle_Adapter(lstDo);
+                        rvODetalle.SetAdapter(mAdapter);
+
+                        mAdapter.ItemClick += MAdapter_ItemClick;
+                    }
+                    else if (response.status == true && response.code == 2)
+                    {
+                        Toast.MakeText(Activity, response.message, ToastLength.Short).Show();
+                    }
+
+                }
+                else if (postJson.StatusCode == System.Net.HttpStatusCode.NotFound)
+                {
+                    Toast.MakeText(Activity, "Sugrio un problema con el procedimiento", ToastLength.Short).Show();
+                }
+            }
+            catch (Java.IO.IOException ex)
+            {
+                Console.WriteLine("mensaje de error en Listar Orden Detalle by Orden en el FRAGMENTO ORDENSOLUCIONAR0:"+ ex.Message);
+            }   
             
-            Orden ord = new Orden();
-            ord.idOrden = o.ID_ORDEN; //obtiene el ID del item seleccionado en la lista
-
-            HttpClient client = new HttpClient();
-            Uri url = new Uri("http://servicios.micmaproyectos.com/orden/buscarDetalleOrdenByIdOrden");
-
-            var json = JsonConvert.SerializeObject(ord);
-            var content = new StringContent(json, Encoding.UTF8, "application/json");
-            var postJson = await client.PostAsync(url, content);
-
-            if (postJson.StatusCode==System.Net.HttpStatusCode.OK)
-            {
-                string readJson = await postJson.Content.ReadAsStringAsync();
-                var response = JsonConvert.DeserializeObject<TramaDetalleOrden>(readJson);
-
-                if (response.status==true && response.code==1)
-                {
-                    Console.WriteLine(response.message);
-                    lstDo = response.lista;
-
-
-                    mAdapter = new ListOrdenDetalle_Adapter(lstDo);
-                    rvODetalle.SetAdapter(mAdapter);
-
-                    mAdapter.ItemClick += MAdapter_ItemClick;
-                }
-                else if (response.status==true && response.code==2)
-                {
-                    Toast.MakeText(Activity, response.message, ToastLength.Short).Show();
-                }
-
-            }
-            else if (postJson.StatusCode==System.Net.HttpStatusCode.NotFound)
-            {
-                Toast.MakeText(Activity, "Sugrio un problema con el procedimiento", ToastLength.Short).Show();
-            }
-
-
         }
 
 
@@ -210,64 +209,72 @@ namespace OrdenTecnica_App.Fragments
                 }
                 else
                 {
-                    Orden ord = new Orden();
-                    ord.idOrden = o.ID_ORDEN;
-                    ord.asunto = lblAsunto.Text;
-                    ord.fecha_atencion = DateTime.Now.ToString("yyyy-MM-dd");
-                    ord.hora_atencion = DateTime.Now.ToString("hh:mm");
-                    ord.remitente = lblClient.Text;
-                    ord.estado = 4;
-                    ord.id_sucursal = int.Parse(lblSucursal.Text);
-                    ord.id_empleado = int.Parse(o.FK_EMPLEADO);
+                    try
+                    {
+                        Orden ord = new Orden();
+                        ord.idOrden = o.ID_ORDEN;
+                        ord.asunto = lblAsunto.Text;
+                        ord.fecha_atencion = DateTime.Now.ToString("yyyy-MM-dd");
+                        ord.hora_atencion = DateTime.Now.ToString("hh:mm");
+                        ord.remitente = lblClient.Text;
+                        ord.estado = 4;
+                        ord.id_sucursal = int.Parse(lblSucursal.Text);
+                        ord.id_empleado = int.Parse(o.FK_EMPLEADO);
 
-                    HttpClient client = new HttpClient();
-                    Uri uri = new Uri("http://servicios.micmaproyectos.com/orden/actualizarOrden");
+                        HttpClient client = new HttpClient();
+                        Uri uri = new Uri("http://servicios.micmaproyectos.com/orden/actualizarOrden");
+
+                        var json = JsonConvert.SerializeObject(ord);
+                        var content = new StringContent(json, Encoding.UTF8, "application/json");
+                        var postJson = await client.PostAsync(uri, content);
+
+                        if (postJson.StatusCode == System.Net.HttpStatusCode.OK)
+                        {
+                            string readJson = await postJson.Content.ReadAsStringAsync();
+                            var response = JsonConvert.DeserializeObject<TramaOrden>(readJson);
+
+                            if (response.status == true && response.code == 1)
+                            {
+                                Console.WriteLine(response.message);
+                                alert = new AlertDialog.Builder(Activity);
+                                alert.SetTitle("MENSAJE DE CONFIRMACION");
+                                alert.SetMessage("Orden Tecnica Finalizada Correctamente");
+                                alert.SetPositiveButton("ACEPTAR", (sender, args) =>
+                                {
+                                    //AQUI NOS DEBE ENVIAR DE NUEVO A LA LISTA QUE ESTAN EN PROCESO
+                                    alert.Dispose();
+                                    postJson.Dispose(); //cerramos el servicio
+                                    iSolucionOrden.AbrirOrdenProceso();
+                                });
+                                Dialog dialog = alert.Create();
+                                dialog.Show();
+
+                            }
+                            else if (response.status == true && response.code == 2)
+                            {
+                                Console.WriteLine(response.message);
+                                alert = new AlertDialog.Builder(Activity);
+                                alert.SetTitle("MENSAJE DE CONFIRMACION");
+                                alert.SetMessage("No se pudo procesar la solicitud");
+                                alert.SetPositiveButton("ACEPTAR", (sender, args) =>
+                                {
+                                    //NOS MANTIENE EN EL MISMO FRAGMENTO
+                                    alert.Dispose();
+                                });
+                                Dialog dialog = alert.Create();
+                                dialog.Show();
+                            }
+                        }
+                        else if (postJson.StatusCode == System.Net.HttpStatusCode.NotFound)
+                        {
+                            Toast.MakeText(Activity, "servicio no encontrado", ToastLength.Short).Show();
+                        }
+                    }
+                    catch (Java.IO.IOException ex)
+                    {
+                        Console.WriteLine("mensaje de error en Boton finalizar Orden del FRAGMENTO ORDEN SOLUCIONAR: "+ ex.Message);
+                    }
                     
-                    var json = JsonConvert.SerializeObject(ord);
-                    var content = new StringContent(json, Encoding.UTF8, "application/json");
-                    var postJson = await client.PostAsync(uri, content);
-
-                    if (postJson.StatusCode == System.Net.HttpStatusCode.OK)
-                    {
-                        string readJson = await postJson.Content.ReadAsStringAsync();
-                        var response = JsonConvert.DeserializeObject<TramaOrden>(readJson);
-
-                        if (response.status == true && response.code == 1)
-                        {
-                            Console.WriteLine(response.message);
-                            alert = new AlertDialog.Builder(Activity);
-                            alert.SetTitle("MENSAJE DE CONFIRMACION");
-                            alert.SetMessage("Orden Tecnica Finalizada Correctamente");
-                            alert.SetPositiveButton("ACEPTAR", (sender, args) =>
-                            {
-                                //AQUI NOS DEBE ENVIAR DE NUEVO A LA LISTA QUE ESTAN EN PROCESO
-                                alert.Dispose();
-                                postJson.Dispose(); //cerramos el servicio
-                                iSolucionOrden.AbrirOrdenProceso();
-                            });
-                            Dialog dialog = alert.Create();
-                            dialog.Show();
-
-                        }
-                        else if (response.status == true && response.code == 2)
-                        {
-                            Console.WriteLine(response.message);
-                            alert = new AlertDialog.Builder(Activity);
-                            alert.SetTitle("MENSAJE DE CONFIRMACION");
-                            alert.SetMessage("No se pudo procesar la solicitud");
-                            alert.SetPositiveButton("ACEPTAR", (sender, args) =>
-                            {
-                                //NOS MANTIENE EN EL MISMO FRAGMENTO
-                                alert.Dispose();
-                            });
-                            Dialog dialog = alert.Create();
-                            dialog.Show();
-                        }
-                    }
-                    else if (postJson.StatusCode == System.Net.HttpStatusCode.NotFound)
-                    {
-                        Toast.MakeText(Activity, "servicio no encontrado", ToastLength.Short).Show();
-                    }
                 }
 
             }

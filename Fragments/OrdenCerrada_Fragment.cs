@@ -94,87 +94,102 @@ namespace OrdenTecnica_App.Fragments
 
         public async void List1()
         {
-            
-            HttpClient client = new HttpClient();
-            Uri url = new Uri("http://servicios.micmaproyectos.com/orden/buscarOrdenByEmpleado");
-
-            var json = JsonConvert.SerializeObject(UserLogin._fk_empleado);
-            var content = new StringContent(json, Encoding.UTF8, "application/json");
-
-            var postJson = await client.PostAsync(url, content);
-
-            Console.WriteLine("json enviado: " + json);
-            Console.WriteLine("estado postjson: " + postJson.StatusCode);
-            if (postJson.StatusCode == System.Net.HttpStatusCode.OK)
+            try
             {
-                string readJson = await postJson.Content.ReadAsStringAsync();
-                Console.WriteLine("readJson: " + readJson);
-                var response = JsonConvert.DeserializeObject<TramaOrdenLista>(readJson);
-                Console.WriteLine("response: " + response);
-                Console.WriteLine("status: " + response.status + " code: " + response.code);
-                if (response.status == true && response.code == 1)
+                HttpClient client = new HttpClient();
+                Uri url = new Uri("http://servicios.micmaproyectos.com/orden/buscarOrdenByEmpleado");
+
+                var json = JsonConvert.SerializeObject(UserLogin._fk_empleado);
+                var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+                var postJson = await client.PostAsync(url, content);
+
+                Console.WriteLine("json enviado: " + json);
+                Console.WriteLine("estado postjson: " + postJson.StatusCode);
+                if (postJson.StatusCode == System.Net.HttpStatusCode.OK)
                 {
-                    lstOrden = new List<OrdenWs>();
+                    string readJson = await postJson.Content.ReadAsStringAsync();
+                    Console.WriteLine("readJson: " + readJson);
+                    var response = JsonConvert.DeserializeObject<TramaOrdenLista>(readJson);
+                    Console.WriteLine("response: " + response);
+                    Console.WriteLine("status: " + response.status + " code: " + response.code);
+                    if (response.status == true && response.code == 1)
+                    {
+                        lstOrden = new List<OrdenWs>();
 
-                    Console.WriteLine("mensaje: " + response.message);
+                        Console.WriteLine("mensaje: " + response.message);
 
-                    lstOrden = response.lista;
+                        lstOrden = response.lista;
 
-                    mAdapter = new ListOrden_Adapter(lstOrden);
-                    Console.WriteLine("datos llenados en el mAdapter");
-                    rvListORden.SetAdapter(mAdapter);
-                    Console.WriteLine("seteando en el recyclerView la nueva lista");
-                    postJson.Dispose();//Cerramos el servicio
-                    mAdapter.ItemClick += MAdapter_ItemClick1;
-                }
-                else if (response.status == true && response.code == 2)
-                {
-                    Toast.MakeText(Activity, response.message, ToastLength.Short).Show();
+                        mAdapter = new ListOrden_Adapter(lstOrden);
+                        Console.WriteLine("datos llenados en el mAdapter");
+                        rvListORden.SetAdapter(mAdapter);
+                        Console.WriteLine("seteando en el recyclerView la nueva lista");
+                        postJson.Dispose();//Cerramos el servicio
+                        mAdapter.ItemClick += MAdapter_ItemClick1;
+                    }
+                    else if (response.status == true && response.code == 2)
+                    {
+                        Toast.MakeText(Activity, response.message, ToastLength.Short).Show();
+                    }
                 }
             }
+            catch (Java.IO.IOException ex)
+            {
+                Console.WriteLine("mensaje de error en list 1 del FRAMENTO ORDEN CERRADA: "+ ex.Message);
+            }
+            
         }
 
         public async void List5()
         {
-            Orden ordEstad = new Orden();
-            ordEstad.estado = 5;
-            HttpClient client = new HttpClient();
-            Uri url = new Uri("http://servicios.micmaproyectos.com/orden/buscarOrdenByEstado ");
-
-            var json = JsonConvert.SerializeObject(ordEstad);
-            var content = new StringContent(json, Encoding.UTF8, "application/json");
-
-            var postJson = await client.PostAsync(url, content);
-
-            Console.WriteLine("json enviado: " + json);
-            Console.WriteLine("estado postjson: " + postJson.StatusCode);
-            if (postJson.StatusCode == System.Net.HttpStatusCode.OK)
+            try
             {
-                string readJson = await postJson.Content.ReadAsStringAsync();
-                Console.WriteLine("readJson: " + readJson);
-                var response = JsonConvert.DeserializeObject<TramaOrdenLista>(readJson);
-                Console.WriteLine("response: " + response);
-                Console.WriteLine("status: " + response.status + " code: " + response.code);
-                if (response.status == true && response.code == 1)
+                Orden ordEstad = new Orden();
+                ordEstad.estado = 5;
+                HttpClient client = new HttpClient();
+                Uri url = new Uri("http://servicios.micmaproyectos.com/orden/buscarOrdenByEstado ");
+
+                var json = JsonConvert.SerializeObject(ordEstad);
+                var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+                var postJson = await client.PostAsync(url, content);
+
+                Console.WriteLine("json enviado: " + json);
+                Console.WriteLine("estado postjson: " + postJson.StatusCode);
+                if (postJson.StatusCode == System.Net.HttpStatusCode.OK)
                 {
-                    lstOrden = new List<OrdenWs>();
+                    string readJson = await postJson.Content.ReadAsStringAsync();
+                    Console.WriteLine("readJson: " + readJson);
+                    var response = JsonConvert.DeserializeObject<TramaOrdenLista>(readJson);
+                    Console.WriteLine("response: " + response);
+                    Console.WriteLine("status: " + response.status + " code: " + response.code);
+                    if (response.status == true && response.code == 1)
+                    {
+                        lstOrden = new List<OrdenWs>();
 
-                    Console.WriteLine("mensaje: " + response.message);
+                        Console.WriteLine("mensaje: " + response.message);
 
-                    lstOrden = response.lista;
+                        lstOrden = response.lista;
 
-                    mAdapter = new ListOrden_Adapter(lstOrden);
-                    Console.WriteLine("datos llenados en el mAdapter");
-                    rvListORden.SetAdapter(mAdapter);
-                    Console.WriteLine("seteando en el recyclerView la nueva lista");
-                    postJson.Dispose();//Cerramos el servicio
-                    mAdapter.ItemClick += MAdapter_ItemClick1;
-                }
-                else if (response.status == true && response.code == 2)
-                {
-                    Toast.MakeText(Activity, response.message, ToastLength.Short).Show();
+                        mAdapter = new ListOrden_Adapter(lstOrden);
+                        Console.WriteLine("datos llenados en el mAdapter");
+                        rvListORden.SetAdapter(mAdapter);
+                        Console.WriteLine("seteando en el recyclerView la nueva lista");
+                        postJson.Dispose();//Cerramos el servicio
+                        mAdapter.ItemClick += MAdapter_ItemClick1;
+                    }
+                    else if (response.status == true && response.code == 2)
+                    {
+                        Toast.MakeText(Activity, response.message, ToastLength.Short).Show();
+                    }
                 }
             }
+            catch (Java.IO.IOException ex)
+            {
+                Console.WriteLine("mensaje de error en lista 5 del fragmento ORDEN CERRADA: "+ ex.Message);
+            }
+            
         }
 
 

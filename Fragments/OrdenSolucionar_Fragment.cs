@@ -345,65 +345,72 @@ namespace OrdenTecnica_App.Fragments
         public async void Generar(object sender, EventArgs e)
         {
             
-
             if (txtDiagnostico.Text=="")
             {
                 Toast.MakeText(Activity, "Campos Vacios, Ingrese datos", ToastLength.Short).Show();
             }
             else
             {
-                UpdateDetalleOrden uD = new UpdateDetalleOrden
+
+                try
                 {
-                    idDetalleOrden = id,
-                    descripcion = txtDiagnostico.Text,
-                    imagen_inicio = PathImgInicio,
-                    imagen_evidencia = PathImgFin,
-                    firma_cliente = PathFirmaCli,
-                    firma_tecnico = PathFirmaTec,
-                    estado = 2,
-                    id_dispositivo = int.Parse(fk_dispositivo)
-                };
-
-                HttpClient client = new HttpClient();
-                Uri url = new Uri("http://servicios.micmaproyectos.com/DetalleOrden/actualizarDetalleOrden");
-
-                var json = JsonConvert.SerializeObject(uD);
-                var content = new StringContent(json, Encoding.UTF8, "application/json");
-                var postJson = await client.PostAsync(url, content);
-
-                Console.WriteLine("json update detalle orden enviado: " + json);
-                if (postJson.StatusCode == System.Net.HttpStatusCode.OK)
-                {
-                    string readJson = await postJson.Content.ReadAsStringAsync();
-                    var response = JsonConvert.DeserializeObject<TramaOrden>(readJson);
-
-                    if (response.status == true && response.code == 1)
+                    UpdateDetalleOrden uD = new UpdateDetalleOrden
                     {
-                        Console.WriteLine(response.message);
-                        alert = new AlertDialog.Builder(Activity);
-                        alert.SetTitle("Mensaje de confirmacion");
-                        alert.SetMessage("Problema Solucionado Correctamente");
-                        alert.SetPositiveButton("ACEPTAR", (sender, args) =>
+                        idDetalleOrden = id,
+                        descripcion = txtDiagnostico.Text,
+                        imagen_inicio = PathImgInicio,
+                        imagen_evidencia = PathImgFin,
+                        firma_cliente = PathFirmaCli,
+                        firma_tecnico = PathFirmaTec,
+                        estado = 2,
+                        id_dispositivo = int.Parse(fk_dispositivo)
+                    };
+
+                    HttpClient client = new HttpClient();
+                    Uri url = new Uri("http://servicios.micmaproyectos.com/DetalleOrden/actualizarDetalleOrden");
+
+                    var json = JsonConvert.SerializeObject(uD);
+                    var content = new StringContent(json, Encoding.UTF8, "application/json");
+                    var postJson = await client.PostAsync(url, content);
+
+                    Console.WriteLine("json update detalle orden enviado: " + json);
+                    if (postJson.StatusCode == System.Net.HttpStatusCode.OK)
+                    {
+                        string readJson = await postJson.Content.ReadAsStringAsync();
+                        var response = JsonConvert.DeserializeObject<TramaOrden>(readJson);
+
+                        if (response.status == true && response.code == 1)
                         {
-                            //cuando se actualiza la orden este nos enviará al fragmento anterior
-                            alert.Dispose();
-                            postJson.Dispose();//Cerramos el servicio
-                            FragmentManager.PopBackStack(); //nos envia al fragmento anterior
-                            
-                        });
-                        Dialog dialog = alert.Create();
-                        dialog.Show();
-                    }
-                    else if (response.status == true && response.code == 2)
-                    {
-                        Toast.MakeText(Activity, response.message, ToastLength.Short).Show();
-                    }
-                }
-                else if (postJson.StatusCode == System.Net.HttpStatusCode.NotFound)
-                {
-                    Toast.MakeText(Activity, "Se genero un problema interno", ToastLength.Short).Show();
-                }
+                            Console.WriteLine(response.message);
+                            alert = new AlertDialog.Builder(Activity);
+                            alert.SetTitle("Mensaje de confirmacion");
+                            alert.SetMessage("Problema Solucionado Correctamente");
+                            alert.SetPositiveButton("ACEPTAR", (sender, args) =>
+                            {
+                                //cuando se actualiza la orden este nos enviará al fragmento anterior
+                                alert.Dispose();
+                                postJson.Dispose();//Cerramos el servicio
+                                FragmentManager.PopBackStack(); //nos envia al fragmento anterior
 
+                            });
+                            Dialog dialog = alert.Create();
+                            dialog.Show();
+                        }
+                        else if (response.status == true && response.code == 2)
+                        {
+                            Toast.MakeText(Activity, response.message, ToastLength.Short).Show();
+                        }
+                    }
+                    else if (postJson.StatusCode == System.Net.HttpStatusCode.NotFound)
+                    {
+                        Toast.MakeText(Activity, "Se genero un problema interno", ToastLength.Short).Show();
+                    }
+                }
+                catch (Java.IO.IOException ex)
+                {
+                    Console.WriteLine("mensaje de error en Generar deL FRAGMENTO ORDEN SOLUCIONAR: "+ ex.Message);
+                }
+                
             }
 
         }

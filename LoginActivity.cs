@@ -94,70 +94,79 @@ namespace OrdenTecnica_App
             }
             else
             {
-                Usuario login = new Usuario(u, c);
+                try
+                {
+                    Usuario login = new Usuario(u, c);
 
-                HttpClient client = new HttpClient();
-                Uri url = new Uri("http://servicios.micmaproyectos.com/usuario/login");
+                    HttpClient client = new HttpClient();
+                    Uri url = new Uri("http://servicios.micmaproyectos.com/usuario/login");
+
+                    var json = JsonConvert.SerializeObject(login);
+                    var content = new StringContent(json, Encoding.UTF8, "application/json");
+                    var postJson = await client.PostAsync(url, content);
+
+                    Console.WriteLine(json);
+                    if (postJson.StatusCode == System.Net.HttpStatusCode.OK)
+                    {
+                        Console.WriteLine("estado de enviso json: " + postJson.StatusCode);
+
+                        string readJson = await postJson.Content.ReadAsStringAsync();
+
+
+                        var response = JsonConvert.DeserializeObject<TramaUsuario>(readJson);
+
+                        if (response.STATUS == true && response.CODE == 1)
+                        {
+                            Console.WriteLine("mensaje: " + response.MESSAGE);
+                            Console.WriteLine("\n id usuario: " + response.OBJETO._id_usuario +
+                                "\n cod_usuario: " + response.OBJETO._cod_usuario +
+                                "\n usuario: " + response.OBJETO._contraseña +
+                                "\n foto: " + response.OBJETO._foto +
+                                "\n estado: " + response.OBJETO._estado +
+                                "\n perfil: " + response.OBJETO._fk_perfil +
+                                "\n empleado: " + response.OBJETO._fk_empleado +
+                                "\n nombres: " + response.OBJETO._nombres +
+                                "\n apellidos: " + response.OBJETO._apellidos);
+
+                            ISharedPreferences pref = GetSharedPreferences("MisPreferencias", FileCreationMode.Private);
+                            ISharedPreferencesEditor editor = pref.Edit();
+                            editor.PutString("idUser", response.OBJETO._id_usuario); //¿porque en string?
+                            editor.PutString("nombreUser", response.OBJETO._nombres + ' ' + response.OBJETO._apellidos);
+                            editor.PutInt("cargo", response.OBJETO._fk_perfil);
+                            editor.PutString("fotoUser", response.OBJETO._foto);
+                            editor.PutInt("idEmpleado", response.OBJETO._fk_empleado);
+                            editor.Apply();
+
+
+                            var intent = new Intent(this, typeof(MainActivity));
+                            intent.PutExtra(MainActivity.LLAVE_COD_EMPLEADO, response.OBJETO._fk_empleado);
+                            StartActivity(intent);
+                            postJson.Dispose(); //cerramos el servicio
+                            LimpiarCampos();
+
+                            UserLogin._fk_empleado = response.OBJETO._fk_empleado;
+                            UserLogin._fk_perfil = response.OBJETO._fk_perfil;
+                            Console.WriteLine("codigo de empleado en static: " + UserLogin._fk_empleado);
+
+                        }
+                        else if (response.STATUS == true && response.CODE == 2)
+                        {
+                            Toast.MakeText(this, response.MESSAGE, ToastLength.Short).Show();
+                        }
+
+
+                    }
+                    else if (postJson.StatusCode == System.Net.HttpStatusCode.NotFound)
+                    {
+                        Toast.MakeText(this, "no se pudo procesar la operacion", ToastLength.Short).Show();
+                    }
+                }
+                catch (Java.IO.IOException e)
+                {
+                    Console.WriteLine("mensaje: " + e.Message);
+                }
+
                 
-                var json = JsonConvert.SerializeObject(login);
-                var content = new StringContent(json, Encoding.UTF8, "application/json");
-                var postJson = await client.PostAsync(url, content);
-
-                Console.WriteLine(json);
-                if (postJson.StatusCode==System.Net.HttpStatusCode.OK)
-                {
-                    Console.WriteLine("estado de enviso json: " + postJson.StatusCode);
-
-                    string readJson = await postJson.Content.ReadAsStringAsync();
-
-                    
-                    var response = JsonConvert.DeserializeObject<TramaUsuario>(readJson);
-                    
-                    if (response.STATUS==true && response.CODE== 1)
-                    {
-                        Console.WriteLine("mensaje: " + response.MESSAGE);
-                        Console.WriteLine("\n id usuario: " + response.OBJETO._id_usuario +
-                            "\n cod_usuario: " + response.OBJETO._cod_usuario +
-                            "\n usuario: " + response.OBJETO._contraseña +
-                            "\n foto: " + response.OBJETO._foto +
-                            "\n estado: " + response.OBJETO._estado +
-                            "\n perfil: " + response.OBJETO._fk_perfil +
-                            "\n empleado: " + response.OBJETO._fk_empleado +
-                            "\n nombres: " + response.OBJETO._nombres +
-                            "\n apellidos: " + response.OBJETO._apellidos);
-
-                        ISharedPreferences pref = GetSharedPreferences("MisPreferencias",FileCreationMode.Private);
-                        ISharedPreferencesEditor editor = pref.Edit();
-                        editor.PutString("idUser",response.OBJETO._id_usuario); //¿porque en string?
-                        editor.PutString("nombreUser",response.OBJETO._nombres + ' '+ response.OBJETO._apellidos);
-                        editor.PutInt("cargo",response.OBJETO._fk_perfil);
-                        editor.PutString("fotoUser",response.OBJETO._foto);
-                        editor.PutInt("idEmpleado", response.OBJETO._fk_empleado);
-                        editor.Apply();
-
-
-                        var intent = new Intent(this, typeof(MainActivity));
-                        intent.PutExtra(MainActivity.LLAVE_COD_EMPLEADO, response.OBJETO._fk_empleado);
-                        StartActivity(intent);
-                        postJson.Dispose(); //cerramos el servicio
-                        LimpiarCampos();
-
-                        UserLogin._fk_empleado = response.OBJETO._fk_empleado;
-                        UserLogin._fk_perfil = response.OBJETO._fk_perfil;
-                        Console.WriteLine("codigo de empleado en static: " + UserLogin._fk_empleado);
-
-                    }
-                    else if (response.STATUS==true && response.CODE==2)
-                    {
-                        Toast.MakeText(this, response.MESSAGE,ToastLength.Short).Show();
-                    }
-
-
-                }
-                else if (postJson.StatusCode==System.Net.HttpStatusCode.NotFound)
-                {
-                    Toast.MakeText(this, "no se pudo procesar la operacion", ToastLength.Short).Show();
-                }
                 
             }
         }

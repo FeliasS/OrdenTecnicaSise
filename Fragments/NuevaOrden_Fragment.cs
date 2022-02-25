@@ -135,9 +135,9 @@ namespace OrdenTecnica_App.Fragments
             txtProblema.Text = "";
         }
 
-        private bool CamposVaciosOrden(string client, string sucursal)
+        private bool CamposVaciosOrden(string client, int sucursal, string asunto, string dispositivo, string problema)
         {
-            if (client.Equals("") || sucursal.Equals(""))
+            if (client.Equals("") || sucursal==0 || asunto.Equals("") || dispositivo.Equals("") || problema.Equals("") || lstDO.Count.Equals(0))
             {
                 return true;
             }
@@ -155,7 +155,7 @@ namespace OrdenTecnica_App.Fragments
 
         private async void AgregarOrden(Orden o)
         {
-            if (CamposVaciosOrden(acCliente.Text, acSucursal.Text).Equals(true))
+            if (CamposVaciosOrden(acCliente.Text, int.Parse(acSucursal.Text), txtAsunto.Text, txtProblema.Text, acDispositivo.Text).Equals(true))
             {
                 Toast.MakeText(Activity, "Campos Vacios, Ingrese datos", ToastLength.Short).Show();
             }
@@ -165,19 +165,32 @@ namespace OrdenTecnica_App.Fragments
             }
             else
             {
-                Orden addOrden = new Orden();
-                addOrden.cod_orden = o.cod_orden;
-                addOrden.asunto = o.asunto;
-                addOrden.fecha_orden = o.fecha_orden;
-                addOrden.hora_orden = o.hora_orden;
-                addOrden.remitente = o.remitente;
-                addOrden.estado = o.estado;
-                addOrden.id_sucursal = o.id_sucursal;
-                addOrden.id_empleado = o.id_empleado;
-                addOrden.listaDetalleOrden= o.listaDetalleOrden; //Recibe la lista
-
                 try
                 {
+                    //Orden addOrden = new Orden();
+                    //addOrden.cod_orden = o.cod_orden;
+                    //addOrden.asunto = o.asunto;
+                    //addOrden.fecha_orden = o.fecha_orden;
+                    //addOrden.hora_orden = o.hora_orden;
+                    //addOrden.remitente = o.remitente;
+                    //addOrden.estado = o.estado;
+                    //addOrden.id_sucursal = o.id_sucursal;
+                    //addOrden.id_empleado = o.id_empleado;
+                    //addOrden.listaDetalleOrden = o.listaDetalleOrden; //Recibe la lista
+
+                    Orden addOrden = new Orden
+                    {
+                        cod_orden = o.cod_orden,
+                        asunto = o.asunto,
+                        fecha_orden = o.fecha_orden,
+                        hora_orden = o.hora_orden,
+                        remitente = o.remitente,
+                        estado = o.estado,
+                        id_sucursal = o.id_sucursal,
+                        id_empleado = o.id_empleado,
+                        listaDetalleOrden = o.listaDetalleOrden
+                    };
+
                     HttpClient client = new HttpClient();
                     Uri url = new Uri("http://servicios.micmaproyectos.com/orden/registrar ");
                     var json = JsonConvert.SerializeObject(addOrden);
@@ -285,6 +298,7 @@ namespace OrdenTecnica_App.Fragments
 
         private void BtnGenerarOrden_Click(object sender, EventArgs e)
         {
+            acSucursal.Text = "0"; //cambio temporar hasta implementar el autocomplete 
             Orden nOrden = new Orden
             {
                 cod_orden = "",

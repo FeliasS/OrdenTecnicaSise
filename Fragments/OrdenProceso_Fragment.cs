@@ -99,78 +99,93 @@ namespace OrdenTecnica_App.Fragments
 
         private async void List1()
         {
-
-            OrdenAEstado oa = new OrdenAEstado();
-            oa.idEstado = 3;
-            oa.idEmpleado = UserLogin._fk_empleado;
-
-            Console.WriteLine("estado: " + oa.idEstado+ " Empleado: "+ oa.idEmpleado);
-            HttpClient client = new HttpClient();
-            Uri url = new Uri("http://servicios.micmaproyectos.com/orden/buscarOrdenByEstadoAndEmpleado");
-
-            var json = JsonConvert.SerializeObject(oa);
-            Console.WriteLine("parametros enviados: " + json);
-
-            var content = new StringContent(json, Encoding.UTF8, "application/json");
-            var postJson = await client.PostAsync(url, content);
-
-            if (postJson.StatusCode == System.Net.HttpStatusCode.OK)
+            try
             {
-                string readJson = await postJson.Content.ReadAsStringAsync();
-                var response = JsonConvert.DeserializeObject<TramaOrdenLista>(readJson);
+                OrdenAEstado oa = new OrdenAEstado();
+                oa.idEstado = 3;
+                oa.idEmpleado = UserLogin._fk_empleado;
 
-                if (response.status == true && response.code == 1)
+                Console.WriteLine("estado: " + oa.idEstado + " Empleado: " + oa.idEmpleado);
+                HttpClient client = new HttpClient();
+                Uri url = new Uri("http://servicios.micmaproyectos.com/orden/buscarOrdenByEstadoAndEmpleado");
+
+                var json = JsonConvert.SerializeObject(oa);
+                Console.WriteLine("parametros enviados: " + json);
+
+                var content = new StringContent(json, Encoding.UTF8, "application/json");
+                var postJson = await client.PostAsync(url, content);
+
+                if (postJson.StatusCode == System.Net.HttpStatusCode.OK)
                 {
-                    Console.WriteLine("mensaje: " + response.message);
-                    lstOrdenProceso = response.lista;
+                    string readJson = await postJson.Content.ReadAsStringAsync();
+                    var response = JsonConvert.DeserializeObject<TramaOrdenLista>(readJson);
 
-                    mAdapter = new ListOrden_Adapter(lstOrdenProceso);
-                    rvOrdenProceso.SetAdapter(mAdapter);
-                    postJson.Dispose();//Cerramos el servicio
-                    mAdapter.ItemClick += MAdapter_ItemClick;
+                    if (response.status == true && response.code == 1)
+                    {
+                        Console.WriteLine("mensaje: " + response.message);
+                        lstOrdenProceso = response.lista;
+
+                        mAdapter = new ListOrden_Adapter(lstOrdenProceso);
+                        rvOrdenProceso.SetAdapter(mAdapter);
+                        postJson.Dispose();//Cerramos el servicio
+                        mAdapter.ItemClick += MAdapter_ItemClick;
+                    }
+                }
+                else if (postJson.StatusCode == System.Net.HttpStatusCode.NotFound)
+                {
+                    Toast.MakeText(Activity, "no se pudo procesar la operacion", ToastLength.Short).Show();
                 }
             }
-            else if (postJson.StatusCode == System.Net.HttpStatusCode.NotFound)
+            catch (Java.IO.IOException e)
             {
-                Toast.MakeText(Activity, "no se pudo procesar la operacion", ToastLength.Short).Show();
+                Console.WriteLine("mensaje de error en lista 1 del fragmento ORDEN PROCESO: "+ e.Message);
             }
+            
         }
 
         private async void List5()
         {
-            Orden est = new Orden();
-            est.estado = 3;
-
-            Console.WriteLine("dato: " + est.estado);
-            HttpClient client = new HttpClient();
-            Uri url = new Uri("http://servicios.micmaproyectos.com/orden/buscarOrdenByEstado");
-
-            var json = JsonConvert.SerializeObject(est);
-            Console.WriteLine("parametros enviados: " + json);
-
-            var content = new StringContent(json, Encoding.UTF8, "application/json");
-            var postJson = await client.PostAsync(url, content);
-
-            if (postJson.StatusCode == System.Net.HttpStatusCode.OK)
+            try
             {
-                string readJson = await postJson.Content.ReadAsStringAsync();
-                var response = JsonConvert.DeserializeObject<TramaOrdenLista>(readJson);
+                Orden est = new Orden();
+                est.estado = 3;
 
-                if (response.status == true && response.code == 1)
+                Console.WriteLine("dato: " + est.estado);
+                HttpClient client = new HttpClient();
+                Uri url = new Uri("http://servicios.micmaproyectos.com/orden/buscarOrdenByEstado");
+
+                var json = JsonConvert.SerializeObject(est);
+                Console.WriteLine("parametros enviados: " + json);
+
+                var content = new StringContent(json, Encoding.UTF8, "application/json");
+                var postJson = await client.PostAsync(url, content);
+
+                if (postJson.StatusCode == System.Net.HttpStatusCode.OK)
                 {
-                    Console.WriteLine("mensaje: " + response.message);
-                    lstOrdenProceso = response.lista;
+                    string readJson = await postJson.Content.ReadAsStringAsync();
+                    var response = JsonConvert.DeserializeObject<TramaOrdenLista>(readJson);
 
-                    mAdapter = new ListOrden_Adapter(lstOrdenProceso);
-                    rvOrdenProceso.SetAdapter(mAdapter);
-                    postJson.Dispose();//Cerramos el servicio
-                    mAdapter.ItemClick += MAdapter_ItemClick;
+                    if (response.status == true && response.code == 1)
+                    {
+                        Console.WriteLine("mensaje: " + response.message);
+                        lstOrdenProceso = response.lista;
+
+                        mAdapter = new ListOrden_Adapter(lstOrdenProceso);
+                        rvOrdenProceso.SetAdapter(mAdapter);
+                        postJson.Dispose();//Cerramos el servicio
+                        mAdapter.ItemClick += MAdapter_ItemClick;
+                    }
+                }
+                else if (postJson.StatusCode == System.Net.HttpStatusCode.NotFound)
+                {
+                    Toast.MakeText(Activity, "no se pudo procesar la operacion", ToastLength.Short).Show();
                 }
             }
-            else if (postJson.StatusCode == System.Net.HttpStatusCode.NotFound)
+            catch (Java.IO.IOException e)
             {
-                Toast.MakeText(Activity, "no se pudo procesar la operacion", ToastLength.Short).Show();
+                Console.WriteLine("mensaje de error en lista 5 del FRAGMENTO ORDEN PROCESO:"+ e.Message);
             }
+            
         }
         private void MAdapter_ItemClick(object sender, int e)
         {

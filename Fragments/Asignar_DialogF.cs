@@ -97,37 +97,45 @@ namespace OrdenTecnica_App.Fragments
             }
             else
             {
-                Console.WriteLine("id obtenido de la lista: " + ATec.idOrden);
-                HttpClient client = new HttpClient();
-                Uri url = new Uri("http://servicios.micmaproyectos.com/orden/asignarTecnico");
-
-                var json = JsonConvert.SerializeObject(ATec);
-                var content = new StringContent(json, Encoding.UTF8, "application/json");
-                var postJson = await client.PostAsync(url, content);
-
-                Console.WriteLine(json);
-                if (postJson.StatusCode == System.Net.HttpStatusCode.OK)
+                try
                 {
-                    string readJson = await postJson.Content.ReadAsStringAsync();
-                    var response = JsonConvert.DeserializeObject<TramaOrden>(readJson);
+                    Console.WriteLine("id obtenido de la lista: " + ATec.idOrden);
+                    HttpClient client = new HttpClient();
+                    Uri url = new Uri("http://servicios.micmaproyectos.com/orden/asignarTecnico");
 
-                    Console.WriteLine("status: " + response.status + " code: " + response.code);
-                    if (response.status == true && response.code == 1)
+                    var json = JsonConvert.SerializeObject(ATec);
+                    var content = new StringContent(json, Encoding.UTF8, "application/json");
+                    var postJson = await client.PostAsync(url, content);
+
+                    Console.WriteLine(json);
+                    if (postJson.StatusCode == System.Net.HttpStatusCode.OK)
                     {
-                        Console.WriteLine(response.message);
-                        // 2) actualizamos el estado de la orden
-                        UpdateOrden(ATec.idOrden);
-                        
+                        string readJson = await postJson.Content.ReadAsStringAsync();
+                        var response = JsonConvert.DeserializeObject<TramaOrden>(readJson);
+
+                        Console.WriteLine("status: " + response.status + " code: " + response.code);
+                        if (response.status == true && response.code == 1)
+                        {
+                            Console.WriteLine(response.message);
+                            // 2) actualizamos el estado de la orden
+                            UpdateOrden(ATec.idOrden);
+
+                        }
+                        else if (response.status == true && response.code == 2)
+                        {
+                            Console.WriteLine(response.message);
+                        }
                     }
-                    else if (response.status==true && response.code==2)
+                    else if (postJson.StatusCode == System.Net.HttpStatusCode.NotFound)
                     {
-                        Console.WriteLine(response.message);
+                        Console.WriteLine("Error al momento de realizar la operacion");
                     }
                 }
-                else if (postJson.StatusCode == System.Net.HttpStatusCode.NotFound)
+                catch (Java.IO.IOException ex)
                 {
-                    Console.WriteLine("Error al momento de realizar la operacion");
+                    Console.WriteLine("mensaje de error en boton asignar del fragmento ASIGNAR DIALOGF: "+ ex.Message);
                 }
+                
             }
 
             
@@ -145,39 +153,45 @@ namespace OrdenTecnica_App.Fragments
 
         private async void ListTecnicos()
         {
-            Tecnicos lstT = new Tecnicos();
-
-            HttpClient client = new HttpClient();
-            Uri uri = new Uri("http://servicios.micmaproyectos.com/tecnico/listarTodos");
-
-            var JsonGet = await client.GetAsync(uri);
-
-            if (JsonGet.StatusCode==System.Net.HttpStatusCode.OK)
+            try
             {
-                string readJSON = await JsonGet.Content.ReadAsStringAsync();
-                var response = JsonConvert.DeserializeObject<TramaTecnicoLista>(readJSON);
-                Console.WriteLine("status: " + response.status + " code: " + response.code);
-                if (response.status==true && response.code==1)
-                {
-                    Console.WriteLine(response.message);
-                    lstTecnico = response.lista;
-                    mAdapter = new ListTecnicos_Adapter(lstTecnico);
-                    rvAsigTecnico.SetAdapter(mAdapter);
+                Tecnicos lstT = new Tecnicos();
 
-                    mAdapter.ItemClick += MAdapter_ItemClick;
-                }
-                else if (response.status==true && response.code==2)
-                {
-                    Console.WriteLine(response.message + " en lista de tecnicos.");
-                }
+                HttpClient client = new HttpClient();
+                Uri uri = new Uri("http://servicios.micmaproyectos.com/tecnico/listarTodos");
 
+                var JsonGet = await client.GetAsync(uri);
+
+                if (JsonGet.StatusCode == System.Net.HttpStatusCode.OK)
+                {
+                    string readJSON = await JsonGet.Content.ReadAsStringAsync();
+                    var response = JsonConvert.DeserializeObject<TramaTecnicoLista>(readJSON);
+                    Console.WriteLine("status: " + response.status + " code: " + response.code);
+                    if (response.status == true && response.code == 1)
+                    {
+                        Console.WriteLine(response.message);
+                        lstTecnico = response.lista;
+                        mAdapter = new ListTecnicos_Adapter(lstTecnico);
+                        rvAsigTecnico.SetAdapter(mAdapter);
+
+                        mAdapter.ItemClick += MAdapter_ItemClick;
+                    }
+                    else if (response.status == true && response.code == 2)
+                    {
+                        Console.WriteLine(response.message + " en lista de tecnicos.");
+                    }
+
+                }
+                else if (JsonGet.StatusCode == System.Net.HttpStatusCode.NotFound)
+                {
+                    Console.WriteLine("No se encontro la URL");
+                }
             }
-            else if (JsonGet.StatusCode==System.Net.HttpStatusCode.NotFound)
+            catch (Java.IO.IOException ex)
             {
-                Console.WriteLine("No se encontro la URL");
+                Console.WriteLine("mensaje de error en listar Tecnicos en el fragmento ASIGNAR_DIALOGF: "+ ex.Message);
             }
-
-
+            
         }
 
         private void MAdapter_ItemClick(object sender, int e)
@@ -185,58 +199,63 @@ namespace OrdenTecnica_App.Fragments
             lblTecnico.Text = lstTecnico[e].NOMBRES +" "+ lstTecnico[e].APELLIDOS;
             idEmpleado = lstTecnico[e].ID_EMPLEADO;
             Console.WriteLine("id del empleado seleccionado: " + idEmpleado);
-            //Toast.MakeText(Activity, "mensaje asignado, falta implementacon", ToastLength.Short).Show();
-
-           
-
+            
         }
 
         async void UpdateOrden(int idOrden)
         {
-            OrdenIDandEst oe = new OrdenIDandEst();
-            oe.idOrden = idOrden;
-            oe.idEstado =2;
-
-            HttpClient client = new HttpClient();
-            Uri url = new Uri("http://servicios.micmaproyectos.com/orden/actualizarEstadoOrden");
-
-            var json = JsonConvert.SerializeObject(oe);
-            var content = new StringContent(json, Encoding.UTF8, "application/json");
-            var postJson = await client.PostAsync(url, content);
-
-            if (postJson.StatusCode==System.Net.HttpStatusCode.OK)
+            try
             {
-                string readJson = await postJson.Content.ReadAsStringAsync();
-                var response = JsonConvert.DeserializeObject<TramaOrden>(readJson);
+                OrdenIDandEst oe = new OrdenIDandEst();
+                oe.idOrden = idOrden;
+                oe.idEstado = 2;
 
-                if (response.status==true && response.code==1)
+                HttpClient client = new HttpClient();
+                Uri url = new Uri("http://servicios.micmaproyectos.com/orden/actualizarEstadoOrden");
+
+                var json = JsonConvert.SerializeObject(oe);
+                var content = new StringContent(json, Encoding.UTF8, "application/json");
+                var postJson = await client.PostAsync(url, content);
+
+                if (postJson.StatusCode == System.Net.HttpStatusCode.OK)
                 {
-                    Console.WriteLine(response.message);
-                    AlertDialog.Builder alert1 = new AlertDialog.Builder(Activity);
-                    alert1.SetTitle("MENSAJE DE CONFIRMACION");
-                    alert1.SetMessage("Tecnico asignado exitosamente");
-                    alert1.SetPositiveButton("ACEPTAR", (sender, args) => 
+                    string readJson = await postJson.Content.ReadAsStringAsync();
+                    var response = JsonConvert.DeserializeObject<TramaOrden>(readJson);
+
+                    if (response.status == true && response.code == 1)
                     {
-                        //Actualizamos la lista creada
-                        iNuevaOrden.ListarOrdenCreado();
-                        alert1.Dispose();
-                        this.Dismiss();
-                        lblTecnico.Text = "";
-                        idEmpleado = 0;
-                    });
-                    Dialog dialog = alert1.Create();
-                    dialog.Show();
+                        Console.WriteLine(response.message);
+                        AlertDialog.Builder alert1 = new AlertDialog.Builder(Activity);
+                        alert1.SetTitle("MENSAJE DE CONFIRMACION");
+                        alert1.SetMessage("Tecnico asignado exitosamente");
+                        alert1.SetPositiveButton("ACEPTAR", (sender, args) =>
+                        {
+                            //Actualizamos la lista creada
+                            iNuevaOrden.ListarOrdenCreado();
+                            alert1.Dispose();
+                            this.Dismiss();
+                            lblTecnico.Text = "";
+                            idEmpleado = 0;
+                        });
+                        Dialog dialog = alert1.Create();
+                        dialog.Show();
 
+                    }
+                    else if (response.status == true && response.code == 2)
+                    {
+                        Console.WriteLine(response.message);
+                    }
                 }
-                else if (response.status==true && response.code==2)
+                else if (postJson.StatusCode == System.Net.HttpStatusCode.NotFound)
                 {
-                    Console.WriteLine(response.message);
+                    Console.WriteLine("error al enviar el json");
                 }
             }
-            else if (postJson.StatusCode==System.Net.HttpStatusCode.NotFound)
+            catch (Java.IO.IOException ex)
             {
-                Console.WriteLine("error al enviar el json");
+                Console.WriteLine("mensaje de error en update orden del fragmento ASIGNAR DIALOGF: "+ ex.Message);
             }
+            
         }
 
         public override void OnActivityCreated(Bundle savedInstanceState)

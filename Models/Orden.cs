@@ -33,6 +33,19 @@ namespace OrdenTecnica_App.Models
 
         }
 
+        public Orden(string cod_orden, string asunto, string fecha_orden, string hora_orden, string remitente, int estado, int id_sucursal, int id_empleado, List<DetalleOrdenWs> listaDetalleOrden)
+        {
+            this.cod_orden = cod_orden;
+            this.asunto = asunto;
+            this.fecha_orden = fecha_orden;
+            this.hora_orden = hora_orden;
+            this.remitente = remitente;
+            this.estado = estado;
+            this.id_sucursal = id_sucursal;
+            this.id_empleado = id_empleado;
+            this.listaDetalleOrden = listaDetalleOrden;
+        }
+
         public Orden(string idOrden, string cod_orden, string asunto, string fecha_orden, string hora_orden, string fecha_atencion, string hora_atencion, string remitente, int estado, int id_sucursal, int id_empleado, List<DetalleOrdenWs> listaDetalleOrden)
         {
             this.idOrden = idOrden;
