@@ -135,9 +135,9 @@ namespace OrdenTecnica_App.Fragments
             txtProblema.Text = "";
         }
 
-        private bool CamposVaciosOrden(string client, int sucursal, string asunto, string dispositivo, string problema)
+        private bool CamposVaciosOrden(string client, string sucursal, string asunto)
         {
-            if (client.Equals("") || sucursal==0 || asunto.Equals("") || dispositivo.Equals("") || problema.Equals("") || lstDO.Count.Equals(0))
+            if (client.Equals("") || sucursal.Equals("") || asunto.Equals("") || lstDO.Count.Equals(0))
             {
                 return true;
             }
@@ -155,7 +155,7 @@ namespace OrdenTecnica_App.Fragments
 
         private async void AgregarOrden(Orden o)
         {
-            if (CamposVaciosOrden(acCliente.Text, int.Parse(acSucursal.Text), txtAsunto.Text, txtProblema.Text, acDispositivo.Text).Equals(true))
+            if (CamposVaciosOrden(acCliente.Text, acSucursal.Text, txtAsunto.Text))
             {
                 Toast.MakeText(Activity, "Campos Vacios, Ingrese datos", ToastLength.Short).Show();
             }
@@ -276,7 +276,7 @@ namespace OrdenTecnica_App.Fragments
                     IMAGENES_EVIDENCIA="",
                     FIRMA_CLIENTE="",
                     FIRMA_TECNICO="",
-                    FK_DISPOSITIVO=disp
+                    FK_DISPOSITIVO=disp,
                 };
                 
                 lstDO.Add(Op);
@@ -298,7 +298,7 @@ namespace OrdenTecnica_App.Fragments
 
         private void BtnGenerarOrden_Click(object sender, EventArgs e)
         {
-            acSucursal.Text = "0"; //cambio temporar hasta implementar el autocomplete 
+            //acSucursal.Text = "0"; //cambio temporar hasta implementar el autocomplete 
             Orden nOrden = new Orden
             {
                 cod_orden = "",
@@ -307,7 +307,7 @@ namespace OrdenTecnica_App.Fragments
                 hora_orden = horaAc,
                 remitente = acCliente.Text,
                 estado = 1,
-                id_sucursal = int.Parse(acSucursal.Text),
+                id_sucursal = acSucursal.Text,
                 id_empleado = 0,
                 listaDetalleOrden = lstDO
             };

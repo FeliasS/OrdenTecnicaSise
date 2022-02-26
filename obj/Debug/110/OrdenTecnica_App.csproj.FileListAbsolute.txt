@@ -810,3 +810,6 @@ D:\Repos\Xamarin\OrdenTecnicaSise\obj\Debug\110\stamp\_ConvertResourcesCases.sta
 D:\Repos\Xamarin\OrdenTecnicaSise\obj\Debug\110\stamp\_GenerateJavaStubs.stamp
 D:\Repos\Xamarin\OrdenTecnicaSise\obj\Debug\110\stamp\_GeneratePackageManagerJava.stamp
 D:\Repos\Xamarin\OrdenTecnicaSise\obj\Debug\110\stamp\_ResolveLibraryProjectImports.stamp
+D:\Repos\Xamarin\OrdenTecnicaSise\obj\Debug\110\res\layout\item_listordendetallebyestado.xml
+D:\Repos\Xamarin\OrdenTecnicaSise\obj\Debug\110\android\src\crc64101ab38e3d43aafd\ListOrdenDetalleByEstado.java
+D:\Repos\Xamarin\OrdenTecnicaSise\obj\Debug\110\android\src\crc64fac4dc6930c9ca92\ListOrdenDetalleByEstado_Adapter.java

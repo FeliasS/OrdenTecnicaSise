@@ -15,14 +15,25 @@ namespace OrdenTecnica_App.ListRecycler.Holder
     class ListOrdenDetalle : RecyclerView.ViewHolder
     {
         //Definimos los elementos del item_listOrdenDetalle
-        public TextView lblODProblema, lblODDispositivo;
-        //lblODEstado;
+        public TextView lblODProblema, lblODDispositivo, lblODEstado, lblNOEstado;
+        public LinearLayout linearLayoutEstado;
 
         public ListOrdenDetalle(View itemView, Action<int> listener) : base(itemView)
         {
             lblODDispositivo = itemView.FindViewById<TextView>(Resource.Id.txtODDispo);
             lblODProblema = itemView.FindViewById<TextView>(Resource.Id.txtODProblema);
-            //lblODEstado = itemView.FindViewById<TextView>(Resource.Id.txtODEstado);
+            lblNOEstado = itemView.FindViewById<TextView>(Resource.Id.lblNOEstado);
+            //linearLayoutEstado = itemView.FindViewById<LinearLayout>(Resource.Id.linearLayoutEstado);
+
+            //if (lblODEstado.Text==null)
+            //{
+            //    linearLayoutEstado.Visibility = ViewStates.Gone;
+            //}
+            //else
+            //{
+            //    //lblODEstado.Visibility = ViewStates.Visible;
+            //    linearLayoutEstado.Visibility = ViewStates.Visible;
+            //}
 
             //Agregamos el evento Click
             itemView.Click += (sender, e) => listener(base.LayoutPosition);

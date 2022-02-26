@@ -136,7 +136,7 @@ namespace OrdenTecnica_App.Fragments
             ordenAsig.cod_orden = lstOrdenProceso[e].COD_ORDEN;
             ordenAsig.asunto = lstOrdenProceso[e].ASUNTO;
             ordenAsig.remitente = lstOrdenProceso[e].REMITENTE;
-            ordenAsig.id_sucursal = int.Parse(lstOrdenProceso[e].FK_SUCURSAL);
+            ordenAsig.id_sucursal = lstOrdenProceso[e].FK_SUCURSAL;
             
             var transaccion = this.Activity.SupportFragmentManager.BeginTransaction();
             Asignar_DialogF dialogAsignar = new Asignar_DialogF();

@@ -23,7 +23,7 @@ namespace OrdenTecnica_App.Models
         public string hora_atencion { get; set; }
         public string remitente { get; set; }
         public int estado { get; set; } // es un foreign key en la BD
-        public int id_sucursal { get; set; } // Foreign key
+        public string id_sucursal { get; set; } // Foreign key
         public int id_empleado { get; set; } // foreign key
 
         public List<DetalleOrdenWs> listaDetalleOrden { get; set; }
@@ -33,7 +33,7 @@ namespace OrdenTecnica_App.Models
 
         }
 
-        public Orden(string cod_orden, string asunto, string fecha_orden, string hora_orden, string remitente, int estado, int id_sucursal, int id_empleado, List<DetalleOrdenWs> listaDetalleOrden)
+        public Orden(string cod_orden, string asunto, string fecha_orden, string hora_orden, string remitente, int estado, string id_sucursal, int id_empleado, List<DetalleOrdenWs> listaDetalleOrden)
         {
             this.cod_orden = cod_orden;
             this.asunto = asunto;
@@ -46,7 +46,7 @@ namespace OrdenTecnica_App.Models
             this.listaDetalleOrden = listaDetalleOrden;
         }
 
-        public Orden(string idOrden, string cod_orden, string asunto, string fecha_orden, string hora_orden, string fecha_atencion, string hora_atencion, string remitente, int estado, int id_sucursal, int id_empleado, List<DetalleOrdenWs> listaDetalleOrden)
+        public Orden(string idOrden, string cod_orden, string asunto, string fecha_orden, string hora_orden, string fecha_atencion, string hora_atencion, string remitente, int estado, string id_sucursal, int id_empleado, List<DetalleOrdenWs> listaDetalleOrden)
         {
             this.idOrden = idOrden;
             this.cod_orden = cod_orden;

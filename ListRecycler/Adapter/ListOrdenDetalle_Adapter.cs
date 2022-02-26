@@ -36,16 +36,16 @@ namespace OrdenTecnica_App.ListRecycler.Adapter
             lstOD_holder.lblODDispositivo.Text = lstOrdenD[position].FK_DISPOSITIVO;
             lstOD_holder.lblODProblema.Text = lstOrdenD[position].DESCRIPCION;
             //lstOD_holder.lblODEstado.Text = lstOrdenD[position].ESTADO;
-
-            //switch (lstOrdenD[position].ESTADO)
-            //{
-            //    case 0:
-            //        lstOD_holder.lblODEstado.Text = "PENDIENTE";
-            //        break;
-            //    case 1:
-            //        lstOD_holder.lblODEstado.Text = "COMPLETADO";
-            //        break;
-            //}
+            
+            switch (lstOrdenD[position].ESTADO)
+            {
+                case 1:
+                    lstOD_holder.lblODEstado.Text = "PENDIENTE";
+                    break;
+                case 2:
+                    lstOD_holder.lblODEstado.Text = "COMPLETADO";
+                    break;
+            }
         }
 
         public override RecyclerView.ViewHolder OnCreateViewHolder(ViewGroup parent, int viewType)

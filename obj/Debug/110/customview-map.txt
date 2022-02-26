@@ -3,6 +3,7 @@ adaptive-icon;obj\Debug\110\res\mipmap-anydpi-v26\ic_launcher.xml
 adaptive-icon;obj\Debug\110\res\mipmap-anydpi-v26\ic_launcher_round.xml
 androidx.appcompat.widget.Toolbar;obj\Debug\110\res\layout\app_bar_main.xml
 androidx.cardview.widget.CardView;obj\Debug\110\res\layout\item_listordendetalle.xml
+androidx.cardview.widget.CardView;obj\Debug\110\res\layout\item_listordendetallebyestado.xml
 androidx.coordinatorlayout.widget.CoordinatorLayout;obj\Debug\110\res\layout\app_bar_main.xml
 androidx.drawerlayout.widget.DrawerLayout;obj\Debug\110\res\layout\activity_main.xml
 androidx.recyclerview.widget.RecyclerView;obj\Debug\110\res\layout\fragment_asignartecnico.xml
@@ -66,6 +67,7 @@ LinearLayout;obj\Debug\110\res\layout\fragment_ordenasignada.xml
 LinearLayout;obj\Debug\110\res\layout\fragment_ordenproceso.xml
 LinearLayout;obj\Debug\110\res\layout\fragment_ordenproceso0.xml
 LinearLayout;obj\Debug\110\res\layout\item_listordendetalle.xml
+LinearLayout;obj\Debug\110\res\layout\item_listordendetallebyestado.xml
 LinearLayout;obj\Debug\110\res\layout\item_listordentecnica.xml
 LinearLayout;obj\Debug\110\res\layout\item_listtecnico.xml
 LinearLayout;obj\Debug\110\res\layout\nav_header_main.xml
@@ -113,6 +115,7 @@ TextView;obj\Debug\110\res\layout\fragment_ordenasignada.xml
 TextView;obj\Debug\110\res\layout\fragment_ordenproceso.xml
 TextView;obj\Debug\110\res\layout\fragment_ordenproceso0.xml
 TextView;obj\Debug\110\res\layout\item_listordendetalle.xml
+TextView;obj\Debug\110\res\layout\item_listordendetallebyestado.xml
 TextView;obj\Debug\110\res\layout\item_listordentecnica.xml
 TextView;obj\Debug\110\res\layout\item_listtecnico.xml
 TextView;obj\Debug\110\res\layout\nav_header_main.xml

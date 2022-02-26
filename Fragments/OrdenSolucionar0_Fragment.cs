@@ -27,7 +27,7 @@ namespace OrdenTecnica_App.Fragments
 
         //Definimos el adaptador para el recyclerView
         RecyclerView.LayoutManager mLayoutManager;
-        ListOrdenDetalle_Adapter mAdapter;
+        ListOrdenDetalleByEstado_Adapter mAdapter;
 
         // Lista Detalle Orden
         List<DetalleOrdenWs> lstDo;
@@ -146,7 +146,7 @@ namespace OrdenTecnica_App.Fragments
                         lstDo = response.lista;
 
 
-                        mAdapter = new ListOrdenDetalle_Adapter(lstDo);
+                        mAdapter = new ListOrdenDetalleByEstado_Adapter(lstDo);
                         rvODetalle.SetAdapter(mAdapter);
 
                         mAdapter.ItemClick += MAdapter_ItemClick;
@@ -218,7 +218,7 @@ namespace OrdenTecnica_App.Fragments
                         ord.hora_atencion = DateTime.Now.ToString("hh:mm");
                         ord.remitente = lblClient.Text;
                         ord.estado = 4;
-                        ord.id_sucursal = int.Parse(lblSucursal.Text);
+                        ord.id_sucursal = lblSucursal.Text;
                         ord.id_empleado = int.Parse(o.FK_EMPLEADO);
 
                         HttpClient client = new HttpClient();

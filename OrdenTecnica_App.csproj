@@ -89,10 +89,12 @@
     <Compile Include="ListRecycler\Adapter\ItemCliente_ac.cs" />
     <Compile Include="ListRecycler\Adapter\ItemDispositivo_ac.cs" />
     <Compile Include="ListRecycler\Adapter\ItemSucursal_ac.cs" />
+    <Compile Include="ListRecycler\Adapter\ListOrdenDetalleByEstado_Adapter.cs" />
     <Compile Include="ListRecycler\Adapter\ListOrdenDetalle_Adapter.cs" />
     <Compile Include="ListRecycler\Adapter\ListOrden_Adapter.cs" />
     <Compile Include="ListRecycler\Adapter\ListTecnicos_Adapter.cs" />
     <Compile Include="ListRecycler\Holder\ListOrdenDetalle.cs" />
+    <Compile Include="ListRecycler\Holder\ListOrdenDetalleByEstado.cs" />
     <Compile Include="ListRecycler\Holder\ListTecnicos.cs" />
     <Compile Include="LoginActivity.cs" />
     <Compile Include="MainActivity.cs" />
@@ -266,6 +268,11 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\fragment_OrdenProceso0.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\item_listOrdenDetalleByEstado.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
