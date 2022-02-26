@@ -345,7 +345,7 @@ namespace OrdenTecnica_App.Fragments
         public async void Generar(object sender, EventArgs e)
         {
             
-            if (txtDiagnostico.Text=="")
+            if (txtDiagnostico.Text=="" || imgIni.Visibility==ViewStates.Gone || imgFin.Visibility==ViewStates.Gone || imgFirmCli.Visibility==ViewStates.Gone || imgFirmTec.Visibility==ViewStates.Gone)
             {
                 Toast.MakeText(Activity, "Campos Vacios, Ingrese datos", ToastLength.Short).Show();
             }

@@ -42,11 +42,18 @@ namespace OrdenTecnica_App.Fragments
         // Definimos la interface
         private INuevaOrden iNuevaOrden;
 
-        // Definimos el Controller Detalle Orden
-        CDetalle_Orden cD_Orden;
-
         //hora ya fecha
         string horaAc, fechaAc;
+
+        //DEFINIMOS UN ARRAY DE CADENA
+        static string[] DISPOSITIVOS;
+        static string[] SUCURSAL;
+        static string[] CLIENTE;
+        
+        //declaracion global
+        List<ListaD> listatemp;
+        List<ListaS> listaSucursal;
+        List<ListaC> listaClientes;
 
         public override void OnAttach(Context context)
         {
@@ -69,23 +76,20 @@ namespace OrdenTecnica_App.Fragments
             lblFecha = view.FindViewById<TextView>(Resource.Id.lblFecha);
             lblHora = view.FindViewById<TextView>(Resource.Id.lblHora);
             
-            // Instanciamos Lista del Detalle Orden
-            cD_Orden = new CDetalle_Orden();
-
             acCliente = view.FindViewById<AutoCompleteTextView>(Resource.Id.autoComplCliente);
             // Llamamos los datos clients
-            string[] cliente = Resources.GetStringArray(Resource.Array.array_cliente);
-            var array_Cliente = new ArrayAdapter<string>(Activity, Resource.Layout.ac_ItemList, cliente);
+            //string[] cliente = Resources.GetStringArray(Resource.Array.array_cliente);
+            //var array_Cliente = new ArrayAdapter<string>(Activity, Resource.Layout.ac_ItemList, cliente);
 
             acSucursal = view.FindViewById<AutoCompleteTextView>(Resource.Id.autoComplSucursal);
             // Llamamos los datos Sucursales
-            string[] sucursal = Resources.GetStringArray(Resource.Array.array_sucursal);
-            var array_sucursal = new ArrayAdapter<string>(Activity, Resource.Layout.ac_ItemList, sucursal);
+            //string[] sucursal = Resources.GetStringArray(Resource.Array.array_sucursal);
+            //var array_sucursal = new ArrayAdapter<string>(Activity, Resource.Layout.ac_ItemList, sucursal);
 
             acDispositivo = view.FindViewById<AutoCompleteTextView>(Resource.Id.autoComplDispositivo);
             // Llamamos los datos Sucursales
-            string[] dispositivo = Resources.GetStringArray(Resource.Array.array_dispositivo);
-            var array_dispositivo = new ArrayAdapter<string>(Activity, Resource.Layout.ac_ItemList, dispositivo);
+            //string[] dispositivo = Resources.GetStringArray(Resource.Array.array_dispositivo);
+            //var array_dispositivo = new ArrayAdapter<string>(Activity, Resource.Layout.ac_ItemList, dispositivo);
 
             txtProblema = view.FindViewById<EditText>(Resource.Id.txtProblema);
             txtAsunto = view.FindViewById<EditText>(Resource.Id.txtAsunto);
@@ -115,13 +119,151 @@ namespace OrdenTecnica_App.Fragments
 
 
             // Asignando el array al autocomplete
-            acCliente.Adapter = array_Cliente;
-            acSucursal.Adapter = array_sucursal;
-            acDispositivo.Adapter = array_dispositivo;
-
+            AcDispositivo();
+            AcSucursal();
+            AcCliente();
+            
             return view;
         }
         
+        private void AcDispositivo()
+        {
+            try
+            {
+                HttpClient client = new HttpClient();
+                Uri url = new Uri("http://servicios.micmaproyectos.com/dispositivo/listarTodos");
+
+                var getJson = client.GetAsync(url).Result;
+                if (getJson.StatusCode==System.Net.HttpStatusCode.OK)
+                {
+                    string readJson = getJson.Content.ReadAsStringAsync().Result;
+                    var response = JsonConvert.DeserializeObject<TramaDispositivo>(readJson);
+                    if (response.status==true && response.code==1)
+                    {
+                        if (response.lista != null)
+                        {
+                            DISPOSITIVOS = response.lista.Select(m=> m.NOMBRE).ToArray();
+                            listatemp = response.lista;
+
+                            
+                        }
+                        else
+                        {
+                            DISPOSITIVOS = new string[0];
+                        }
+                    }
+                    else if (response.status==true && response.code==2)
+                    {
+                        Console.WriteLine("Se genero un problema al traer la lista dispositivos");
+                    }
+
+                    var adapter = new ArrayAdapter<String>(Activity, Resource.Layout.ac_ItemList, DISPOSITIVOS);
+                    acDispositivo.Adapter= adapter;
+
+                }
+                else if (getJson.StatusCode==System.Net.HttpStatusCode.NotFound)
+                {
+                    Console.WriteLine("servicio no encontrado");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Mensaje de error en AcDipositivo del Fragmento NUEVA ORDEN: "+ ex.Message);
+            }
+        }
+
+        private void AcSucursal()
+        {
+            try
+            {
+                HttpClient client = new HttpClient();
+                Uri url = new Uri("http://servicios.micmaproyectos.com/sucursal/listarTodos");
+
+                var getJson = client.GetAsync(url).Result;
+                if (getJson.StatusCode == System.Net.HttpStatusCode.OK)
+                {
+                    string readJson = getJson.Content.ReadAsStringAsync().Result;
+                    var response = JsonConvert.DeserializeObject<TramaSucursal>(readJson);
+                    if (response.status == true && response.code == 1)
+                    {
+                        if (response.lista != null)
+                        {
+                            SUCURSAL = response.lista.Select(m => m.DIRECCION).ToArray();
+                            listaSucursal = response.lista;
+
+
+                        }
+                        else
+                        {
+                            SUCURSAL = new string[0];
+                        }
+                    }
+                    else if (response.status == true && response.code == 2)
+                    {
+                        Console.WriteLine("Se genero un problema al traer la lista sucursal");
+                    }
+
+                    var adapter = new ArrayAdapter<String>(Activity, Resource.Layout.ac_ItemList, SUCURSAL);
+                    acSucursal.Adapter = adapter;
+
+                }
+                else if (getJson.StatusCode == System.Net.HttpStatusCode.NotFound)
+                {
+                    Console.WriteLine("servicio no encontrado");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Mensaje de error en AcDipositivo del Fragmento NUEVA ORDEN: " + ex.Message);
+            }
+        }
+
+        private void AcCliente()
+        {
+            try
+            {
+                HttpClient client = new HttpClient();
+                Uri url = new Uri("http://servicios.micmaproyectos.com/cliente/listarTodos");
+
+                var getJson = client.GetAsync(url).Result;
+                if (getJson.StatusCode == System.Net.HttpStatusCode.OK)
+                {
+                    string readJson = getJson.Content.ReadAsStringAsync().Result;
+                    var response = JsonConvert.DeserializeObject<TramaCliente>(readJson);
+                    if (response.status == true && response.code == 1)
+                    {
+                        if (response.lista != null)
+                        {
+                            CLIENTE = response.lista.Select(m => m.RAZON_SOCIAL).ToArray();
+                            listaClientes = response.lista;
+
+
+                        }
+                        else
+                        {
+                            CLIENTE = new string[0];
+                        }
+                    }
+                    else if (response.status == true && response.code == 2)
+                    {
+                        Console.WriteLine("Se genero un problema al traer la lista clientes");
+                    }
+
+                    var adapter = new ArrayAdapter<String>(Activity, Resource.Layout.ac_ItemList, CLIENTE);
+                    acCliente.Adapter = adapter;
+
+                }
+                else if (getJson.StatusCode == System.Net.HttpStatusCode.NotFound)
+                {
+                    Console.WriteLine("servicio no encontrado");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Mensaje de error en AcDipositivo del Fragmento NUEVA ORDEN: " + ex.Message);
+            }
+        }
+
         private void LimpiarCampos()
         {
             acCliente.Text = "";
@@ -167,17 +309,7 @@ namespace OrdenTecnica_App.Fragments
             {
                 try
                 {
-                    //Orden addOrden = new Orden();
-                    //addOrden.cod_orden = o.cod_orden;
-                    //addOrden.asunto = o.asunto;
-                    //addOrden.fecha_orden = o.fecha_orden;
-                    //addOrden.hora_orden = o.hora_orden;
-                    //addOrden.remitente = o.remitente;
-                    //addOrden.estado = o.estado;
-                    //addOrden.id_sucursal = o.id_sucursal;
-                    //addOrden.id_empleado = o.id_empleado;
-                    //addOrden.listaDetalleOrden = o.listaDetalleOrden; //Recibe la lista
-
+                    
                     Orden addOrden = new Orden
                     {
                         cod_orden = o.cod_orden,
@@ -262,57 +394,139 @@ namespace OrdenTecnica_App.Fragments
 
         private void AgregarDetalleOrd(string disp, string probl)
         {
-            if (CamposVaciosDetalleOrd(disp,probl).Equals(true))
+            if (CamposVaciosDetalleOrd(disp,probl).Equals(true) || acDispositivo.Text=="")
             {
                 Toast.MakeText(Activity, "Campos Vacios, Ingrese datos", ToastLength.Short).Show();
             }
             else
             {
-                //Instanciamos una lista
-                DetalleOrdenWs Op = new DetalleOrdenWs
-                {
-                    DESCRIPCION = probl,
-                    IMAGENES="",
-                    IMAGENES_EVIDENCIA="",
-                    FIRMA_CLIENTE="",
-                    FIRMA_TECNICO="",
-                    FK_DISPOSITIVO=disp,
-                };
+                String[] acDispo = listatemp.Where(x => x.NOMBRE.Equals(acDispositivo.Text)).Select(m => m.ID_DISPOSITIVO).ToArray();
                 
-                lstDO.Add(Op);
+                //Capturamos el index del valor insertado en el campo
+                var index = Array.FindIndex(acDispo, x=>x == acDispositivo.Text);
+                
+                if (index > -1)
+                {
+                    alert = new AlertDialog.Builder(Activity);
+                    alert.SetTitle("MENSAJE");
+                    alert.SetMessage("Por favor, ingrese solo datos sugeridos por la aplicacion");
+                    alert.SetPositiveButton("ACEPTAR", (sender, args) =>
+                    {
+                        alert.Dispose();
+                    });
+                    Dialog dialog = alert.Create();
+                    dialog.Show();
+                   
+                }
+                else
+                {
+                    //Instanciamos una lista
+                    DetalleOrdenWs Op = new DetalleOrdenWs
+                    {
+                        DESCRIPCION = probl,
+                        IMAGENES = "",
+                        IMAGENES_EVIDENCIA = "",
+                        FIRMA_CLIENTE = "",
+                        FIRMA_TECNICO = "",
+                        FK_DISPOSITIVO = acDispo[0],
+                        
+                    };
 
-                //indicamos al adapter que actualice la lista
-                mAdapter.NotifyDataSetChanged();
-                rvOrden_Detalle.SmoothScrollToPosition(lstDO.Count());
+                    lstDO.Add(Op);
 
-                Console.WriteLine("problema; "+ Op.DESCRIPCION);
-                LimpiarDetalleOrd();
+                    //indicamos al adapter que actualice la lista
+                    mAdapter.NotifyDataSetChanged();
+                    rvOrden_Detalle.SmoothScrollToPosition(lstDO.Count());
+
+                    Console.WriteLine("problema; " + Op.DESCRIPCION);
+                    Console.WriteLine("ID DE AUTOCOMPLETE SELECCIONADO: " + acDispo[0]);
+
+                    LimpiarDetalleOrd();
+                }
+
+                
             }
         }
 
         private void BtnAgregarList_Click(object sender, EventArgs e)
         {
-            AgregarDetalleOrd(acDispositivo.Text,txtProblema.Text);
-            Console.WriteLine(txtProblema.Text);
+            if (acDispositivo.Text=="" || txtProblema.Text=="")
+            {
+                alert = new AlertDialog.Builder(Activity);
+                alert.SetTitle("MENSAJE");
+                alert.SetMessage("Campos para Agregar datos a las SubOrdenes tecnicas Vacios, \nIngrese dato por favor");
+                alert.SetPositiveButton("ACEPTAR", (sender, args) =>
+                {
+                    alert.Dispose();
+                });
+                Dialog dialog = alert.Create();
+                dialog.Show();
+            }
+            else
+            {
+                AgregarDetalleOrd(acDispositivo.Text, txtProblema.Text);
+                Console.WriteLine(txtProblema.Text);
+            }
+            
         }
 
         private void BtnGenerarOrden_Click(object sender, EventArgs e)
         {
-            //acSucursal.Text = "0"; //cambio temporar hasta implementar el autocomplete 
-            Orden nOrden = new Orden
+            if (acCliente.Text=="" || acSucursal.Text=="" || txtAsunto.Text=="" || lstDO.Count.Equals(0))
             {
-                cod_orden = "",
-                asunto = txtAsunto.Text,
-                fecha_orden = fechaAc,
-                hora_orden = horaAc,
-                remitente = acCliente.Text,
-                estado = 1,
-                id_sucursal = acSucursal.Text,
-                id_empleado = 0,
-                listaDetalleOrden = lstDO
-            };
+                alert = new AlertDialog.Builder(Activity);
+                alert.SetTitle("MENSAJE");
+                alert.SetMessage("Los Campos estan Vacios, ingrese datos por favor");
+                alert.SetPositiveButton("ACEPTAR",(sender, args)=>
+                {
+                    alert.Dispose();
+                });
+                Dialog dialog = alert.Create();
+                dialog.Show();
+            }
+            else
+            {
+                String[] acClie = listaClientes.Where(x => x.RAZON_SOCIAL.Equals(acCliente.Text)).Select(m => m.ID_CLIENTE).ToArray();
+                
+                String[] acSucu = listaSucursal.Where(x => x.DIRECCION.Equals(acSucursal.Text)).Select(m => m.ID_SUCURSAL).ToArray();
+                
+                //Capturamos el index del valor insertado en el campo
+                var indClie = Array.FindIndex(acClie, x => x == acCliente.Text);
+                var indSucu = Array.FindIndex(acSucu, x=> x == acSucursal.Text);
 
-            AgregarOrden(nOrden);
+                if (indClie > -1 || indSucu > -1)
+                {
+                    alert = new AlertDialog.Builder(Activity);
+                    alert.SetTitle("MENSAJE");
+                    alert.SetMessage("Por favor, ingrese solo datos sugeridos por la aplicacion");
+                    alert.SetPositiveButton("ACEPTAR", (sender, args) =>
+                    {
+                        alert.Dispose();
+                    });
+                    Dialog dialog = alert.Create();
+                    dialog.Show();
+                    
+                }
+                else
+                {
+                    Orden nOrden = new Orden
+                    {
+                        cod_orden = "",
+                        asunto = txtAsunto.Text,
+                        fecha_orden = fechaAc,
+                        hora_orden = horaAc,
+                        remitente = acClie[0],
+                        estado = 1,
+                        id_sucursal = acSucu[0],
+                        id_empleado = 0,
+                        listaDetalleOrden = lstDO
+                    };
+                    Console.WriteLine("ID DE AUTOCOMPLETE ACSUCURSAL SELECCIONADO: " + acSucu[0]);
+                    Console.WriteLine("ID DE AUTOCOMPLETE ACCLIENTE SELECCIONADO: " + acClie[0]);
+                    AgregarOrden(nOrden);
+                }
+
+            }
 
         }
 

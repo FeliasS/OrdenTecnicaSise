@@ -35,6 +35,10 @@ corners;obj\Debug\110\res\drawable\custom_input_v1.xml
 declare-styleable;D:\Repos\Xamarin\OrdenTecnicaSise\obj\Debug\110\lp\0\jl\res\values\attrs.xml
 dimen;D:\Repos\Xamarin\OrdenTecnicaSise\obj\Debug\110\lp\0\jl\res\values\signature_pad_defaults.xml
 dimen;obj\Debug\110\res\values\dimens.xml
+domain;obj\Debug\110\res\values\network_security_config.xml
+domain;obj\Debug\110\res\xml\network_security_config.xml
+domain-config;obj\Debug\110\res\values\network_security_config.xml
+domain-config;obj\Debug\110\res\xml\network_security_config.xml
 EditText;obj\Debug\110\res\layout\activity_login.xml
 EditText;obj\Debug\110\res\layout\fragment_nuevaorden.xml
 EditText;obj\Debug\110\res\layout\fragment_ordenproceso.xml
@@ -74,6 +78,8 @@ LinearLayout;obj\Debug\110\res\layout\nav_header_main.xml
 menu;obj\Debug\110\res\menu\activity_main_drawer.xml
 menu;obj\Debug\110\res\menu\menu_main.xml
 merge;D:\Repos\Xamarin\OrdenTecnicaSise\obj\Debug\110\lp\0\jl\res\layout\signature_pad_layout.xml
+network-security-config;obj\Debug\110\res\values\network_security_config.xml
+network-security-config;obj\Debug\110\res\xml\network_security_config.xml
 path;obj\Debug\110\res\drawable-v21\ic_menu_camera.xml
 path;obj\Debug\110\res\drawable-v21\ic_menu_gallery.xml
 path;obj\Debug\110\res\drawable-v21\ic_menu_manage.xml
@@ -83,14 +89,17 @@ path;obj\Debug\110\res\drawable-v21\ic_menu_slideshow.xml
 paths;D:\Repos\Xamarin\OrdenTecnicaSise\obj\Debug\110\lp\45\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
 RelativeLayout;obj\Debug\110\res\layout\content_main.xml
 RelativeLayout;obj\Debug\110\res\layout\item_firmas.xml
+resource-config;obj\Debug\110\res\values\network_security_config.xml
 resources;D:\Repos\Xamarin\OrdenTecnicaSise\obj\Debug\110\lp\0\jl\res\values\attrs.xml
 resources;D:\Repos\Xamarin\OrdenTecnicaSise\obj\Debug\110\lp\0\jl\res\values\signature_pad_defaults.xml
 resources;obj\Debug\110\res\values\colors.xml
 resources;obj\Debug\110\res\values\dimens.xml
 resources;obj\Debug\110\res\values\drawables.xml
 resources;obj\Debug\110\res\values\ic_launcher_background.xml
+resources;obj\Debug\110\res\values\network_security_config.xml
 resources;obj\Debug\110\res\values\strings.xml
 resources;obj\Debug\110\res\values\styles.xml
+resources-config;obj\Debug\110\res\values\network_security_config.xml
 ScrollView;obj\Debug\110\res\layout\fragment_ordenproceso0.xml
 SearchView;obj\Debug\110\res\layout\fragment_asignartecnico.xml
 SearchView;obj\Debug\110\res\layout\fragment_listordenes.xml

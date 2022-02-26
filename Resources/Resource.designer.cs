@@ -9853,7 +9853,10 @@ namespace OrdenTecnica_App
 			public const int image_share_filepaths = 2131886080;
 			
 			// aapt resource value: 0x7F120001
-			public const int xamarin_essentials_fileprovider_file_paths = 2131886081;
+			public const int network_security_config = 2131886081;
+			
+			// aapt resource value: 0x7F120002
+			public const int xamarin_essentials_fileprovider_file_paths = 2131886082;
 			
 			static Xml()
 			{

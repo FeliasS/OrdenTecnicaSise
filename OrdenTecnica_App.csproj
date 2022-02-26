@@ -115,12 +115,15 @@
     <Compile Include="ServicesClubTec\DetalleOrdenWs.cs" />
     <Compile Include="ServicesClubTec\OrdenWs.cs" />
     <Compile Include="ServicesClubTec\TecnicoWs.cs" />
+    <Compile Include="ServicesClubTec\TramaCliente.cs" />
     <Compile Include="ServicesClubTec\TramaDetalleOrden.cs" />
+    <Compile Include="ServicesClubTec\TramaDispositivo.cs" />
     <Compile Include="ServicesClubTec\TramaOrden.cs" />
     <Compile Include="ServicesClubTec\TramaOrdenLista.cs" />
     <Compile Include="ServicesClubTec\TramaOrdenTecnica.cs" />
     <Compile Include="ServicesClubTec\TramaOrdenObjeto.cs" />
     <Compile Include="ServicesClubTec\TramaPostDetalleOrdWs.cs" />
+    <Compile Include="ServicesClubTec\TramaSucursal.cs" />
     <Compile Include="ServicesClubTec\TramaTecnicoLista.cs" />
     <Compile Include="ServicesClubTec\TramaUsuario.cs" />
     <Compile Include="ServicesClubTec\UploadFirm.cs" />
@@ -275,6 +278,9 @@
     <AndroidResource Include="Resources\layout\item_listOrdenDetalleByEstado.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\xml\network_security_config.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
