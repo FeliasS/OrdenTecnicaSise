@@ -77,20 +77,11 @@ namespace OrdenTecnica_App.Fragments
             lblHora = view.FindViewById<TextView>(Resource.Id.lblHora);
             
             acCliente = view.FindViewById<AutoCompleteTextView>(Resource.Id.autoComplCliente);
-            // Llamamos los datos clients
-            //string[] cliente = Resources.GetStringArray(Resource.Array.array_cliente);
-            //var array_Cliente = new ArrayAdapter<string>(Activity, Resource.Layout.ac_ItemList, cliente);
-
+            
             acSucursal = view.FindViewById<AutoCompleteTextView>(Resource.Id.autoComplSucursal);
-            // Llamamos los datos Sucursales
-            //string[] sucursal = Resources.GetStringArray(Resource.Array.array_sucursal);
-            //var array_sucursal = new ArrayAdapter<string>(Activity, Resource.Layout.ac_ItemList, sucursal);
-
+            
             acDispositivo = view.FindViewById<AutoCompleteTextView>(Resource.Id.autoComplDispositivo);
-            // Llamamos los datos Sucursales
-            //string[] dispositivo = Resources.GetStringArray(Resource.Array.array_dispositivo);
-            //var array_dispositivo = new ArrayAdapter<string>(Activity, Resource.Layout.ac_ItemList, dispositivo);
-
+            
             txtProblema = view.FindViewById<EditText>(Resource.Id.txtProblema);
             txtAsunto = view.FindViewById<EditText>(Resource.Id.txtAsunto);
             rvOrden_Detalle = view.FindViewById<RecyclerView>(Resource.Id.recyclerV_ODetalle);

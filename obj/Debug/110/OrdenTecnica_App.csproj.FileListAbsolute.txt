@@ -496,6 +496,8 @@ D:\Repos\Xamarin\OrdenTecnicaSise\obj\Debug\110\res\layout\fragment_orddetallepr
 D:\Repos\Xamarin\OrdenTecnicaSise\obj\Debug\110\res\layout\item_listtecnico.xml
 D:\Repos\Xamarin\OrdenTecnicaSise\obj\Debug\110\res\layout\item_firmas.xml
 D:\Repos\Xamarin\OrdenTecnicaSise\obj\Debug\110\res\layout\fragment_ordenproceso0.xml
+D:\Repos\Xamarin\OrdenTecnicaSise\obj\Debug\110\res\layout\item_listordendetallebyestado.xml
+D:\Repos\Xamarin\OrdenTecnicaSise\obj\Debug\110\res\xml\network_security_config.xml
 D:\Repos\Xamarin\OrdenTecnicaSise\obj\Debug\110\uploadflags.txt
 D:\Repos\Xamarin\OrdenTecnicaSise\obj\Debug\110\resolvedassemblies.hash
 D:\Repos\Xamarin\OrdenTecnicaSise\obj\Debug\110\android\assets\Java.Interop.dll
@@ -676,6 +678,7 @@ D:\Repos\Xamarin\OrdenTecnicaSise\obj\Debug\110\android\src\com\bumptech\glide\R
 D:\Repos\Xamarin\OrdenTecnicaSise\obj\Debug\110\android\src\com\google\android\material\R.java
 D:\Repos\Xamarin\OrdenTecnicaSise\obj\Debug\110\android\src\com\google\android\material\snackbar\Snackbar_SnackbarActionClickImplementor.java
 D:\Repos\Xamarin\OrdenTecnicaSise\obj\Debug\110\android\src\crc64101ab38e3d43aafd\ListOrdenDetalle.java
+D:\Repos\Xamarin\OrdenTecnicaSise\obj\Debug\110\android\src\crc64101ab38e3d43aafd\ListOrdenDetalleByEstado.java
 D:\Repos\Xamarin\OrdenTecnicaSise\obj\Debug\110\android\src\crc64101ab38e3d43aafd\ListOrden_Item.java
 D:\Repos\Xamarin\OrdenTecnicaSise\obj\Debug\110\android\src\crc64101ab38e3d43aafd\ListTecnicos.java
 D:\Repos\Xamarin\OrdenTecnicaSise\obj\Debug\110\android\src\crc64396a3fe5f8138e3f\CustomTabsServiceConnectionImpl.java
@@ -715,6 +718,7 @@ D:\Repos\Xamarin\OrdenTecnicaSise\obj\Debug\110\android\src\crc64d818c4686ed024a
 D:\Repos\Xamarin\OrdenTecnicaSise\obj\Debug\110\android\src\crc64fac4dc6930c9ca92\ItemCliente_ac.java
 D:\Repos\Xamarin\OrdenTecnicaSise\obj\Debug\110\android\src\crc64fac4dc6930c9ca92\ItemDispositivo_ac.java
 D:\Repos\Xamarin\OrdenTecnicaSise\obj\Debug\110\android\src\crc64fac4dc6930c9ca92\ItemSucursal_ac.java
+D:\Repos\Xamarin\OrdenTecnicaSise\obj\Debug\110\android\src\crc64fac4dc6930c9ca92\ListOrdenDetalleByEstado_Adapter.java
 D:\Repos\Xamarin\OrdenTecnicaSise\obj\Debug\110\android\src\crc64fac4dc6930c9ca92\ListOrdenDetalle_Adapter.java
 D:\Repos\Xamarin\OrdenTecnicaSise\obj\Debug\110\android\src\crc64fac4dc6930c9ca92\ListOrden_Adapter.java
 D:\Repos\Xamarin\OrdenTecnicaSise\obj\Debug\110\android\src\crc64fac4dc6930c9ca92\ListTecnicos_Adapter.java
@@ -810,7 +814,3 @@ D:\Repos\Xamarin\OrdenTecnicaSise\obj\Debug\110\stamp\_ConvertResourcesCases.sta
 D:\Repos\Xamarin\OrdenTecnicaSise\obj\Debug\110\stamp\_GenerateJavaStubs.stamp
 D:\Repos\Xamarin\OrdenTecnicaSise\obj\Debug\110\stamp\_GeneratePackageManagerJava.stamp
 D:\Repos\Xamarin\OrdenTecnicaSise\obj\Debug\110\stamp\_ResolveLibraryProjectImports.stamp
-D:\Repos\Xamarin\OrdenTecnicaSise\obj\Debug\110\res\layout\item_listordendetallebyestado.xml
-D:\Repos\Xamarin\OrdenTecnicaSise\obj\Debug\110\android\src\crc64101ab38e3d43aafd\ListOrdenDetalleByEstado.java
-D:\Repos\Xamarin\OrdenTecnicaSise\obj\Debug\110\android\src\crc64fac4dc6930c9ca92\ListOrdenDetalleByEstado_Adapter.java
-D:\Repos\Xamarin\OrdenTecnicaSise\obj\Debug\110\res\xml\network_security_config.xml

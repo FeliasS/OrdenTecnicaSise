@@ -165,7 +165,7 @@ namespace OrdenTecnica_App.Fragments
                         {
                             string rutaImg = Fdirectoryname + resultado.data;
 
-                            PutImgFirms(id, rutaImg);
+                            PutImgFirms(id, rutaImg, resultado.data);
                             dialog.Dismiss();
                             Toast.MakeText(Activity, resultado.message, ToastLength.Short).Show();
 
@@ -184,7 +184,7 @@ namespace OrdenTecnica_App.Fragments
             btnCancelFirm.Click += (sender, e) => { dialog.Dismiss(); };
         }
 
-        private void PutImgFirms(int id, string pathfirm)
+        private void PutImgFirms(int id, string pathfirm, string name)
         {
 
 
@@ -195,13 +195,13 @@ namespace OrdenTecnica_App.Fragments
                     Glide.With(Activity).AsBitmap().Load(pathfirm).Into(imgFirmTec);
                     imgFirmTec.Visibility = Android.Views.ViewStates.Visible;
                     //lblFtec.Visibility = Android.Views.ViewStates.Visible;
-                    PathFirmaTec = pathfirm;
+                    PathFirmaTec = name;
                     break;
                 case 2:
                     Glide.With(Activity).AsBitmap().Load(pathfirm).Into(imgFirmCli);
                     imgFirmCli.Visibility = Android.Views.ViewStates.Visible;
                     //lblFcli.Visibility = Android.Views.ViewStates.Visible;
-                    PathFirmaCli = pathfirm;
+                    PathFirmaCli = name;
                     break;
             }
 
@@ -271,7 +271,9 @@ namespace OrdenTecnica_App.Fragments
                 HttpClient httpClient = new HttpClient();
                 Uri urlmtf = new Uri(urlrestImg);
                 MultipartFormDataContent form = new MultipartFormDataContent();
+                Console.WriteLine("FILENAME: "+ photo.FileName);
                 form.Add(new StreamContent(stream), name: "file", fileName: photo.FileName);
+                Console.WriteLine("" + photo.FileName);
                 HttpResponseMessage response; string content;
                 try
                 {
@@ -292,12 +294,12 @@ namespace OrdenTecnica_App.Fragments
                             {
                                 case 1:
                                     Glide.With(Activity).AsBitmap().Load(PhotoPath).Into(imgIni);
-                                    PathImgInicio = PhotoPath;
+                                    PathImgInicio = resultado.data;
 
                                     break;
                                 case 2:
                                     Glide.With(Activity).AsBitmap().Load(PhotoPath).Into(imgFin);
-                                    PathImgFin = PhotoPath;
+                                    PathImgFin = resultado.data;
                                     break;
                             }
 

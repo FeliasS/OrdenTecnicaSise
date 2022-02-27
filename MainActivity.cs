@@ -39,11 +39,11 @@ namespace OrdenTecnica_App
         // Funcion para llamar a los fragmentos
         void callFragmentInConteiner()
         {
-            Title = "ORDENES CERRADAS";
             ordenCerrada = new OrdenCerrada_Fragment();
             
             var transaccion = SupportFragmentManager.BeginTransaction();
-            transaccion.Add(Resource.Id.conteinerView, ordenCerrada);
+            transaccion.Add(Resource.Id.conteinerView, ordenCerrada, "fragmentOrdenCerrado");
+            transaccion.AddToBackStack(null);
             transaccion.Commit();
         }
 
@@ -52,7 +52,8 @@ namespace OrdenTecnica_App
             NuevaOrden_Fragment nOrden = new NuevaOrden_Fragment();
 
             var transaccion = SupportFragmentManager.BeginTransaction();
-            transaccion.Replace(Resource.Id.conteinerView, nOrden);
+            transaccion.Replace(Resource.Id.conteinerView, nOrden, "fragmentoNuevaOrden");
+            transaccion.AddToBackStack("fragmentoNuevaOrden");
             transaccion.Commit();
         }
 
@@ -108,7 +109,7 @@ namespace OrdenTecnica_App
                     }
                     else
                     {
-                        System.Net.WebRequest request = System.Net.WebRequest.Create("https://i.ibb.co/5T5n6nj/kitten.jpg");
+                        System.Net.WebRequest request = System.Net.WebRequest.Create("http://orders.micmaproyectos.com/imagenes/usuarios/"+ fotoUser);
                         System.Net.ServicePointManager.ServerCertificateValidationCallback = delegate { return true; };
                         System.Net.WebResponse response = request.GetResponse();
                         System.IO.Stream responseStream = response.GetResponseStream();
@@ -140,7 +141,7 @@ namespace OrdenTecnica_App
                     }
                     else
                     {
-                        System.Net.WebRequest request = System.Net.WebRequest.Create("https://i.ibb.co/5T5n6nj/kitten.jpg"); //url = obj = string
+                        System.Net.WebRequest request = System.Net.WebRequest.Create("http://orders.micmaproyectos.com/imagenes/usuarios/" +fotoUser); //url = obj = string
                         System.Net.ServicePointManager.ServerCertificateValidationCallback = delegate { return true; };
                         System.Net.WebResponse response = request.GetResponse();
                         System.IO.Stream resposeStream = response.GetResponseStream();
@@ -171,7 +172,7 @@ namespace OrdenTecnica_App
                     }
                     else
                     {
-                        System.Net.WebRequest request = System.Net.WebRequest.Create("https://i.ibb.co/5T5n6nj/kitten.jpg"); //url = obj = string
+                        System.Net.WebRequest request = System.Net.WebRequest.Create("http://orders.micmaproyectos.com/imagenes/usuarios/"+ fotoUser); //url = obj = string
                         System.Net.ServicePointManager.ServerCertificateValidationCallback = delegate { return true; };
                         System.Net.WebResponse response = request.GetResponse();
                         System.IO.Stream responseStream = response.GetResponseStream();
@@ -329,7 +330,7 @@ namespace OrdenTecnica_App
                 var transaccion = SupportFragmentManager.BeginTransaction();
 
                 transaccion.Replace(Resource.Id.conteinerView, ordenCerrada,"fragmentOrdenCerrado");
-                transaccion.AddToBackStack("fragmentOrdenCerrado");
+                transaccion.AddToBackStack(null);
                 transaccion.Commit();
             }
             else if (id == Resource.Id.cerrar_sesion)

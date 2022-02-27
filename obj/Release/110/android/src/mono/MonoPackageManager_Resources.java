@@ -8,7 +8,6 @@ public class MonoPackageManager_Resources {
 		"Xamarin.Android.Glide.dll",
 		"Xamarin.AndroidX.Activity.dll",
 		"Xamarin.AndroidX.AppCompat.dll",
-		"Xamarin.AndroidX.CoordinatorLayout.dll",
 		"Xamarin.AndroidX.Core.dll",
 		"Xamarin.AndroidX.CustomView.dll",
 		"Xamarin.AndroidX.DrawerLayout.dll",
