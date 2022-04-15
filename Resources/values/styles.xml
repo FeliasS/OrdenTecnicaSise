@@ -17,4 +17,14 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.MaterialComponents.Light" />
 
+
+
+	<style name="SplashTheme" parent="ThemeOverlay.MaterialComponents.Light" >
+		<item name="android:windowBackground">@drawable/splash_screenxml</item>
+		<item name="android:windowNoTitle">true</item>
+		<item name="android:windowFullscreen">true</item>
+		<item name="android:windowContentOverlay">@null</item>
+		<item name="android:windowActionBar">true</item>
+	</style>
+
 </resources>
