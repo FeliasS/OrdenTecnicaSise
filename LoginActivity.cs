@@ -18,7 +18,7 @@ using OrdenTecnica_App.Models.Statics;
 
 namespace OrdenTecnica_App
 {
-    [Activity(Label = "LoginActivity", MainLauncher =true)]
+    [Activity(Label = "LoginActivity", MainLauncher =false)]
     public class LoginActivity : Activity
     {
         // Definiendo los controles del login
