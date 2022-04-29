@@ -196,9 +196,7 @@ namespace OrdenTecnica_App.Fragments
 
         private void MAdapter_ItemClick1(object sender, int e)
         {
-            var transaccion = this.Activity.SupportFragmentManager.BeginTransaction();
-            Asignar_DialogF dialogAsignar = new Asignar_DialogF();
-            dialogAsignar.Show(transaccion, "asignar Tecnico fragment");
+            //aqui se agregara un mensaje para indicar que esta funcion no esta disponible.
         }
 
     }

@@ -10,7 +10,7 @@ androidx.recyclerview.widget.RecyclerView;obj\Debug\110\res\layout\fragment_asig
 androidx.recyclerview.widget.RecyclerView;obj\Debug\110\res\layout\fragment_listordenes.xml
 androidx.recyclerview.widget.RecyclerView;obj\Debug\110\res\layout\fragment_nuevaorden.xml
 androidx.recyclerview.widget.RecyclerView;obj\Debug\110\res\layout\fragment_orddetalleproceso.xml
-attr;C:\Users\Poaty\source\repos\Final ver 1\obj\Debug\110\lp\0\jl\res\values\attrs.xml
+attr;D:\Repos\Xamarin\OrdenTecnicaSise\obj\Debug\110\lp\0\jl\res\values\attrs.xml
 AutoCompleteTextView;obj\Debug\110\res\layout\fragment_nuevaorden.xml
 background;obj\Debug\110\res\mipmap-anydpi-v26\ic_launcher.xml
 background;obj\Debug\110\res\mipmap-anydpi-v26\ic_launcher_round.xml
@@ -23,8 +23,8 @@ Button;obj\Debug\110\res\layout\fragment_ordenasignada.xml
 Button;obj\Debug\110\res\layout\fragment_ordenproceso.xml
 Button;obj\Debug\110\res\layout\fragment_ordenproceso0.xml
 Button;obj\Debug\110\res\layout\item_firmas.xml
-cache-path;C:\Users\Poaty\source\repos\Final ver 1\obj\Debug\110\lp\45\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
-color;C:\Users\Poaty\source\repos\Final ver 1\obj\Debug\110\lp\0\jl\res\values\signature_pad_defaults.xml
+cache-path;D:\Repos\Xamarin\OrdenTecnicaSise\obj\Debug\110\lp\45\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
+color;D:\Repos\Xamarin\OrdenTecnicaSise\obj\Debug\110\lp\0\jl\res\values\signature_pad_defaults.xml
 color;obj\Debug\110\res\drawable\splash_screenxml.xml
 color;obj\Debug\110\res\values\colors.xml
 color;obj\Debug\110\res\values\ic_launcher_background.xml
@@ -34,8 +34,8 @@ com.google.android.material.textfield.TextInputLayout;obj\Debug\110\res\layout\f
 com.google.android.material.textfield.TextInputLayout;obj\Debug\110\res\layout\fragment_ordenproceso.xml
 com.google.android.material.textfield.TextInputLayout;obj\Debug\110\res\layout\fragment_ordenproceso0.xml
 corners;obj\Debug\110\res\drawable\custom_input_v1.xml
-declare-styleable;C:\Users\Poaty\source\repos\Final ver 1\obj\Debug\110\lp\0\jl\res\values\attrs.xml
-dimen;C:\Users\Poaty\source\repos\Final ver 1\obj\Debug\110\lp\0\jl\res\values\signature_pad_defaults.xml
+declare-styleable;D:\Repos\Xamarin\OrdenTecnicaSise\obj\Debug\110\lp\0\jl\res\values\attrs.xml
+dimen;D:\Repos\Xamarin\OrdenTecnicaSise\obj\Debug\110\lp\0\jl\res\values\signature_pad_defaults.xml
 dimen;obj\Debug\110\res\values\dimens.xml
 domain;obj\Debug\110\res\xml\network_security_config.xml
 domain-config;obj\Debug\110\res\xml\network_security_config.xml
@@ -43,15 +43,15 @@ EditText;obj\Debug\110\res\layout\activity_login.xml
 EditText;obj\Debug\110\res\layout\fragment_nuevaorden.xml
 EditText;obj\Debug\110\res\layout\fragment_ordenproceso.xml
 EditText;obj\Debug\110\res\layout\fragment_ordenproceso0.xml
-external-cache-path;C:\Users\Poaty\source\repos\Final ver 1\obj\Debug\110\lp\45\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
-external-path;C:\Users\Poaty\source\repos\Final ver 1\obj\Debug\110\lp\45\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
+external-cache-path;D:\Repos\Xamarin\OrdenTecnicaSise\obj\Debug\110\lp\45\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
+external-path;D:\Repos\Xamarin\OrdenTecnicaSise\obj\Debug\110\lp\45\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
 foreground;obj\Debug\110\res\mipmap-anydpi-v26\ic_launcher.xml
 foreground;obj\Debug\110\res\mipmap-anydpi-v26\ic_launcher_round.xml
 FrameLayout;obj\Debug\110\res\layout\content_main.xml
 gradient;obj\Debug\110\res\drawable\side_nav_bar.xml
 GridLayout;obj\Debug\110\res\layout\fragment_ordenproceso0.xml
 group;obj\Debug\110\res\menu\activity_main_drawer.xml
-ImageView;C:\Users\Poaty\source\repos\Final ver 1\obj\Debug\110\lp\0\jl\res\layout\signature_pad_layout.xml
+ImageView;D:\Repos\Xamarin\OrdenTecnicaSise\obj\Debug\110\lp\0\jl\res\layout\signature_pad_layout.xml
 ImageView;obj\Debug\110\res\layout\fragment_ordenproceso0.xml
 ImageView;obj\Debug\110\res\layout\nav_header_main.xml
 include;obj\Debug\110\res\layout\activity_main.xml
@@ -79,7 +79,7 @@ LinearLayout;obj\Debug\110\res\layout\item_listtecnico.xml
 LinearLayout;obj\Debug\110\res\layout\nav_header_main.xml
 menu;obj\Debug\110\res\menu\activity_main_drawer.xml
 menu;obj\Debug\110\res\menu\menu_main.xml
-merge;C:\Users\Poaty\source\repos\Final ver 1\obj\Debug\110\lp\0\jl\res\layout\signature_pad_layout.xml
+merge;D:\Repos\Xamarin\OrdenTecnicaSise\obj\Debug\110\lp\0\jl\res\layout\signature_pad_layout.xml
 network-security-config;obj\Debug\110\res\xml\network_security_config.xml
 path;obj\Debug\110\res\drawable-v21\ic_menu_camera.xml
 path;obj\Debug\110\res\drawable-v21\ic_menu_gallery.xml
@@ -87,11 +87,11 @@ path;obj\Debug\110\res\drawable-v21\ic_menu_manage.xml
 path;obj\Debug\110\res\drawable-v21\ic_menu_send.xml
 path;obj\Debug\110\res\drawable-v21\ic_menu_share.xml
 path;obj\Debug\110\res\drawable-v21\ic_menu_slideshow.xml
-paths;C:\Users\Poaty\source\repos\Final ver 1\obj\Debug\110\lp\45\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
+paths;D:\Repos\Xamarin\OrdenTecnicaSise\obj\Debug\110\lp\45\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
 RelativeLayout;obj\Debug\110\res\layout\content_main.xml
 RelativeLayout;obj\Debug\110\res\layout\item_firmas.xml
-resources;C:\Users\Poaty\source\repos\Final ver 1\obj\Debug\110\lp\0\jl\res\values\attrs.xml
-resources;C:\Users\Poaty\source\repos\Final ver 1\obj\Debug\110\lp\0\jl\res\values\signature_pad_defaults.xml
+resources;D:\Repos\Xamarin\OrdenTecnicaSise\obj\Debug\110\lp\0\jl\res\values\attrs.xml
+resources;D:\Repos\Xamarin\OrdenTecnicaSise\obj\Debug\110\lp\0\jl\res\values\signature_pad_defaults.xml
 resources;obj\Debug\110\res\values\colors.xml
 resources;obj\Debug\110\res\values\dimens.xml
 resources;obj\Debug\110\res\values\drawables.xml
@@ -102,18 +102,18 @@ ScrollView;obj\Debug\110\res\layout\fragment_ordenproceso0.xml
 SearchView;obj\Debug\110\res\layout\fragment_asignartecnico.xml
 SearchView;obj\Debug\110\res\layout\fragment_listordenes.xml
 selector;obj\Debug\110\res\drawable\custom_input_v1.xml
-shape;C:\Users\Poaty\source\repos\Final ver 1\obj\Debug\110\lp\0\jl\res\drawable\signature_pad_background.xml
+shape;D:\Repos\Xamarin\OrdenTecnicaSise\obj\Debug\110\lp\0\jl\res\drawable\signature_pad_background.xml
 shape;obj\Debug\110\res\drawable\custom_input_v1.xml
 shape;obj\Debug\110\res\drawable\side_nav_bar.xml
-solid;C:\Users\Poaty\source\repos\Final ver 1\obj\Debug\110\lp\0\jl\res\drawable\signature_pad_background.xml
+solid;D:\Repos\Xamarin\OrdenTecnicaSise\obj\Debug\110\lp\0\jl\res\drawable\signature_pad_background.xml
 solid;obj\Debug\110\res\drawable\custom_input_v1.xml
 Space;obj\Debug\110\res\layout\activity_login.xml
-string;C:\Users\Poaty\source\repos\Final ver 1\obj\Debug\110\lp\0\jl\res\values\signature_pad_defaults.xml
+string;D:\Repos\Xamarin\OrdenTecnicaSise\obj\Debug\110\lp\0\jl\res\values\signature_pad_defaults.xml
 string;obj\Debug\110\res\values\strings.xml
 string-array;obj\Debug\110\res\values\strings.xml
 stroke;obj\Debug\110\res\drawable\custom_input_v1.xml
 style;obj\Debug\110\res\values\styles.xml
-TextView;C:\Users\Poaty\source\repos\Final ver 1\obj\Debug\110\lp\0\jl\res\layout\signature_pad_layout.xml
+TextView;D:\Repos\Xamarin\OrdenTecnicaSise\obj\Debug\110\lp\0\jl\res\layout\signature_pad_layout.xml
 TextView;obj\Debug\110\res\layout\ac_itemlist.xml
 TextView;obj\Debug\110\res\layout\fragment_asignartecnico.xml
 TextView;obj\Debug\110\res\layout\fragment_nuevaorden.xml
@@ -132,6 +132,6 @@ vector;obj\Debug\110\res\drawable-v21\ic_menu_manage.xml
 vector;obj\Debug\110\res\drawable-v21\ic_menu_send.xml
 vector;obj\Debug\110\res\drawable-v21\ic_menu_share.xml
 vector;obj\Debug\110\res\drawable-v21\ic_menu_slideshow.xml
-View;C:\Users\Poaty\source\repos\Final ver 1\obj\Debug\110\lp\0\jl\res\layout\signature_pad_layout.xml
-Xamarin.Controls.SignaturePadCanvasView;C:\Users\Poaty\source\repos\Final ver 1\obj\Debug\110\lp\0\jl\res\layout\signature_pad_layout.xml
+View;D:\Repos\Xamarin\OrdenTecnicaSise\obj\Debug\110\lp\0\jl\res\layout\signature_pad_layout.xml
+Xamarin.Controls.SignaturePadCanvasView;D:\Repos\Xamarin\OrdenTecnicaSise\obj\Debug\110\lp\0\jl\res\layout\signature_pad_layout.xml
 Xamarin.Controls.SignaturePadView;obj\Debug\110\res\layout\item_firmas.xml

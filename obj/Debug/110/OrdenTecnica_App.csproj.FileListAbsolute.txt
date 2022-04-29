@@ -1228,3 +1228,6 @@ C:\Users\Poaty\source\repos\Final ver 1\obj\Debug\110\stamp\_GenerateJavaStubs.s
 C:\Users\Poaty\source\repos\Final ver 1\obj\Debug\110\stamp\_GeneratePackageManagerJava.stamp
 C:\Users\Poaty\source\repos\Final ver 1\obj\Debug\110\stamp\_ResolveLibraryProjectImports.stamp
 C:\Users\Poaty\source\repos\Final ver 1\obj\Debug\110\android\src\crc64a1e84454907822fc\OrdenesTecnicasCTS.java
+D:\Repos\Xamarin\OrdenTecnicaSise\obj\Debug\110\res\drawable\splash_screenxml.xml
+D:\Repos\Xamarin\OrdenTecnicaSise\obj\Debug\110\res\drawable\clubtecsise.png
+D:\Repos\Xamarin\OrdenTecnicaSise\obj\Debug\110\android\src\crc64a1e84454907822fc\SplashActivity.java
