@@ -211,7 +211,7 @@ namespace OrdenTecnica_App.Fragments
         {
             try
             {
-                var photo = await MediaPicker.CapturePhotoAsync();
+                var photo = await MediaPicker.CapturePhotoAsync(); //abre la camara
                 await LoadPhotoAsync(photo, idtimephoto);
                 Console.WriteLine($" Captura: {PhotoPath}");
             }

@@ -160,11 +160,11 @@ public final class R {
 		public static final int notification_template_part_time = 0x7f0c0046;
 	}
 	public static final class string {
-		public static final int copy_toast_msg = 0x7f0f0021;
-		public static final int fallback_menu_item_copy_link = 0x7f0f0024;
-		public static final int fallback_menu_item_open_in_browser = 0x7f0f0025;
-		public static final int fallback_menu_item_share_link = 0x7f0f0026;
-		public static final int status_bar_notification_info_overflow = 0x7f0f0034;
+		public static final int copy_toast_msg = 0x7f0f0024;
+		public static final int fallback_menu_item_copy_link = 0x7f0f0027;
+		public static final int fallback_menu_item_open_in_browser = 0x7f0f0028;
+		public static final int fallback_menu_item_share_link = 0x7f0f0029;
+		public static final int status_bar_notification_info_overflow = 0x7f0f0037;
 	}
 	public static final class style {
 		public static final int TextAppearance_Compat_Notification = 0x7f10011a;

@@ -34,4 +34,12 @@
 		<item>Sensor de Calor</item>
 	</string-array>
 	
+
+	<string name="TextClient">Ingrese el nombre de clientes jurídicos. \nEjm: S.A.C MiEmpresa</string>
+
+	<string name="TextSucursal">Ingrese la dirección de la sucursal. \nEjm: Av. MiDirección</string>
+
+	<string name="TextDevice">Ingrese el nombre del dispositivo. \nEjm: Cámara </string>
+	
+	
 </resources>

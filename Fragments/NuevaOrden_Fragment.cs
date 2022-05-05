@@ -394,13 +394,17 @@ namespace OrdenTecnica_App.Fragments
                 String[] acDispo = listatemp.Where(x => x.NOMBRE.Equals(acDispositivo.Text)).Select(m => m.ID_DISPOSITIVO).ToArray();
                 
                 //Capturamos el index del valor insertado en el campo
-                var index = Array.FindIndex(acDispo, x=>x == acDispositivo.Text);
-                
-                if (index > -1)
+                //var index = Array.FindIndex(acDispo, x=>x == acDispositivo.Text);
+                //var value = acDispo[0];
+                //int ubicacion = Array.IndexOf(acDispo,value);
+                //Console.WriteLine($"la posicion del elemento es: {ubicacion}");
+                //Console.WriteLine(index.ToString());
+                Console.WriteLine(acDispo.Length);
+                if (acDispo.Length==0)
                 {
                     alert = new AlertDialog.Builder(Activity);
                     alert.SetTitle("MENSAJE");
-                    alert.SetMessage("Por favor, ingrese solo datos sugeridos por la aplicacion");
+                    alert.SetMessage("Por favor, ingrese solo datos sugeridos por el sistema");
                     alert.SetPositiveButton("ACEPTAR", (sender, args) =>
                     {
                         alert.Dispose();
@@ -456,7 +460,7 @@ namespace OrdenTecnica_App.Fragments
             else
             {
                 AgregarDetalleOrd(acDispositivo.Text, txtProblema.Text);
-                Console.WriteLine(txtProblema.Text);
+                Console.WriteLine(acDispositivo.Text);
             }
             
         }
@@ -482,14 +486,18 @@ namespace OrdenTecnica_App.Fragments
                 String[] acSucu = listaSucursal.Where(x => x.DIRECCION.Equals(acSucursal.Text)).Select(m => m.ID_SUCURSAL).ToArray();
                 
                 //Capturamos el index del valor insertado en el campo
-                var indClie = Array.FindIndex(acClie, x => x == acCliente.Text);
-                var indSucu = Array.FindIndex(acSucu, x=> x == acSucursal.Text);
+                //var indClie = Array.FindIndex(acClie, x => x == acCliente.Text);
+                //var indSucu = Array.FindIndex(acSucu, x=> x == acSucursal.Text);
 
-                if (indClie > -1 || indSucu > -1)
+                //int indiceCliente = Array.IndexOf(acClie, acCliente.Text);
+                //Console.WriteLine(indiceCliente.ToString());
+                //Console.WriteLine(indSucu.ToString());
+                //Console.WriteLine(acClie.ToString());
+                if (acClie.Length == 0 || acSucu.Length == 0)
                 {
                     alert = new AlertDialog.Builder(Activity);
                     alert.SetTitle("MENSAJE");
-                    alert.SetMessage("Por favor, ingrese solo datos sugeridos por la aplicacion");
+                    alert.SetMessage("Por favor, ingrese solo datos sugeridos por el sistema");
                     alert.SetPositiveButton("ACEPTAR", (sender, args) =>
                     {
                         alert.Dispose();
